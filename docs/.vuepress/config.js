@@ -12,15 +12,15 @@ module.exports = {
     themeConfig: {
         authorAvatar: '/image/cat.jpg',
         type: 'blog',
-        nav: nav,
-        sidebar: sidebar,
+        nav: nav,//导航栏
+        sidebar: sidebar, //侧边栏
         subSidebar: 'auto',
         collapsable: false,
         logo: '/image/cat.jpg',
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
-        nextLink: true,
-        preLink: true,
+        nextLink: true, //下一页
+        preLink: true, //上一页
         modePicker: false,
         blogConfig: {
             tag: {
@@ -28,7 +28,7 @@ module.exports = {
                 text: '标签', // 默认 “标签”
             },
             socialLinks: [
-                { icon: 'reco-mayun', link: 'https://gitee.com/AZRNG' }
+                { text:'码云', icon: 'reco-mayun', link: 'https://gitee.com/AZRNG' }
             ]
         }
     },
