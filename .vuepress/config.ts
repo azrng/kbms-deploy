@@ -1,5 +1,4 @@
 import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
 import recoTheme from 'vuepress-theme-reco'
 
 export default defineUserConfig({
@@ -15,50 +14,18 @@ export default defineUserConfig({
     lastUpdatedText: '',
     // series 为原 sidebar  左侧栏
     series: {
-      //   '/web/': [
-
-      //   //   {
-      //   //   title: 'Web',
-      //   //   collapsable: false,
-      //   //   children: [
-      //   //     { title: '介绍', path: '/web/introduce' },
-      //   //     { title: '基础知识', path: '/web/basegrammar' },
-      //   //     {
-      //   //       title: 'HTTP', children: [
-      //   //         { title: 'HTTP代理', path: '/web/http/agency' }
-      //   //       ]
-      //   //     }
-      //   //   ]
-      //   // }
-      //   {text:'介绍',link:'/web/introduce'}
-
-      // ], 
-      // '/csharp/': [{
-      //   title: 'C#',
-      //   collapsable: false,
-      //   children: [
-      //     { title: '预定义类型', path: '/csharp/predefined-type' },
-      //     { title: '类', path: '/csharp/class' },
-      //     { title: '类型转换', path: '/csharp/type-convert' },
-      //     { title: '特性[Attribute]', path: '/csharp/attribute' }
-      //   ]
-      // }],
       '/web/': [
-        { text: "Web", children: ["introduce", "basegrammar"] }
+        {
+          text: "Web", children:
+            [
+              "introduce",
+              //"basegrammar"
+            ]
+        }
       ],
       '/csharp/': [
-        { text: "C#", children: ["predefined-type", "class", "type-convert", "attribute"] }
+        { text: "CSharp", children: ["predefined-type", "class", "type-convert", "attribute"] }
       ]
-      // '/docs/theme-reco/': [
-      //   {
-      //     text: 'module one',
-      //     children: ['home', 'theme']
-      //   },
-      //   {
-      //     text: 'module two',
-      //     children: ['api', 'plugin']
-      //   }
-      // ]
     },
     navbar:
       [
@@ -67,7 +34,7 @@ export default defineUserConfig({
           text: '目录',
           children: [
             { text: 'Web', link: '/web/introduce' },
-            { text: 'c#', link: '/csharp/predefined-type' },
+            { text: 'CSharp', link: '/csharp/predefined-type' },
             //{ text: 'vuepress-reco', link: '/docs/theme-reco/theme' },
           ],
         },
