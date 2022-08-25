@@ -27,7 +27,7 @@ public void ConfigureServices(IServiceCollection services)
 
 
 
-OpenDbContext类必须公开具有 DbContextOptions<OpenDbContext> 参数的公共构造函数。 这是将 AddDbContext 的上下文配置传递到 DbContext 的方式。
+OpenDbContext类必须公开具有 DbContextOptions&lt;OpenDbContext&gt;参数的公共构造函数。 这是将 AddDbContext 的上下文配置传递到 DbContext 的方式。
 
 ```
     public class OpenDbContext : DbContext
@@ -301,7 +301,7 @@ FromSqlInterpolated 类似于 FromSqlRaw，但你可以借助它使用字符串�
 	Console.WriteLine(JsonConvert.SerializeObject(list));
 ```
 
-记得引用：System.Linq  否则提示：未找到源类型“DbSet<User>”的查询模式的实现，未找到join
+记得引用：System.Linq  否则提示：未找到源类型“DbSet&lt;User&gt;”的查询模式的实现，未找到join
 
 生成SQL
 

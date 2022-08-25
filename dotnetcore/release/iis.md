@@ -85,7 +85,7 @@ Internet Information Services (IIS) 是一种灵活、安全且可管理的 Web 
 
 > 该图说明了 IIS、ASP.NET Core 模块和进程外托管的应用之间的关系
 
-进程外托管配置，在项目文件 ( .csproj) 中将 <AspNetCoreHostingModel> 属性的值设置为 OutOfProcess
+进程外托管配置，在项目文件 ( .csproj) 中将 &lt;AspNetCoreHostingModel&gt; 属性的值设置为 OutOfProcess
 
 ```
 <PropertyGroup>
