@@ -1,5 +1,5 @@
 ---
-title: 基础知识
+title: 介绍
 date: '2022/08/25'
 publish: true
 categories:
@@ -17,7 +17,7 @@ tags:
 
 全面的c#编码规范(勤快哥)：https://masuit.com/1755
 
-# 教程
+<!-- # 教程
 
 ## 博客
 
@@ -40,7 +40,7 @@ tags:
 ## 实验
 * [微软Learn]: https://docs.microsoft.com/zh-cn/learn/browse/
 * [腾讯云实验室]: https://cloud.tencent.com/developer/labs/gallery
-* [阿里云实验室]: https://developer.aliyun.com/adc/labs
+* [阿里云实验室]: https://developer.aliyun.com/adc/labs -->
 
 
 # 常用概念解释
