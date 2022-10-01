@@ -87,7 +87,7 @@ var accessToken = await AccessTokenContainer.GetAccessTokenAsync(_configuration[
 
 ## 自定义消息回复
 
-要实现接受用户的消息，并且做出回应，我们需要继承MessageHandler<DefaultMpMessageContext>，新建CustomerMessageHandler类，该类中实现了网上说的价值一个亿的AI核心代码，看到就是赚到。
+要实现接受用户的消息，并且做出回应，我们需要继承MessageHandler&lt;DefaultMpMessageContext&gt;，新建CustomerMessageHandler类，该类中实现了网上说的价值一个亿的AI核心代码，看到就是赚到。
 
 ```
     /// <summary>
