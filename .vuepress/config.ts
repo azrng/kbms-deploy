@@ -38,7 +38,7 @@ export default defineUserConfig({
             ]
         }
       ],
-      '/dotnetcore/':[
+      '/dotnetcore/': [
         {
           text: "基础知识",
           children: [
@@ -169,7 +169,178 @@ export default defineUserConfig({
             "/dotnetcore/release/docker.md",
           ]
         }
-      ]
+      ],
+      '/middleware/': [
+        {
+          text: "单个",
+          children:
+            [
+              "/middleware/yapi.md",
+              "/middleware/baget.md",
+              "/middleware/toolgood-words.md"
+            ]
+        },
+        {
+          text: "Office",
+          children:
+            [
+              "/middleware/office/aspose-pdf.md",
+              "/middleware/office/spire-pdf.md",
+            ]
+        },
+        {
+          text: "打印",
+          children:
+            [
+              "/middleware/print/fastreport.md",
+            ]
+        },
+        {
+          text: "GRPC",
+          children:
+            [
+              "/middleware/grpc/introduce.md",
+              "/middleware/grpc/model.md"
+            ]
+        },
+        {
+          text: "微信",
+          children:
+            [
+              "/middleware/wechat/senparcweixin.md",
+            ]
+        },
+        {
+          text: "配置中心",
+          children:
+            [
+              "/middleware/config-centre/agileconfig.md",
+            ]
+        },
+        {
+          text: "服务通知",
+          children:
+            [
+              "/middleware/service-notifications/jieyi.md",
+              "/middleware/service-notifications/other.md"
+            ]
+        }
+      ],
+      '/db/': [
+        {
+          text: "基础",
+          children:
+            [
+              "/db/base.md",
+              "/db/cache-db-consistency.md",
+            ]
+        },
+        {
+          text: "PostgreSQL",
+          children:
+            [
+              "/db/pgsql/jsonb_path_query.md",
+            ]
+        }
+      ],
+      '/soft/': [
+        {
+          text: "单个",
+          children:
+            [
+              "/soft/soft-collection.md",
+              "/soft/open_source_protocol.md",
+              "/soft/uos.md",
+              "/soft/small/picgo.md",
+              "/soft/postman.md",
+
+            ]
+        },
+        {
+          text: "Jenkins",
+          children:
+            [
+              "/soft/jenkins/base.md",
+              "/soft/jenkins/free-style.md",
+              "/soft/jenkins/docker-install.md",
+              "/soft/jenkins/linux-install.md",
+            ]
+        },
+        {
+          text: "Linux",
+          children:
+            [
+              "/soft/linux/catalog.md",
+              "/soft/linux/vm_install.md",
+              "/soft/linux/hyper-v_install.md",
+            ]
+        },
+        {
+          text: "Visual Studio",
+          children:
+            [
+              "/soft/visualstudio/use-skill.md",
+              "/soft/visualstudio/install.md",
+            ]
+        },
+        {
+          text: "Docker",
+          children:
+            [
+              "/soft/docker/base.md",
+              "/soft/docker/install-services.md",
+              "/soft/docker/mark-small-image.md",
+              "/soft/docker/windows-install.md",
+              "/soft/docker/linux-install.md",
+            ]
+        },
+        {
+          text: "Jenkins",
+          children:
+            [
+              "/aboutme/aboutme.md",
+            ]
+        },
+        {
+          text: "Kubernetes",
+          children:
+            [
+              "/soft/kubernetes/base.md",
+              "/soft/kubernetes/base_concept.md",
+              "/soft/kubernetes/network.md",
+              "/soft/kubernetes/service_discovery.md",
+            ]
+        }
+        ,
+        {
+          text: "Git",
+          children:
+            [
+              "/soft/code-version/base_theory.md",
+              "/soft/code-version/github-base.md",
+              "/soft/code-version/wazgit.md",
+              "/soft/code-version/gitlabinstall.md",
+            ]
+        }
+      ],
+      '/interview/': [
+        {
+          text: "面试",
+          children:
+            [
+              "/interview/anti-fraud.md",
+            ]
+        }
+      ],
+       '/aboutme/': [
+        {
+          text: "关于我",
+          children:
+            [
+              "/aboutme/aboutme.md",
+            ]
+        }
+      ],
     },
     navbar:
       [
@@ -180,8 +351,13 @@ export default defineUserConfig({
             { text: 'Web', link: '/web/introduce' },
             { text: 'CSharp', link: '/csharp/predefined-type' },
             { text: 'dotnetcore', link: '/dotnetcore/base' },
+            { text: '中间件', link: '/middleware/yapi' },
+            { text: '数据库', link: '/db/base' },
+            { text: '软件', link: '/soft/soft-collection' },
+            { text: '面试', link: '/interview/anti-fraud' },
           ],
         },
+        { text: '关于我', link: '/aboutme/aboutme' },
         // 页面404
         // { text: '分类', link: '/categories/csharp/1/' },
         // { text: '标签', link: '/tags/csharp/1/' },
