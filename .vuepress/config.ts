@@ -224,6 +224,13 @@ export default defineUserConfig({
               "/middleware/service-notifications/jieyi.md",
               "/middleware/service-notifications/other.md"
             ]
+        },
+        {
+          text: "CI&CD",
+          children:
+            [
+              "/middleware/ci&cd/github/github-actions-buildimages-release.md"
+            ]
         }
       ],
       '/db/': [
