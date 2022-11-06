@@ -161,6 +161,12 @@ export default defineUserConfig({
           ]
         },
         {
+          text: "小知识",
+          children: [
+            "/dotnetcore/small/dynamic_load.md",
+          ]
+        },
+        {
           text: "部署",
           children: [
             "/dotnetcore/release/iis.md",
