@@ -2,47 +2,21 @@
 home: true
 layout: Blog
 icon: home
-title: Blog Home
+title: 主页
 heroImage: /logo.svg
-heroText: the name of your blog
-tagline: You can put your slogan here
+heroText: 知识库
 heroFullScreen: true
-projects:
-  - icon: project
-    name: project name
-    desc: project detailed description
-    link: https://your.project.link
+tagline: 人总是在正确的事情和容易做的事情之间做选择
+# projects:
+#   - icon: project
+#     name: 项目名称
+#     desc: 项目详细描述
+#     link: https://你的项目链接
 
-  - icon: link
-    name: link name
-    desc: link detailed description
-    link: https://link.address
+#   - icon: /logo.svg
+#     name: 自定义项目
+#     desc: 自定义详细介绍
+#     link: https://你的自定义链接
 
-  - icon: book
-    name: book name
-    desc: Detailed description of the book
-    link: https://link.to.your.book
-
-  - icon: article
-    name: article name
-    desc: Detailed description of the article
-    link: https://link.to.your.article
-
-  - icon: friend
-    name: friend name
-    desc: Detailed description of friend
-    link: https://link.to.your.friend
-
-  - icon: /logo.svg
-    name: custom item
-    desc: Detailed description of this custom item
-    link: https://link.to.your.friend
-
-footer: customize your footer text
+footer: 知识仓库
 ---
-
-This is a blog home page demo.
-
-To use this layout, you should set both `layout: Blog` and `home: true` in the page front matter.
-
-For related configuration docs, please see [blog homepage](https://vuepress-theme-hope.github.io/v2/guide/blog/home/).

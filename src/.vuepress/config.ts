@@ -1,18 +1,29 @@
+import { searchPlugin } from "@vuepress/plugin-search";
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 
 export default defineUserConfig({
-  base: "/",
+  // 设置网站的前缀地址
+  base: "/kbms/",
 
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "博客演示",
-      description: "vuepress-theme-hope 的博客演示",
+      title: "知识库",
+      description: "一个知识库网站",
     },
   },
 
   theme,
 
   shouldPrefetch: false,
+  plugins: [
+    searchPlugin({
+      locales: {
+        "/": {
+          placeholder: "搜索",
+        },
+      }
+    })
+  ],
 });

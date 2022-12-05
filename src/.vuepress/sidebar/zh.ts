@@ -18,5 +18,5 @@ export const zhSidebar = sidebar({
     },
     "intro",
     "slides",
-  ],
+  ]
 });

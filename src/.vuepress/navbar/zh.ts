@@ -1,8 +1,10 @@
 import { navbar } from "vuepress-theme-hope";
 
+// 导航栏
+
 export const zhNavbar = navbar([
-  "/zh/",
-  { text: "演示", icon: "discover", link: "/zh/demo/" },
+  "/",
+  { text: "Web", icon: "discover", link: "/web/introduce.md/" },
   {
     text: "博文",
     icon: "edit",
@@ -45,8 +47,8 @@ export const zhNavbar = navbar([
     ],
   },
   {
-    text: "V2 文档",
+    text: "个人介绍",
     icon: "note",
-    link: "https://vuepress-theme-hope.github.io/v2/zh/",
+    link: "https://azrng.gitee.io",
   },
 ]);

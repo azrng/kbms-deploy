@@ -6,11 +6,11 @@ export default hopeTheme({
   hostname: "https://mister-hope.github.io",
   author: {
     name: "AZRNG",
-    url: "https://mrhope.site",
+    url: "https://azrng.gitee.io",
   },
   iconAssets: "iconfont",
-  logo: "/logo.svg",
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  logo: "/logo.svg", //导航栏logo
+  repo: "vuepress-theme-hope/vuepress-theme-hope", //默认为 GitHub. 同时也可以是一个完整的 URL
   docsDir: "docs",
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
   blog: {
@@ -19,7 +19,6 @@ export default hopeTheme({
       Gitee: "https://example.com",
       GitHub: "https://example.com",
       Wechat: "https://example.com",
-      Zhihu: "https://example.com"
     },
   },
 
@@ -29,10 +28,10 @@ export default hopeTheme({
       navbar: zhNavbar,
       // sidebar
       sidebar: zhSidebar,
-      footer: "默认页脚",
+      footer: "45454544545",
       displayFooter: true,
       blog: {
-        description: "一个前端开发者",
+        description: "一个.NET开发者",
         intro: "/zh/intro.html",
       },
       // page meta
@@ -41,7 +40,7 @@ export default hopeTheme({
       },
     },
   },
-
+  // 加密的页面
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
@@ -53,6 +52,7 @@ export default hopeTheme({
     blog: {
       autoExcerpt: true,
     },
+
 
     // If you don’t need comment feature, you can remove following option
     // The following config is for demo ONLY, if you need comment feature, please generate and use your own config, see comment plugin documentation for details.

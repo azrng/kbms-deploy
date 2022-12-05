@@ -1,10 +1,10 @@
 ---
 title: HTML介绍
-date: '2021/02/22'
+date: 2021-02-22
 publish: true
 categories:
  - web
-tags:
+tag:
  - html
  - web
 ---
@@ -16,11 +16,11 @@ tags:
 
 ## 博客
 
-* [菜鸟教程]: https://www.runoob.com/html/html-tutorial.html
+菜鸟教程: https://www.runoob.com/html/html-tutorial.html
 
 ## 基础视频
 
-* [零基础必看的h5(html5)+css3+移动端前端视频教程]: https://www.bilibili.com/video/BV14J4114768
-    * [教程素材]：https://www.lanzoux.com/imSLkh63lcj
-* [JavaScript基础语法-dom-bom-js-es6新语法]: https://www.bilibili.com/video/BV1Sy4y1C7ha
+零基础必看的h5(html5)+css3+移动端前端视频教程] https://www.bilibili.com/video/BV14J4114768  
+  [教程素材]：https://www.lanzoux.com/imSLkh63lcj  
+JavaScript基础语法-dom-bom-js-es6新语法 : https://www.bilibili.com/video/BV1Sy4y1C7ha
 

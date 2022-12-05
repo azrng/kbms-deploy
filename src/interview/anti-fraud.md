@@ -1,12 +1,16 @@
 ---
+icon: edit
 title: 防坑指南
-date: '2021/02/22'
+date: 2021-02-22
 publish: true
+author: azrng
+isOriginal: true
 categories:
  - 面试
-tags:
+tag:
  - 防坑
 ---
+
 # 防坑指南
 
 # 1. 简历篇
