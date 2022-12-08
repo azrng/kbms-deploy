@@ -2,6 +2,7 @@ import { searchPlugin } from "@vuepress/plugin-search";
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 
+//https://v2.vuepress.vuejs.org/zh/reference/config.html
 export default defineUserConfig({
   // 设置网站的前缀地址
   base: "/kbms/",

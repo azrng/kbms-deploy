@@ -2,6 +2,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 import { zhNavbar } from "./navbar/index.js";
 import { zhSidebar } from "./sidebar/index.js";
 
+// 主题
 export default hopeTheme({
   hostname: "https://mister-hope.github.io",
   author: {
