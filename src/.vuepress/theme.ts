@@ -4,7 +4,7 @@ import { zhSidebar } from "./sidebar/index.js";
 
 // 主题
 export default hopeTheme({
-  hostname: "https://mister-hope.github.io",
+  hostname: "https://azrng.github.io/kbms/",
   author: {
     name: "AZRNG",
     url: "https://azrng.gitee.io",
@@ -27,10 +27,8 @@ export default hopeTheme({
     description: "一个.NET开发者",
     roundAvatar:true,//是否剪裁头像为圆形形状
     medias: {
-      Email: "https://example.com",
-      Gitee: "https://example.com",
-      GitHub: "https://example.com",
-      Wechat: "https://example.com",
+      Gitee: "https://gitee.com/AZRNG",
+      GitHub: "https://github.com/AZRNG",
     },
   },
 

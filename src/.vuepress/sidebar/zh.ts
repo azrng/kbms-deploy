@@ -9,6 +9,7 @@ export const zhSidebar = sidebar({
   "/web/": [
     "/web/introduce.md",
     "/web/http-agency.md",
+    "/web/http.md",
   ],
   "/csharp/": [
     "predefined-type.md",
