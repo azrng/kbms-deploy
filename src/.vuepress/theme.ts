@@ -14,7 +14,18 @@ export default hopeTheme({
   repo: "vuepress-theme-hope/vuepress-theme-hope", //默认为 GitHub. 同时也可以是一个完整的 URL
   docsDir: "docs",
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
+  themeColor: {
+    white: "#ffffff",
+    red: "#e53e31",
+    green: "#3eaf7c",
+    orange: "#f29e00",
+  },
+  fullscreen: true,
   blog: {
+    name: "Azrng",
+    timeline: "知识库",
+    description: "一个.NET开发者",
+    roundAvatar:true,//是否剪裁头像为圆形形状
     medias: {
       Email: "https://example.com",
       Gitee: "https://example.com",
@@ -29,11 +40,9 @@ export default hopeTheme({
       navbar: zhNavbar,
       // sidebar
       sidebar: zhSidebar,
-      footer: "45454544545",
       displayFooter: true,
       blog: {
-        description: "一个.NET开发者",
-        intro: "/zh/intro.html",
+        intro: "/aboutme/aboutme.md", // 点击个人头像跳转地址
       },
       // page meta
       metaLocales: {
@@ -42,12 +51,12 @@ export default hopeTheme({
     },
   },
   // 加密的页面
-  encrypt: {
-    config: {
-      "/demo/encrypt.html": ["1234"],
-      "/zh/demo/encrypt.html": ["1234"],
-    },
-  },
+  // encrypt: {
+  //   config: {
+  //     "/demo/encrypt.html": ["1234"],
+  //     "/zh/demo/encrypt.html": ["1234"],
+  //   },
+  // },
 
   plugins: {
     blog: {
@@ -62,11 +71,11 @@ export default hopeTheme({
       /**
        * Using Giscus
        */
-      provider: "Giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
-      category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
+      // provider: "Giscus",
+      // repo: "vuepress-theme-hope/giscus-discussions",
+      // repoId: "R_kgDOG_Pt2A",
+      // category: "Announcements",
+      // categoryId: "DIC_kwDOG_Pt2M4COD69",
 
       /**
        * Using Twikoo

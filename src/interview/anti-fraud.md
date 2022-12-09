@@ -1,11 +1,10 @@
 ---
-icon: edit
 title: 防坑指南
 date: 2021-02-22
 publish: true
 author: azrng
 isOriginal: true
-categories:
+category:
  - 面试
 tag:
  - 防坑

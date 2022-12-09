@@ -1,7 +1,7 @@
 ---
 title: 关于我
 date: 2021-02-22
-categories:
+category:
  - 关于我
 ---
 # 关于我
