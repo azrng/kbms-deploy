@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-beta.53" />
+    <meta name="theme" content="VuePress Theme Hope" />
+    <meta property="og:url" content="https://mister-hope.github.io/kbms/middleware/print/fastreport.html"><meta property="og:site_name" content="知识库"><meta property="og:title" content="FastReport浏览器直接打印无须预览"><meta property="og:description" content="文章来源自：https://jhrs.com/2021/44698.html ​		2022最终版FastReport浏览器直接打印无须预览，之所以写这篇文章，是因为在两年前首发在 jhrs.com 的FastReport.net 打印功能这篇文章被很多网站转（偷）载，也是为了填一下2次封装FastReport.net 打印功能，Web项目网页支持直接..."><meta property="og:type" content="article"><meta property="og:updated_time" content="2022-12-09T02:19:17.000Z"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="azrng"><meta property="article:tag" content="FastReport"><meta property="article:tag" content="打印"><meta property="article:published_time" content="2021-02-22T00:00:00.000Z"><meta property="article:modified_time" content="2022-12-09T02:19:17.000Z"><title>FastReport浏览器直接打印无须预览 | 知识库</title><meta name="description" content="文章来源自：https://jhrs.com/2021/44698.html ​		2022最终版FastReport浏览器直接打印无须预览，之所以写这篇文章，是因为在两年前首发在 jhrs.com 的FastReport.net 打印功能这篇文章被很多网站转（偷）载，也是为了填一下2次封装FastReport.net 打印功能，Web项目网页支持直接...">
+    <style>
+      :root {
+        --bg-color: #fff;
+      }
+
+      html[data-theme="dark"] {
+        --bg-color: #1d2025;
+      }
+
+      html,
+      body {
+        background: var(--bg-color);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
+        document.querySelector("html").setAttribute("data-theme", "dark");
+      }
+    </script>
+    <link rel="preload" href="/kbms/assets/style.ff819d8f.css" as="style" /><link rel="stylesheet" href="/kbms/assets/style.ff819d8f.css" />
+    <link rel="modulepreload" href="/kbms/assets/app.e215a38f.js"><link rel="modulepreload" href="/kbms/assets/framework.e8a0537a.js"><link rel="modulepreload" href="/kbms/assets/fastreport.html.d4b5d129.js"><link rel="modulepreload" href="/kbms/assets/fastreport.html.cc7340a8.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="skip-link sr-only">跳至主要內容</a><!--]--><div class="theme-container has-toc"><!--[--><!--[--><header class="navbar"><div class="navbar-left"><button class="toggle-sidebar-button" title="Toggle Sidebar"><span class="icon"></span></button><!--[--><!----><!--]--><a href="/kbms/" class="brand"><img class="logo" src="/kbms/logo.svg" alt="知识库"><!----><span class="site-name hide-in-pad">知识库</span></a><!--[--><!----><!--]--></div><div class="navbar-center"><!--[--><!----><!--]--><nav class="nav-links"><div class="nav-item hide-in-mobile"><a href="/kbms/" class="nav-link" aria-label="首页"><span class="icon iconfont icon-home"></span>首页<!----></a></div><div class="nav-item hide-in-mobile"><a href="/kbms/web/introduce.html" class="nav-link" aria-label="Web"><!---->Web<!----></a></div><div class="nav-item hide-in-mobile"><a href="/kbms/csharp/predefined-type.html" class="nav-link" aria-label="csharp"><!---->csharp<!----></a></div><div class="nav-item hide-in-mobile"><a href="/kbms/dotnetcore/base.html" class="nav-link" aria-label="dotnetcore"><!---->dotnetcore<!----></a></div><div class="nav-item hide-in-mobile"><a href="/kbms/middleware/yapi.html" class="nav-link" aria-label="中间件"><!---->中间件<!----></a></div><div class="nav-item hide-in-mobile"><a href="/kbms/db/base.html" class="nav-link" aria-label="数据库"><!---->数据库<!----></a></div><div class="nav-item hide-in-mobile"><a href="/kbms/soft/soft-collection.html" class="nav-link" aria-label="软件"><!---->软件<!----></a></div><div class="nav-item hide-in-mobile"><a href="/kbms/interview/anti-fraud.html" class="nav-link" aria-label="面试"><!---->面试<!----></a></div><div class="nav-item hide-in-mobile"><a href="/kbms/aboutme/aboutme.html" class="nav-link" aria-label="个人介绍"><!---->个人介绍<!----></a></div></nav><!--[--><!----><!--]--></div><div class="navbar-right"><!--[--><!----><!--]--><!----><div class="nav-item"><a class="repo-link" href="https://github.com/vuepress-theme-hope/vuepress-theme-hope" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" class="icon github-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="github icon" style="width:1.25rem;height:1.25rem;vertical-align:middle;"><path d="M511.957 21.333C241.024 21.333 21.333 240.981 21.333 512c0 216.832 140.544 400.725 335.574 465.664 24.49 4.395 32.256-10.07 32.256-23.083 0-11.69.256-44.245 0-85.205-136.448 29.61-164.736-64.64-164.736-64.64-22.315-56.704-54.4-71.765-54.4-71.765-44.587-30.464 3.285-29.824 3.285-29.824 49.195 3.413 75.179 50.517 75.179 50.517 43.776 75.008 114.816 53.333 142.762 40.79 4.523-31.66 17.152-53.377 31.19-65.537-108.971-12.458-223.488-54.485-223.488-242.602 0-53.547 19.114-97.323 50.517-131.67-5.035-12.33-21.93-62.293 4.779-129.834 0 0 41.258-13.184 134.912 50.346a469.803 469.803 0 0 1 122.88-16.554c41.642.213 83.626 5.632 122.88 16.554 93.653-63.488 134.784-50.346 134.784-50.346 26.752 67.541 9.898 117.504 4.864 129.834 31.402 34.347 50.474 78.123 50.474 131.67 0 188.586-114.73 230.016-224.042 242.09 17.578 15.232 33.578 44.672 33.578 90.454v135.85c0 13.142 7.936 27.606 32.854 22.87C862.25 912.597 1002.667 728.747 1002.667 512c0-271.019-219.648-490.667-490.71-490.667z"></path></svg></a></div><div class="nav-item hide-in-mobile"><button class="outlook-button" tabindex="-1" ariahidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon outlook-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="outlook icon"><path d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4 38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32 51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0 102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2 6.4-44.8-9.6-12.8-12.8-25.6-12.8-41.6 0-54.4 60.8-99.2 137.6-99.2 6.4 0 12.8 0 22.4 0 12.8 0 38.4 9.6 48-25.6 0-3.2 0-3.2 3.2-6.4 0-3.2 3.2-6.4 3.2-6.4 6.4-16 6.4-16 6.4-19.2 9.6-35.2 16-73.6 16-115.2 0-105.6-41.6-198.4-108.8-268.8C704 396.8 560 675.2 560 675.2zM224 419.2c0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2 0 28.8-22.4 51.2-51.2 51.2C246.4 470.4 224 448 224 419.2zM320 284.8c0-22.4 19.2-41.6 41.6-41.6 22.4 0 41.6 19.2 41.6 41.6 0 22.4-19.2 41.6-41.6 41.6C339.2 326.4 320 307.2 320 284.8zM457.6 208c0-12.8 12.8-25.6 25.6-25.6 12.8 0 25.6 12.8 25.6 25.6 0 12.8-12.8 25.6-25.6 25.6C470.4 233.6 457.6 220.8 457.6 208zM128 505.6C128 592 153.6 672 201.6 736c28.8-60.8 112-60.8 124.8-60.8-16-51.2 16-99.2 16-99.2l316.8-422.4c-48-19.2-99.2-32-150.4-32C297.6 118.4 128 291.2 128 505.6zM764.8 86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4 80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6 6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"></path></svg><div class="outlook-dropdown"><!----></div></button></div><form class="search-box" role="search"><input type="search" placeholder="搜索" autocomplete="off" spellcheck="false" value><!----></form><!--[--><!----><!--]--><button class="toggle-navbar-button" aria-label="Toggle Navbar" aria-expanded="false" aria-controls="nav-screen"><span class="button-container"><span class="button-top"></span><span class="button-middle"></span><span class="button-bottom"></span></span></button></div></header><!----><!--]--><!----><div class="toggle-sidebar-wrapper"><span class="arrow left"></span></div><aside class="sidebar"><!--[--><!----><!--]--><ul class="sidebar-links"><li><section class="sidebar-group"><p class="sidebar-heading"><!----><span class="title">单个</span><!----></p><ul class="sidebar-links"><li><!--[--><a href="/kbms/middleware/yapi.html" class="nav-link sidebar-link sidebar-page" aria-label="YAPI"><!---->YAPI<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/kbms/middleware/baget.html" class="nav-link sidebar-link sidebar-page" aria-label="包管理服务BaGet"><!---->包管理服务BaGet<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/kbms/middleware/toolgood-words.html" class="nav-link sidebar-link sidebar-page" aria-label="敏感词组件"><!---->敏感词组件<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li></ul></section></li><li><section class="sidebar-group"><p class="sidebar-heading"><!----><span class="title">Office</span><!----></p><ul class="sidebar-links"><li><!--[--><a href="/kbms/middleware/office/aspose-pdf.html" class="nav-link sidebar-link sidebar-page" aria-label="Aspose.PDF"><!---->Aspose.PDF<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/kbms/middleware/office/spire-pdf.html" class="nav-link sidebar-link sidebar-page" aria-label="Spire.PDF"><!---->Spire.PDF<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li></ul></section></li><li><section class="sidebar-group"><p class="sidebar-heading active"><!----><span class="title">打印</span><!----></p><ul class="sidebar-links"><li><!--[--><a aria-current="page" href="/kbms/middleware/print/fastreport.html" class="router-link-active router-link-exact-active nav-link active sidebar-link sidebar-page active" aria-label="FastReport浏览器直接打印无须预览"><!---->FastReport浏览器直接打印无须预览<!----></a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a aria-current="page" href="/kbms/middleware/print/fastreport.html#fastreport浏览器直接打印无须预览" class="router-link-active router-link-exact-active nav-link sidebar-link heading" aria-label="FastReport浏览器直接打印无须预览"><!---->FastReport浏览器直接打印无须预览<!----></a><ul class="sidebar-sub-headers"></ul></li><li class="sidebar-sub-header"><a aria-current="page" href="/kbms/middleware/print/fastreport.html#编写客户端打印程序" class="router-link-active router-link-exact-active nav-link sidebar-link heading" aria-label="编写客户端打印程序"><!---->编写客户端打印程序<!----></a><ul class="sidebar-sub-headers"></ul></li><li class="sidebar-sub-header"><a aria-current="page" href="/kbms/middleware/print/fastreport.html#编写安装程序类" class="router-link-active router-link-exact-active nav-link sidebar-link heading" aria-label="编写安装程序类"><!---->编写安装程序类<!----></a><ul class="sidebar-sub-headers"></ul></li><li class="sidebar-sub-header"><a aria-current="page" href="/kbms/middleware/print/fastreport.html#fastreport-web打印页面代码" class="router-link-active router-link-exact-active nav-link sidebar-link heading" aria-label="FastReport web打印页面代码"><!---->FastReport web打印页面代码<!----></a><ul class="sidebar-sub-headers"></ul></li></ul><!--]--></li></ul></section></li><li><section class="sidebar-group"><p class="sidebar-heading"><!----><span class="title">GRPC</span><!----></p><ul class="sidebar-links"><li><!--[--><a href="/kbms/middleware/grpc/introduce.html" class="nav-link sidebar-link sidebar-page" aria-label="介绍"><!---->介绍<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/kbms/middleware/grpc/model.html" class="nav-link sidebar-link sidebar-page" aria-label="gRPC四种模式"><!---->gRPC四种模式<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li></ul></section></li><li><section class="sidebar-group"><p class="sidebar-heading"><!----><span class="title">微信</span><!----></p><ul class="sidebar-links"><li><!--[--><a href="/kbms/middleware/wechat/senparcweixin.html" class="nav-link sidebar-link sidebar-page" aria-label="盛派微信SDK"><!---->盛派微信SDK<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li></ul></section></li><li><section class="sidebar-group"><p class="sidebar-heading"><!----><span class="title">配置中心</span><!----></p><ul class="sidebar-links"><li><!--[--><a href="/kbms/middleware/config-centre/agileconfig.html" class="nav-link sidebar-link sidebar-page" aria-label="AgileConfig"><!---->AgileConfig<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li></ul></section></li><li><section class="sidebar-group"><p class="sidebar-heading"><!----><span class="title">服务通知</span><!----></p><ul class="sidebar-links"><li><!--[--><a href="/kbms/middleware/service-notifications/jieyi.html" class="nav-link sidebar-link sidebar-page" aria-label="捷易快讯"><!---->捷易快讯<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/kbms/middleware/service-notifications/other.html" class="nav-link sidebar-link sidebar-page" aria-label="其他通知"><!---->其他通知<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li></ul></section></li><li><section class="sidebar-group"><p class="sidebar-heading"><!----><span class="title">CI&amp;CD</span><!----></p><ul class="sidebar-links"><li><!--[--><a href="/kbms/middleware/ci&amp;cd/github/github-actions-buildimages-release.html" class="nav-link sidebar-link sidebar-page" aria-label="GitHub Actions构建镜像并部署服务"><!---->GitHub Actions构建镜像并部署服务<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li></ul></section></li></ul><!--[--><!----><!--]--></aside><!--[--><main class="page" id="main-content"><!--[--><!----><nav class="breadcrumb disable"></nav><div class="page-title"><h1><!---->FastReport浏览器直接打印无须预览</h1><div class="page-info"><span class="author-info" aria-label="作者🖊" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon author-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="author icon"><path d="M649.6 633.6c86.4-48 147.2-144 147.2-249.6 0-160-128-288-288-288s-288 128-288 288c0 108.8 57.6 201.6 147.2 249.6-121.6 48-214.4 153.6-240 288-3.2 9.6 0 19.2 6.4 25.6 3.2 9.6 12.8 12.8 22.4 12.8h704c9.6 0 19.2-3.2 25.6-12.8 6.4-6.4 9.6-16 6.4-25.6-25.6-134.4-121.6-240-243.2-288z"></path></svg><span><span class="author-item">azrng</span></span><span property="author" content="azrng"></span></span><!----><span class="date-info" aria-label="写作日期📅" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon calendar-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="calendar icon"><path d="M716.4 110.137c0-18.753-14.72-33.473-33.472-33.473-18.753 0-33.473 14.72-33.473 33.473v33.473h66.993v-33.473zm-334.87 0c0-18.753-14.72-33.473-33.473-33.473s-33.52 14.72-33.52 33.473v33.473h66.993v-33.473zm468.81 33.52H716.4v100.465c0 18.753-14.72 33.473-33.472 33.473a33.145 33.145 0 01-33.473-33.473V143.657H381.53v100.465c0 18.753-14.72 33.473-33.473 33.473a33.145 33.145 0 01-33.473-33.473V143.657H180.6A134.314 134.314 0 0046.66 277.595v535.756A134.314 134.314 0 00180.6 947.289h669.74a134.36 134.36 0 00133.94-133.938V277.595a134.314 134.314 0 00-133.94-133.938zm33.473 267.877H147.126a33.145 33.145 0 01-33.473-33.473c0-18.752 14.72-33.473 33.473-33.473h736.687c18.752 0 33.472 14.72 33.472 33.473a33.145 33.145 0 01-33.472 33.473z"></path></svg><span><!----></span><meta property="datePublished" content="2021-02-22T00:00:00.000Z"></span><span class="category-info" aria-label="分类🌈" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon category-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="category icon"><path d="M148.41 106.992h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H148.41c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.311-40.31zM147.556 553.478H429.73c22.263 0 40.311 18.048 40.311 40.31v282.176c0 22.263-18.048 40.312-40.31 40.312H147.555c-22.263 0-40.311-18.049-40.311-40.312V593.79c0-22.263 18.048-40.311 40.31-40.311zM593.927 106.992h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H593.927c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.31-40.31zM730.22 920.502H623.926c-40.925 0-74.22-33.388-74.22-74.425V623.992c0-41.038 33.387-74.424 74.425-74.424h222.085c41.038 0 74.424 33.226 74.424 74.067v114.233c0 10.244-8.304 18.548-18.547 18.548s-18.548-8.304-18.548-18.548V623.635c0-20.388-16.746-36.974-37.33-36.974H624.13c-20.585 0-37.331 16.747-37.331 37.33v222.086c0 20.585 16.654 37.331 37.126 37.331H730.22c10.243 0 18.547 8.304 18.547 18.547 0 10.244-8.304 18.547-18.547 18.547z"></path></svg><ul class="categories-wrapper"><li><span class="category category5 clickable" role="navigation">中间件</span></li></ul><meta property="articleSection" content="中间件"></span><span aria-label="标签🏷" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon tag-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="tag icon"><path d="M939.902 458.563L910.17 144.567c-1.507-16.272-14.465-29.13-30.737-30.737L565.438 84.098h-.402c-3.215 0-5.726 1.005-7.634 2.913l-470.39 470.39a10.004 10.004 0 000 14.164l365.423 365.424c1.909 1.908 4.42 2.913 7.132 2.913s5.223-1.005 7.132-2.913l470.39-470.39c2.01-2.11 3.014-5.023 2.813-8.036zm-240.067-72.121c-35.458 0-64.286-28.828-64.286-64.286s28.828-64.285 64.286-64.285 64.286 28.828 64.286 64.285-28.829 64.286-64.286 64.286z"></path></svg><ul class="tags-wrapper"><li><span class="tag tag5 clickable" role="navigation">FastReport</span></li><li><span class="tag tag1 clickable" role="navigation">打印</span></li></ul><meta property="keywords" content="FastReport,打印"></span><span class="reading-time-info" aria-label="阅读时间⌛" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon timer-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="timer icon"><path d="M799.387 122.15c4.402-2.978 7.38-7.897 7.38-13.463v-1.165c0-8.933-7.38-16.312-16.312-16.312H256.33c-8.933 0-16.311 7.38-16.311 16.312v1.165c0 5.825 2.977 10.874 7.637 13.592 4.143 194.44 97.22 354.963 220.201 392.763-122.204 37.542-214.893 196.511-220.2 389.397-4.661 5.049-7.638 11.651-7.638 19.03v5.825h566.49v-5.825c0-7.379-2.849-13.981-7.509-18.9-5.049-193.016-97.867-351.985-220.2-389.527 123.24-37.67 216.446-198.453 220.588-392.892zM531.16 450.445v352.632c117.674 1.553 211.787 40.778 211.787 88.676H304.097c0-48.286 95.149-87.382 213.728-88.676V450.445c-93.077-3.107-167.901-81.297-167.901-177.093 0-8.803 6.99-15.793 15.793-15.793 8.803 0 15.794 6.99 15.794 15.793 0 80.261 63.69 145.635 142.01 145.635s142.011-65.374 142.011-145.635c0-8.803 6.99-15.793 15.794-15.793s15.793 6.99 15.793 15.793c0 95.019-73.789 172.82-165.96 177.093z"></path></svg><span>大约 12 分钟</span><meta property="timeRequired" content="PT12M"></span></div><hr></div><div class="toc-place-holder"><aside id="toc"><div class="toc-header">此页内容</div><div class="toc-wrapper"><ul class="toc-list"><!--[--><li class="toc-item"><a aria-current="page" href="/kbms/middleware/print/fastreport.html#fastreport浏览器直接打印无须预览" class="router-link-active router-link-exact-active toc-link level2">FastReport浏览器直接打印无须预览</a></li><!----><!--]--><!--[--><li class="toc-item"><a aria-current="page" href="/kbms/middleware/print/fastreport.html#编写客户端打印程序" class="router-link-active router-link-exact-active toc-link level2">编写客户端打印程序</a></li><!----><!--]--><!--[--><li class="toc-item"><a aria-current="page" href="/kbms/middleware/print/fastreport.html#编写安装程序类" class="router-link-active router-link-exact-active toc-link level2">编写安装程序类</a></li><!----><!--]--><!--[--><li class="toc-item"><a aria-current="page" href="/kbms/middleware/print/fastreport.html#fastreport-web打印页面代码" class="router-link-active router-link-exact-active toc-link level2">FastReport web打印页面代码</a></li><!----><!--]--></ul></div></aside></div><!----><div class="theme-hope-content"><blockquote><p>文章来源自：<a href="https://jhrs.com/2021/44698.html" target="_blank" rel="noopener noreferrer">https://jhrs.com/2021/44698.html<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p></blockquote><h1 id="fastreport浏览器直接打印无须预览-2022终版" tabindex="-1"><a class="header-anchor" href="#fastreport浏览器直接打印无须预览-2022终版" aria-hidden="true">#</a> FastReport浏览器直接打印无须预览（2022终版）</h1><p>​ 2022最终版FastReport浏览器直接打印无须预览，之所以写这篇文章，是因为在两年前首发在 <a href="http://jhrs.com" target="_blank" rel="noopener noreferrer">jhrs.com<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> <a href="http://xn--FastReport-hk5y.net" target="_blank" rel="noopener noreferrer">的FastReport.net<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> 打印功能这篇文章被很多网站转（偷）载，也是为了填一下<a href="https://jhrs.com/2019/28460.html" target="_blank" rel="noopener noreferrer">2次封装FastReport.net 打印功能，Web项目网页支持直接打印<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>这篇文章留下的坑，本文将会给出详细的代码以实现浏览器上并结合FastReport.Net实现无须预览直接打印功能。</p><p>​ 无须预览直接打印也叫<strong>静默打印</strong>，即点一下按钮（当然你可以任意方式实现让打印机开始）打印机直接开始工作打印文件；在WinForm下很好实现，而web 静默打印一直是难点，且实现较为麻烦，这也是本文要解决的问题。</p><p>​ 以下的文章是2年前和后来写的关于FastReport.Net的一些系列文章，原文还是值得翻出来看一下的，讲的是一些实现思路。本文会略过VS2022怎样打包安装程序，如果你是C#开发人员，会开发WinForm程序但不熟悉怎样打包安装程序，可以看看我之前写的<a href="https://jhrs.com/2019/33231.html" target="_blank" rel="noopener noreferrer">WPF程序打包教程<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>，它们是一个路数。</p><ol><li><a href="https://jhrs.com/2019/28460.html" target="_blank" rel="noopener noreferrer">2次封装FastReport.net 打印功能，Web项目网页支持直接打印<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></li><li><a href="https://jhrs.com/2020/39052.html" target="_blank" rel="noopener noreferrer">自定义协议打开本地客户端程序遇上CSP内容安全策略<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></li><li><a href="https://jhrs.com/2019/33231.html" target="_blank" rel="noopener noreferrer">VS2019打包WPF安装程序最新教程<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></li></ol><h1 id="源码解决方案说明" tabindex="-1"><a class="header-anchor" href="#源码解决方案说明" aria-hidden="true">#</a> 源码解决方案说明</h1><p>​ 当你从github下载源码后，使用VS2022打开会看到如下的样式，如果你首次打开时JHRS.PrintClientSetup不能正常加载，说明你没有安装Installer Projects，参见<a href="https://jhrs.com/2021/44527.html" target="_blank" rel="noopener noreferrer">VS2022 打不开vdproj项目解决办法，升级Installer Projects<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>这篇文章解决即可。</p><p><img src="https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112272302544.webp" alt="web 打印控件封装源码解决方案" loading="lazy"></p><p>​ 源码中提供了 2 个网站程序，分别是使用<a href="https://jhrs.com/2021/43582.html" target="_blank" rel="noopener noreferrer">asp.net webform<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><a href="http://xn--asp-y11ex8kks1a2phw03c.net" target="_blank" rel="noopener noreferrer">技术编写和asp.net<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> core razor page编写，从命名上就已经区分了；JHRS.PrintClient是基于FastReport.net封装的客户端软件，引用了FastReport.net相关dll文件。</p><p>​ JHRS.PrintClientSetup是打包安装程序，为什么需要打包安装呢？那是因为在生产环境中你不可能将Debug或Release目录下的文件发给客户让他们使用，况且也使用不起来，而且还需要借助该打包程序往注册表写入自定义协议信息，具体在下面代码中会介绍。打包成安装程序后，即可在生产环境中的网页上提供下载功能，需要使用打印功能的客户端，只需要下载安装上该客户端即可，之后就可以打印了。</p><p>**Github地址：**<a href="https://github.com/jhrscom/JHRS-PrintClient" target="_blank" rel="noopener noreferrer">https://github.com/jhrscom/JHRS-PrintClient<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p>**演示网站：**<a href="https://fastreport.jhrs.com/" target="_blank" rel="noopener noreferrer">https://fastreport.jhrs.com/<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p>**提示：**如果打开Github有问题，你最好自备一个<a href="https://gbtcs.com/li7k" target="_blank" rel="noopener noreferrer">上网工具<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>。你可以进入<a href="https://fastreport.jhrs.com/" target="_blank" rel="noopener noreferrer">演示网站<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>首先下载客户端程序安装上，之后再点击打印按钮即可。</p><h2 id="fastreport浏览器直接打印无须预览" tabindex="-1"><a class="header-anchor" href="#fastreport浏览器直接打印无须预览" aria-hidden="true">#</a> <strong>FastReport浏览器直接打印无须预览</strong></h2><p>我们在使用web技术开发管理系统，如医疗领域的HIS系统，企业的ERP系统，财务系统等等，都有打印需求，而正是各类系统和客户都有着各种不相同的打印需要，模板，格式，数据不一样等；市面上报表有多种产品，但我们选择了FastReport.Net做为解决打印需求的第三方组件，当然，商用它是付费的，不过对于公司来说，这都没有什么问题。</p><p>本文中所涉及到的FastReport.Net是使用的来自网上的古老的 2.0 版本，正式产品中使用，还是需要购买授权的。<a href="http://xn--webFastReport-o40uda246vpemt2filufhslyrqotba551cj14gys2crc0da.net" target="_blank" rel="noopener noreferrer">接下来就来说说怎样在web环境下结合FastReport.net<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> 实现无预览直接打印功能，另外需要说明的是，我封装的客户端你可以自由的设置是否需要使用预览功能，客户端的功能点如下：</p><ol><li>支持选择多打印机，并且可以设置默认打印机</li><li>支持无须预览直接打印，也可以启动客户端将预览功能开启。</li><li>跨浏览器支持，Chrome，IE，FireFox，Edge全都支持。</li><li>打印日志功能（保存在安装目录）</li><li>桌面快捷方式（一般无须打开，只有更改设置时才使用，如更换默认打印机，设置静默打印【无预览】）</li></ol><p>要实现FastReport浏览器静默打印功能，我们需要做两步工作：</p><p><strong>第一步是编写客户端程序</strong>，并且提供下载功能，用户首次使用时先安装客户端，首次点击打印会在浏览器上看到如下提示：</p><p><img src="https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112272304071.webp" alt="img" loading="lazy"></p><p><strong>第二步是web应用程序界面上提供打印功能和获取打印数据接口</strong>，具体的实现会在源码中展示。</p><h2 id="编写客户端打印程序" tabindex="-1"><a class="header-anchor" href="#编写客户端打印程序" aria-hidden="true">#</a> <strong>编写客户端打印程序</strong></h2><p>客户端打印程序其实就是将FastReport打印组件封装进去，因此我们需要编写一个WinForm窗体程序，当然你也可以使用WPF来实现，在这个窗体程序上需要拖动一个 PreviewControl 控件到主窗体上面，该窗体程序非常简单，就一个FastReport.Preview.PreviewControl控件。当然我放在github上的源码你 clone下来后可以看到其它的，只是一些辅助功能而已。</p><p><img src="https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112272305751.webp" alt="FastReport浏览器直接打印无须预览" loading="lazy"></p><p>完整的源码如下：</p><div class="language-c# line-numbers-mode" data-ext="c#"><pre class="language-c#"><code>using JHRS.PrintClient.Entity;
+using JHRS.PrintClient.Extensions;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Windows.Forms;
+
+namespace JHRS.PrintClient
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        public string[] args { get; set; }
+        /// &lt;summary&gt;
+        /// 带参
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;args&quot;&gt;&lt;/param&gt;
+        public MainForm(string[] args)
+        {
+            this.args = args;
+            InitializeComponent();
+        }
+
+        /// &lt;summary&gt;
+        /// 打印方法
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;args&quot;&gt;&lt;/param&gt;
+        private void Print(string[] args)
+        {
+            var printConfig = ConfigList.FirstOrDefault(x =&gt; x.Selected);
+            LogHelper.WriteLog($&quot;----------------------------------------------开始打印----------------------------------------------&quot;);
+            LogHelper.WriteLog($&quot;进入打印方法，打印设置名称：{printConfig?.ConfigName}，打印机名称：【{printConfig?.DefaultPrinter}】，是否启用直接打印功能：{printConfig?.DirectPrint}&quot;);
+
+            if (printConfig == null)
+            {
+                LogHelper.WriteLog(&quot;未指定默认打印机，请先做打印设置！&quot;);
+                LogHelper.WriteLog($&quot;----------------------------------------------结束打印----------------------------------------------\r\n\r\n&quot;);
+                DialogResult result = MessageBox.Show(&quot;未指定默认打印机，请先做打印设置！&quot;, &quot;系统提示&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (result == DialogResult.OK)
+                {
+                    DialogResult dialog = new PrintSet().ShowDialog(this);
+                    if (dialog == DialogResult.Cancel)
+                    {
+                        Print(args);
+                    }
+                }
+                return;
+            }
+
+            LogHelper.WriteLog($&quot;打印数据请求接口来源：{args[0].Replace(&quot;jhrsprint:&quot;, &quot;&quot;)}&quot;);
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = client.GetAsync(args[0].Replace(&quot;jhrsprint:&quot;, &quot;&quot;)).Result;
+            if (!response.IsSuccessStatusCode)
+            {
+                return;
+            }
+            var data = response.Content.ReadAsStringAsync().Result;
+            LogHelper.WriteLog($&quot;打印数据：{data}&quot;);
+            PrintData printData = JsonConvert.DeserializeObject&lt;PrintData&gt;(data);
+
+            byte[] arrary = printData.FrxFile.Split(&#39;^&#39;).Select(x =&gt; (byte)int.Parse(x)).ToArray();
+
+            report1.Preview = previewControl1;
+
+            report1.Load(new MemoryStream(arrary));
+            report1.RegisterData(printData.Data, &quot;打印数据源&quot;);
+            
+            report1.PrintSettings.Printer = printConfig.DefaultPrinter;
+            LogHelper.WriteLog($&quot;----------------------------------------------结束打印----------------------------------------------\r\n\r\n&quot;);
+            if (printConfig.DirectPrint)
+            {
+                report1.PrintSettings.ShowDialog = false;
+                report1.Print();
+                ExitSystem();
+            }
+            else
+            {
+                report1.Prepare();
+                report1.ShowPrepared();
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (args != null)
+            {
+                Print(args);
+            }
+            SetMenuItem();
+        }
+
+        /// &lt;summary&gt;
+        /// 设置默认打印机
+        /// &lt;/summary&gt;
+        public void SetMenuItem(bool reload = false)
+        {
+            reloadConfig = reload;
+            var arrary = ConfigList.Select(x =&gt; x.ConfigName).ToArray();
+            if (arrary.Length == 0)
+            {
+                toolStripComboBox1.Items.Add(&quot;未设置&quot;);
+                toolStripComboBox1.SelectedIndex = 0;
+            }
+            else
+            {
+                toolStripComboBox1.Items.Clear();
+                toolStripComboBox1.Items.AddRange(ConfigList.Select(x =&gt; x.ConfigName).ToArray());
+                var selected = ConfigList.FirstOrDefault(x =&gt; x.Selected);
+                if (selected != null) toolStripComboBox1.SelectedItem = selected.ConfigName;
+            }
+        }
+
+        private bool reloadConfig = false;
+        private List&lt;Configs&gt; list;
+        private List&lt;Configs&gt; ConfigList
+        {
+            get
+            {
+                if (list == null || reloadConfig == true)
+                {
+                    list = XmlHelper.Deserialize&lt;List&lt;Configs&gt;&gt;(Constants.ConfigSavePath);
+                    reloadConfig = false;
+                }
+                if (list != null) return list;
+                return list ?? new List&lt;Configs&gt;();
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBoxButtons mess = MessageBoxButtons.OKCancel;
+            var printConfig = ConfigList.FirstOrDefault(x =&gt; x.Selected);
+            if (printConfig != null &amp;&amp; printConfig.DirectPrint)
+            {
+                ExitSystem();
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show(&quot;您确定要退出打印客户端吗？&quot;, &quot;系统提示&quot;, mess, MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
+                    ExitSystem();
+                else
+                    e.Cancel = true;
+            }
+        }
+
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (this.WindowState == FormWindowState.Minimized)
+                {
+                    this.WindowState = FormWindowState.Maximized;
+                    this.ShowInTaskbar = true;
+                }
+                this.Activate();
+            }
+        }
+
+        private void 退出打印客户端ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons mess = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show(&quot;您确定要退出打印客户端吗？&quot;, &quot;系统提示&quot;, mess, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK) ExitSystem();
+        }
+
+        private void 打印设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var set = new PrintSet();
+            if (set.ParentForm == null)
+            {
+                set.StartPosition = FormStartPosition.CenterScreen;
+            }
+            set.ShowDialog(this);
+        }
+
+        /// &lt;summary&gt;
+        /// 更改打印设置
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var list = ConfigList;
+            foreach (var item in list)
+            {
+                if (item.ConfigName == toolStripComboBox1.SelectedItem.ToString())
+                {
+                    item.Selected = true;
+                }
+                else
+                {
+                    item.Selected = false;
+                }
+            }
+
+            XmlHelper.SerializeToXmlFile(list);
+        }
+
+        private void 打印日志ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new LogForm().ShowDialog(this);
+        }
+
+        /// &lt;summary&gt;
+        /// 退出系统
+        /// &lt;/summary&gt;
+        private void ExitSystem()
+        {
+            notifyIcon.Dispose();
+            Environment.Exit(0);
+        }
+    }
+
+    /// &lt;summary&gt;
+    /// 打印数据实体
+    /// &lt;/summary&gt;
+    public class PrintData
+    {
+        /// &lt;summary&gt;
+        /// 待打印数据使用的报表，由服务器端返回告诉客户端控件
+        /// &lt;/summary&gt;
+        public string FrxFile { get; set; }
+
+        /// &lt;summary&gt;
+        /// 报表数据源，由服务器端返回
+        /// &lt;/summary&gt;
+        public DataTable Data { get; set; }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>​ 在上面代码中的Print(string[] args)方法中，args参数就是通过自定义协议传入的，该方法就是最终的调用FastReport.Net组件在（客户端）浏览器上实现打印功能，完全具备和桌面软件一样的功能。有关自定义协议的内容，参见下面这篇文章：</p><h2 id="编写安装程序类" tabindex="-1"><a class="header-anchor" href="#编写安装程序类" aria-hidden="true">#</a> <strong>编写安装程序类</strong></h2><p>​ 安装程序类的用途是将自定义协议信息写入注册表，当你安装客户端程序时，它会自动的被操作系统的 Installer 自动调用，当然需要你在打包项目中做一些设置。完整的安装程序类的源码如下：</p><div class="language-c# line-numbers-mode" data-ext="c#"><pre class="language-c#"><code>using Microsoft.Win32;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration.Install;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace JHRS.PrintClient
+{
+    [RunInstaller(true)]
+    public partial class PrintInstall : Installer
+    {
+        public PrintInstall()
+        {
+            InitializeComponent();
+        }
+
+        protected override void OnAfterInstall(IDictionary savedState)
+        {
+            string path = this.Context.Parameters[&quot;targetdir&quot;];
+            //获取用户设定的安装目标路径, 注意，需要在Setup项目里面自定义操作的属性栏里面的CustomActionData添加上/targetdir=&quot;[TARGETDIR]\&quot;            
+            LogWrite(path);
+
+            const string UriScheme = &quot;jhrsprint&quot;;
+            const string FriendlyName = &quot;jhrsprint自定义协议&quot;;
+            using (var key = Registry.LocalMachine.CreateSubKey(&quot;SOFTWARE\\Classes\\&quot; + UriScheme))
+            {
+                string applicationLocation = path.Substring(0, path.Length - 1) + @&quot;JHRS.PrintClient.exe&quot;;
+                LogWrite($&quot;打印客户端安装路径：{applicationLocation}&quot;);
+                key.SetValue(&quot;&quot;, &quot;URL:&quot; + FriendlyName);
+                LogWrite($&quot;自定义协议名称：URL:{FriendlyName}&quot;);
+                key.SetValue(&quot;URL Protocol&quot;, &quot;&quot;);
+
+                using (var defaultIcon = key.CreateSubKey(&quot;DefaultIcon&quot;))
+                {
+                    defaultIcon.SetValue(&quot;&quot;, applicationLocation + &quot;,1&quot;);
+                }
+
+                using (var commandKey = key.CreateSubKey(@&quot;shell\open\command&quot;))
+                {
+                    commandKey.SetValue(&quot;&quot;, &quot;\&quot;&quot; + applicationLocation + &quot;\&quot; \&quot;%1\&quot;&quot;);
+                }
+                LogWrite($&quot;设置结束！key.Name是：{key.Name}，{key}&quot;);
+            }
+            base.OnAfterInstall(savedState);
+        }
+        public override void Install(IDictionary stateSaver)
+        {
+            LogWrite(&quot;Install！&quot;);
+            base.Install(stateSaver);
+        }
+
+        protected override void OnBeforeInstall(IDictionary savedState)
+        {
+            LogWrite(&quot;OnBeforeInstall!&quot;);
+            base.OnBeforeInstall(savedState);
+        }
+        public override void Uninstall(IDictionary savedState)
+        {
+            LogWrite(&quot;Uninstall!&quot;); base.Uninstall(savedState);
+        }
+        public override void Rollback(IDictionary savedState)
+        {
+            LogWrite(&quot;Rollback&quot;);
+            base.Rollback(savedState);
+        }
+
+        public void LogWrite(string str)
+        {
+#if DEBUG
+            string LogPath = @&quot;c:\log\&quot;;
+            if (!System.IO.Directory.Exists(LogPath)) System.IO.Directory.CreateDirectory(LogPath);
+            using (System.IO.StreamWriter sw = new System.IO.StreamWriter(LogPath + @&quot;SetUpLog.txt&quot;, true))
+            {
+                sw.WriteLine(DateTime.Now.ToString(&quot;[yyyy-MM-dd HH:mm:ss] &quot;) + str + &quot;\n&quot;);
+            }
+#endif
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>web打印客户端安装后会在桌面生成一个快捷方式，平常不会使用它的，除非你需要对客户端做一些设置。</p><p><img src="https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112272306151.webp" alt="FastReport浏览器直接打印无须预览（2022终版） 1" loading="lazy"></p><p>​ 完成了web客户端程序的编写和打包程序的设置， 剩下的操作你只需要将客户端打包就行了，之后放到网站目录，并提供一个下载功能，供用户下载安装你的客户端即可。</p><p>​ 接下来我们来看网站端是怎样使用的FastReport web打印功能的。</p><h2 id="fastreport-web打印页面代码" tabindex="-1"><a class="header-anchor" href="#fastreport-web打印页面代码" aria-hidden="true">#</a> <strong>FastReport web打印页面代码</strong></h2><p>页面上要触发打印功能，通常都是放置按钮或者链接来实现，正如下面的代码那样，<a href="http://xn--asp-hb0ez26f2f0a.net" target="_blank" rel="noopener noreferrer">我使用asp.net<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> core razor page来编写的。页面上放置了一个按钮，然后将请求提交到当前页面来处理。</p><div class="language-c# line-numbers-mode" data-ext="c#"><pre class="language-c#"><code>&lt;input type=&quot;button&quot; value=&quot;下载并安装控件&quot; onclick=&quot;location.href=&#39;?handler=Download&#39;&quot; /&gt;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>完整的代码你可以在<a href="https://github.com/jhrscom/JHRS-PrintClient/blob/master/JHRS.CoreWebPrint/Pages/Index.cshtml" target="_blank" rel="noopener noreferrer">github上找到<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>。后台处理打印请求，即获取打印数据的示例代码如下：</p><div class="language-c# line-numbers-mode" data-ext="c#"><pre class="language-c#"><code>/// &lt;summary&gt;
+        /// 获取打印数据
+        /// &lt;/summary&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public ContentResult OnGetPrintData()
+        {
+            if (&quot;https://jhrs.com&quot;.Equals(Request.Query[&quot;par1&quot;].ToString())&amp;&amp; &quot;znlive.com&quot;.Equals(Request.Query[&quot;myblog&quot;].ToString()))
+            {
+                List&lt;SbEntity&gt; list = new List&lt;SbEntity&gt;();
+                for (int i = 0; i &lt; 1; i++)
+                {
+                    list.Add(new SbEntity
+                    {
+                        标题 = &quot;江湖人士醫院超聲設備標牌&quot;,
+                        使用科室 = &quot;超聲科-&quot; + i,
+                        启用日期 = DateTime.Now.AddDays(i),
+                        型号 = &quot;XH34534-&quot; + i,
+                        序列号 = &quot;XLH-3452&quot; + i,
+                        序号 = (i + 1).ToString(),
+                        条码 = &quot;BH20190302002&quot; + i,
+                        二维码 = &quot;https://znlive.com/the-best-cheap-vpn&quot;,
+                        生产厂家 = &quot;jhrs.com 科技有限公司&quot;,
+                        规格 = &quot;GGX-1&quot; + i,
+                        设备名称 = &quot;X射線髮射器&quot;,
+                        责任人 = &quot;趙佳發&quot;,
+                        质保日期 = DateTime.Now.AddYears(i + 1)
+                    });
+                }
+
+                var print = new PrintDataEntity&lt;List&lt;SbEntity&gt;&gt; { Data = list };
+
+                var path = Path.Combine(Environment.CurrentDirectory, &quot;wwwroot/print/设备标牌.frx&quot;);
+
+                using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+                {
+                    try
+                    {
+                        byte[] buffur = new byte[fs.Length];
+                        fs.Read(buffur, 0, (int)fs.Length);
+                        print.FrxFile = string.Join(&quot;^&quot;, buffur);
+                    }
+                    catch (Exception ex)
+                    {
+                        return Content(new { Success = false, ErrorMsg = ex.Message }.ToJson());
+                    }
+                }
+                return Content(print.ToJson());
+            }
+            return Content(new { Success = false, ErrorMsg = &quot;狗日的，参数不对，重新传！&quot; }.ToJson());
+        }
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>怎么样，是不是很简单呢？在<a href="https://fastreport.jhrs.com/" target="_blank" rel="noopener noreferrer">演示网站<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>中，也提供了下载功能，这里就不做过多介绍了，完整的解决方案源码你可以在github上找到。</p><p>**最后提示：**<a href="http://FastReport.net" target="_blank" rel="noopener noreferrer">FastReport.net<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> 组件是付费产品，你在使用过程中，需要购买授权，你可以在它们的官网上联系售后进行购买。<strong>下面提供的2.0学习版较为古老，最新版界面风格也变了，但使用方式类似。</strong></p><h1 id="总结" tabindex="-1"><a class="header-anchor" href="#总结" aria-hidden="true">#</a> 总结</h1><p>本文写得比较简单，如果你是一个新手，况且对于FastReport.net没有过多的了解，或者不熟悉，会遇到很多的问题，本来还想画一张图来说明一下的，但想想还是算了，毕竟当阅读到这篇文章的人都是开发人员，且有需求，应该会弄明白的。</p><p>顺便提一下，<a href="http://xn--FastReport-vh5pypx88hgroj5yrqf6qa299eg70bqw5f16h.net" target="_blank" rel="noopener noreferrer">本文并没有讲解如何使用FastReport.net<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>，例如怎样制作报表文件，怎样绑定数据源，怎样添加字典文件等，这些内容，只需要看看FastReport.net提供的demo程序就明白了。做为学习使用，这里提供了一个国外网盘下载地址，你可以下载FastReport.net来学习，如果下载不了，请参见上面打开github的方法解决，毕竟是国外的网盘。</p><p>你下载时需要做好心里准备，这TMD的网盘要连点几次广告才能下载。。<strong>当然钱能解决一切问题。</strong></p><p><a href="http://FastReport.net" target="_blank" rel="noopener noreferrer">FastReport.net<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> 2.0学习版下载地址：<a href="http://up-4.net/d/Qdbe" target="_blank" rel="noopener noreferrer">点击下载<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><img src="https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112272308334.webp" alt="img" loading="lazy"></p></div><!----><footer class="page-meta"><div class="meta-item edit-link"><a href="https://github.com/vuepress-theme-hope/vuepress-theme-hope/edit/main/docs/middleware/print/fastreport.md" rel="noopener noreferrer" target="_blank" aria-label="在 GitHub 上编辑此页" class="nav-link label"><!--[--><svg xmlns="http://www.w3.org/2000/svg" class="icon edit-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="edit icon"><path d="M430.818 653.65a60.46 60.46 0 0 1-50.96-93.281l71.69-114.012 7.773-10.365L816.038 80.138A60.46 60.46 0 0 1 859.225 62a60.46 60.46 0 0 1 43.186 18.138l43.186 43.186a60.46 60.46 0 0 1 0 86.373L588.879 565.55l-8.637 8.637-117.466 68.234a60.46 60.46 0 0 1-31.958 11.229z"></path><path d="M728.802 962H252.891A190.883 190.883 0 0 1 62.008 771.98V296.934a190.883 190.883 0 0 1 190.883-192.61h267.754a60.46 60.46 0 0 1 0 120.92H252.891a69.962 69.962 0 0 0-69.098 69.099V771.98a69.962 69.962 0 0 0 69.098 69.098h475.911A69.962 69.962 0 0 0 797.9 771.98V503.363a60.46 60.46 0 1 1 120.922 0V771.98A190.883 190.883 0 0 1 728.802 962z"></path></svg><!--]-->在 GitHub 上编辑此页<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!----></a></div><div class="meta-item update-time"><span class="label">上次编辑于: </span><!----></div><div class="meta-item contributors"><span class="label">贡献者: </span><!--[--><!--[--><span class="contributor" title="email: zhang.yunpeng@synyi.com">zhangyunpeng</span>,<!--]--><!--[--><span class="contributor" title="email: itzhangyunpeng@163.com">azrng</span><!--]--><!--]--></div></footer><!----><!----><!----><!--]--></main><!--]--><footer class="footer-wrapper"><div class="footer"></div><div class="copyright">Copyright © 2022 azrng</div></footer><!--]--></div><!--]--><!----><!--]--></div>
+    <script type="module" src="/kbms/assets/app.e215a38f.js" defer></script>
+  </body>
+</html>
