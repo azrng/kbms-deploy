@@ -25,7 +25,7 @@ export default hopeTheme({
     name: "Azrng",
     timeline: "知识库",
     description: "一个.NET开发者",
-    roundAvatar:true,//是否剪裁头像为圆形形状
+    roundAvatar: true,//是否剪裁头像为圆形形状
     medias: {
       Gitee: "https://gitee.com/AZRNG",
       GitHub: "https://github.com/AZRNG",
@@ -47,6 +47,10 @@ export default hopeTheme({
         editLink: "在 GitHub 上编辑此页",
       },
     },
+  },
+  encrypt: {
+    admin: ["19970825"],
+    global: true
   },
   // 加密的页面
   // encrypt: {
