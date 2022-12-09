@@ -3,6 +3,36 @@ title: 关于我
 date: 2021-02-22
 category:
  - 关于我
+# 是否启用导航栏
+navbar: true
+
+# 是否启用侧边栏
+sidebar: false
+
+# 禁用编辑页面
+editLink: false
+
+# 禁用脚本导航
+breadcrumb: false
+
+# 禁用页面信息
+pageInfo: false
+
+# 禁用贡献者
+contributors: false
+
+# 禁用更新时间
+# lastUpdated: false
+
+# 禁用上一页
+prev: false
+# 禁用下一页
+next: false
+# 是否显示页脚
+footer: true
+
+# 禁用返回顶部按钮
+backtotop: false
 ---
 # 关于我
 一个喜欢编程的小伙子，喜欢捣鼓各种开发技术、软件。

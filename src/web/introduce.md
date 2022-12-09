@@ -1,15 +1,47 @@
 ---
+# 文章标题
 title: HTML介绍
+
+# 页面图标
+# icon: page
+
+# 侧边栏的顺序
+# order: 1
+
+# 设置语言
 lang: zh-CN
+
+# 设置写作时间
 date: 2021-02-22
+
 publish: true
+
+# 设置作者
 author: azrng
+
+# 是否是原创
 isOriginal: true
+
+# 此页面会在文章列表置顶
+# sticky: true
+
+# 此页面会出现在文章收藏中
+# star: true
+
+# 一个页面可以有多个分类
 category:
  - web
+
+# 一个页面可以有多个标签 
 tag:
  - html
  - web
+
+# 自定义页脚
+# footer: 测试页脚
+
+# 自定义版权信息
+# copyright: 版权
 ---
 
 超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。
