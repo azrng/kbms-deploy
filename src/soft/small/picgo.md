@@ -20,7 +20,7 @@ GitHub：https://github.com/PicGo/
 
 需要先安装nodejs
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621752972165-b4781917-e4ad-46c6-a621-3ed13644ce28.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428910.png)
 
 官网：https://nodejs.org/en/
 
@@ -36,29 +36,29 @@ GitHub：https://github.com/PicGo/
 
 登录gitee进入(没有账号的需要创建账号)
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621752936448-d7567919-7e3b-4740-9af1-3766a4adaf86.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428151.png)
 
 创建一个公开的仓库用户存储图片
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621753014180-c7af59f9-83cd-4475-bd3f-329248fc02e1.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428917.png)
 
 进入个人设置配置私人令牌
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621753063591-c55c5450-70a9-449d-9a0b-47f4c14c1ad3.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428439.png)
 
 配置好的令牌密钥需要保存好
 
 打开PicGo搜索插件Gitee进行安装
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621753132415-8e7f1136-113f-439c-8c3c-2eced4626bbf.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428229.png)
 
 然后我们可以再图床设置找到
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621753168851-e77e2b7e-40a1-4979-b35a-5bea4cfe6898.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429999.png)
 
 配置参数
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621753252236-6fae7d2d-097c-4300-867c-b456cfa5744f.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428822.png)
 
 | 名称    | 作用                     |
 | ------- | ------------------------ |
@@ -73,7 +73,19 @@ GitHub：https://github.com/PicGo/
 
 上传后的图片显示在相册
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621753297380-73eda0b3-7770-40b3-91f9-5aacec79f1f9.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428264.png)
+
+## Github图床
+
+设置方案可以参考文档：https://blog.csdn.net/weixin_46522803/article/details/126052265
+
+
+
+关键点就是选择了快速免费公有的CDN-**jsdelivr**，只需要只在我们 PicGo 图床配置中添加如下自定义域名即可
+
+```
+https://cdn.jsdelivr.net/gh/用户名/仓库名
+```
 
 ## 阿里云OSS
 
@@ -85,73 +97,73 @@ GitHub：https://github.com/PicGo/
 
 登录阿里云oss控制台-->Bucket列表-->创建Bucket
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126641-7360935f-bd63-4dbe-afb1-5cd4c63d4202.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/创建Bucket.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428321.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/创建Bucket.png)
 
 创建的一个Bucket有点类似于我们的一块磁盘，我们可以在上面创建文件夹，上传文件。
 
 我在新创建的Bucket上创建了markdown/images文件夹来用于做为我文章的配图的图床
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126638-f3255425-6e99-4b19-afaa-df93cce5951f.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/创建文件夹.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428188.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/创建文件夹.png)
 
 对此文件设置匿名可以访问的权限，方便图片在任何地方无需认证只需要url就可以访问到
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126652-4b986b88-d09e-474f-9367-d3926a319360.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/授权.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428576.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/授权.png)
 
 新增授权
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126667-e2b58989-af79-41eb-8f73-a0b4c74e2893.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/新增授权.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428111.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/新增授权.png)
 
 获取上传到OSS的keyId和keySecret
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126652-a30f9895-5187-4828-aa2a-8d825509690c.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/权限管理.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101428523.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/权限管理.png)
 
 创建访问OSS用户
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126656-084a31a6-5ff1-429c-9a21-9af47d02fd43.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/创建用户.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429370.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/创建用户.png)
 
 新增oss用户
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126658-95d1abea-b7f6-4727-9811-ad3513e7bb90.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/新增用户.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429296.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/新增用户.png)
 
 保存用户获取到 `AccessKey ID`和 `AccessKey Secret` 可以先保存下来用于之后PicGo配置
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126657-7e051d81-1f71-4ac2-b714-37eb78305fb7.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/保存AccessKey.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429644.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/保存AccessKey.png)
 
 配置PicGo的阿里云OSS的KeyId和keySecret，将如上获取到的 `AccessKey ID`和 `AccessKey Secret`分别填入此处。存储路径一定要写刚刚我们设置可匿名访问的路径
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126663-b6d6d0bf-1747-423f-8c88-6078cbd4e2ff.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/PicGo配置OSS.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429733.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/PicGo配置OSS.png)
 
 确定存储区域这里需要填写我们oss的存储区域ID，在创建Bucket的时候选区域是有显示的，忘了也不要紧。在如下位置也可以获取到这个id
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126655-0b19edae-e006-437a-aa7f-05a936fc6b1e.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/存储区域ID.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429772.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/存储区域ID.png)
 
 给我们新创建的用户添加访问OSS的权限
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126683-d797de09-5c56-424a-a675-d521686b2327.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/添加权限.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429694.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/添加权限.png)
 
 添加OSS所有权限
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126658-8adcf1fb-8d86-4c7b-b654-a72731fe1b1e.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/OSS全部权限.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429510.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/OSS全部权限.png)
 
 自此我们在PicGo配置OSS的全部步骤就已经全部完成
 
 可以在PicGo上传图片试试
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126693-ea1f8a1d-5e35-407e-9dd9-ab8f602dd3d0.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/上传图片测试.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429390.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/上传图片测试.png)
 
 在OSS的控制台上也可以看到我们图片的具体信息
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126672-277f779e-ef92-4703-8c74-c692b22a3cd3.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/OSS查看图片.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429877.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/OSS查看图片.png)
 
 复制文件URL在浏览器打开可以直接访问到我们刚上传的图片，无需认证。如果此处出现访问失败，403等错误，请检查是否按上面的配置匿名访问配置了文件夹的匿名访问权限
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1621905126668-e80dba19-fe90-46e7-9f9a-9b898d2a2887.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/测试访问.png)
+[![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429637.png)](https://daoxini.oss-cn-shenzhen.aliyuncs.com/markdown/images/测试访问.png)
 
 # 配置Typora
 
 进入文件=>偏好设置=>图像
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1620743422481-2ba9c286-36d7-4d86-b2c8-993941f0bc9e.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101429486.png)
 
 配置好后可以在文档中直接右键上传图片使用
 

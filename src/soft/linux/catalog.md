@@ -27,7 +27,7 @@ Linux 下以一个多级树状结构来组织目录和文件的， 最顶层的�
 - **.** 或 **./** 表示当前路径
 - **..** 或 **../** 表示上一级目录
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121111659.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440360.webp)
 
 ## **切换工作目录 - cd**
 
@@ -37,7 +37,7 @@ cd - change directory 的缩写， cd 命令用于切换工作目录。我们操
 
 - 如果不带参数， 回到用户的主目录
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121111119.webp)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440216.webp)
 
 ## **显示当前工作目录 - pwd**
 
@@ -48,7 +48,7 @@ pwd - print working directory 的缩写， pwd 命令用于显示当前工作目
 - -P： 显示真实路径， 而非链接路径， 链接路径类似 Windows 中的快捷方式
 - **man pwd**： 查看 pwd 命令的帮助信息
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121112136.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440200.webp)
 
 **查看当前工作目录文件 - ls**
 
@@ -91,7 +91,7 @@ ls - list 的缩写， ls 命令是**最常用**的命令， 默认情况下用�
 
 - --full-time： 列出完整日期时间模式
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121112542.webp)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440335.webp)
 
 ## **创建目录 - mkdir**
 
@@ -105,11 +105,11 @@ mkdir - make directory 的缩写， mkdir 命令用于创建指定目录， 创�
 
 使用 -p 参数创建多级目录：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121113979.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440696.webp)
 
 使用 -m 设置文件权限， 文件权限下面会讲到：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121113291.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440725.webp)
 
 ## **删除空目录 - rmdir**
 
@@ -121,7 +121,7 @@ rmdir - remove directory 的缩写， rmdir 命令用于删除指定目录， **
 - -p： 连同删除多级目录
 - **man rmdir**： 查看 rmdir 命令的帮助信息
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121113178.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440604.webp)
 
 # Linux 文件管理命令
 
@@ -145,11 +145,11 @@ touch 命令可以创建一个新文件， 这是常用的操作， touch 命令
 
 先创建一个文件 data.cfg，再修改文件时间：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121114538.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440206.webp)
 
 先编辑文件 data.cfg 内容，mtime 会更改，载修改文件时间为 2 天前：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121114197.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440374.webp)
 
 ## **删除目录或文件 - rm**
 
@@ -165,7 +165,7 @@ rm - remove 的缩写， rm 命令可以删除不需要的目录或文件， 并
 - -r： 递归删除，将子目录及子目录中文件删除
 - -i： 互动模式，在删除前会询问
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121114051.webp)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440536.webp)
 
 使用 rm 命令一定要小心， 文件一旦被删除就不能恢复了。尤其网上的删除跑路段子： rm -rf /
 
@@ -193,7 +193,7 @@ cp - copy 的缩写， cp 命令用来复制文件或目录。
 
 将 /soft/mongodb-linux-x86_64-4.0.3.tgz 复制到 /usr/local 目录下
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121115007.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440833.webp)
 
 ## **移动文件 - mv**
 
@@ -212,7 +212,7 @@ mv - move 的缩写， mv 命令可以移动文件或目录到另一个文件后
 - -u：如果目标文件已存在，是否 update
 - 最后一个参数 **directory** 是目录并且该目录存在
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121115368.webp)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440314.webp)
 
 # Linux 文件权限
 
@@ -226,7 +226,7 @@ Linux 中可以使用 ll 或者 ls –l 命令来显示一个文件的属性以�
 
 > ls - l
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121116429.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440419.webp)
 
 从上图可知，文件权限是类似 【lrwxrwxrwx】的 10 个字符表示的，它们每一位都是有含义的， 位数以 0 - 9 表示：
 
@@ -261,7 +261,7 @@ Linux系统按文件所有者、文件所有者同组用户和其他用户来规
 
 以一个例子说明：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121117701.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101440963.webp)
 
 > -rw-r--r--
 

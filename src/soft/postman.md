@@ -18,7 +18,7 @@ postman是一款支持http协议的接口调试与测试工具，其主要特点
 
 那么接下来就介绍下postman到底有哪些功能，它们分别都能干些什么 。下面先通过一张图来直观的来看下postman中所包含的功能 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/9229752f-dacf-4ddb-80f4-6a63805dcafe.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101422519.png)
 
 当然，以上功能也只是展示了postman的一部分功能，为了能更加全面的体现这款工具的特点，我将从以下三个维度来加以说明。它们分别是：
 
@@ -71,7 +71,7 @@ postman安装步骤：
 
 2.进入到下载页面，根据自己电脑下载对应的版本
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142330472.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101422067.webp)
 
 3.双击下载的安装包，进入到安装界面，直到用户登录和注册界面。
 
@@ -79,13 +79,13 @@ postman安装步骤：
 
 若团队使用，可以进行注册，注册后使用账号可以加入团队工作区
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142330342.webp)
+![图片](./soft/postman/202110142330342.webp)
 
 ### 2.界面导航说明
 
 初次使用postman的朋友可能对界面上的一些元素不太熟悉，下面就通过一张图来说明这些元素的含义 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142330566.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423545.webp)
 
 ### 3.发送第一个请求
 
@@ -99,7 +99,7 @@ http://www.weather.com.cn/data/sk/101010100.html
 
 3.点击Send按钮，这时就可以在下部的窗格中看到来自服务器的json响应数据。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142330907.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423903.webp)
 
 ## 二.postman基础功能
 
@@ -129,7 +129,7 @@ http://www.weather.com.cn/data/sk/101010100.html
 
 3.接口URL中输入地址，点击Send按钮就可以发送请求了 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331133.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423706.webp)
 
 说明：查询参数的URL一般直接拷贝到输入的URL地址栏中就可以了，当然也可以把查询参数在Params中输入，俩者的效果是一样的 。
 
@@ -141,7 +141,7 @@ http://www.weather.com.cn/data/sk/101010100.html
 
 不同的接口，请求体的数据类型是不一样的，比较常见的一种就是表单类型，那么什么是表单类型呢 ？简单理解就是在请求头中查看Content-Type，它的值如果是:application/x-www-form-urlencoded .那么就说明客户端提交的数据是以表单形式提交的 。见下图：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142330247.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423748.webp)
 
 ### postman中如何请求？
 
@@ -158,7 +158,7 @@ http://www.weather.com.cn/data/sk/101010100.html
 - 在请求中设置以上四个参数，点击Send按钮。在postman中设置请求体类型为，需要选择body-> x-www-form-urlencoded
 - 查看响应数据。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331804.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423559.webp)
 
 ### 1.3 上传文件的表单请求
 
@@ -184,14 +184,21 @@ file=a1.jpg
 - 在请求中设置以上四个参数，点击Send按钮。注意：在postman中设置请求体类型，需要选择body-> form-data 。file中要选择File类型，然后上传本地的文件 。
 - 查看响应数据。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331597.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423515.webp)
 
 根据以上报文，我们可以分析出，我们在postman只需要填写四个参数即可，具体如下：
 
-- 请求方法：POST
-- 请求地址：http://xxx/api/sys/login
-- 请求体类型：json
-- 请求体数据：{"account":"root","password":"123456"}
+* 请求方法：POST
+
+* 请求地址：http://xxx/api/sys/login
+
+* 请求体类型：json
+
+* 请求体数据
+
+  ```json
+  {"account":"root","password":"123456"}
+  ```
 
 实现步骤：
 
@@ -199,13 +206,13 @@ file=a1.jpg
 - 在请求中设置以上四个参数，点击Send按钮。注意：在postman中设置请求体类型，需要选择body-> raw -JSON
 - 查看响应数据。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331927.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423655.webp)
 
 ### 2.接口响应数据解析
 
 响应数据是发送请求后经过服务器处理后返回的结果，响应由三部分组成，分别是状态行、响应头、响应体。我们来看下postman的响应数据展示。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331437.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423419.webp)
 
 在postman中的响应数据展示：
 
@@ -221,7 +228,7 @@ file=a1.jpg
 
 下来我们再来关注下Body中的几个显示主题，分别是：Pretty，Raw，Preview .
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331478.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423173.webp)
 
 Pretty:翻译成中文就是漂亮 ， 也就是说返回的Body数据在这个标签中查看 ，都是经过格式化的，格式化后的数据看起来更加直观，所以postman默认展示的也是这个选项。比如返回html页面，它会经过格式化成HTML格式后展示，比如返回json，那么也会格式化成json格式展示 。
 
@@ -229,7 +236,7 @@ Raw：翻译成中文未经过加工的，也就是原始数据 ，原始数据�
 
 Preview：翻译成中文就是预览，这个选项一般对返回HTML的页面效果特别明显，如请求百度后返回结果，点击这个选项后就直接能查看到的页面 ，如下图 。同时这个选项和浏览器抓包中的Preview也是一样的 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331930.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423765.webp)
 
 ### 3. 接口管理（Collection）
 
@@ -244,19 +251,19 @@ Preview：翻译成中文就是预览，这个选项一般对返回HTML的页面
 
 1.点击Collection，点击+New Collection，在弹出的输入框中输入Collection名称（这个就可以理解为所测试的系统）
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331229.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423421.webp)
 
 2.选中新建的Collection右键，点击Add Folder ，在弹出对话框中输入文件夹名称（这个就可以理解为系统中的模块）
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331679.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423525.webp)
 
 3.选中新建的Folder，点击Add Request ，在弹出的对话框中输入请求名称，这个就是我们所测试的接口，也可以理解为测试用例 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331563.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423642.webp)
 
 那么通过以上三个步骤，达到的效果就是如图所示：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331088.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101423582.webp)
 
 总结，通过上面的操作，我们实现了一个最简单的demo模型。但实际上，有了这个功能才是postman学习的开始，因为很多功能都是基础这个功能的基础上进行的，比如用例的批量执行，Mock ，接口文档等功能 。
 
@@ -268,15 +275,15 @@ Preview：翻译成中文就是预览，这个选项一般对返回HTML的页面
 
 1.选中一个Collection，点击右三角，在弹出的界面点击RUN
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142331072.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424351.webp)
 
 2.这是会弹出一个叫Collection Runner的界面，默认会把Collection中的所有用例选中 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332891.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424383.webp)
 
 3.点击界面下方的RUN Collection，就会对Collection中选中的所有测试用例运行 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332817.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424280.webp)
 
 对上面的几个红框内的功能进行简单说明：
 
@@ -293,17 +300,17 @@ Preview：翻译成中文就是预览，这个选项一般对返回HTML的页面
 
 在postman中编写日志打印语句使用的是JavaScript，编写的位置可以是Pre-request Script 或Tests标签中。编写打印语句如：console.log("我是一条日志")
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332641.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424221.webp)
 
 那么打印的日如何看呢 ？在postman中有俩个入口，第一个入口就是：view-show postman console 。
 
 第二个入口就是左下角第三个图标 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332257.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424108.webp)
 
 打开的日志界面：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332469.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424110.webp)
 
 这里面有几个比较实用的功能：
 
@@ -327,7 +334,7 @@ Preview：翻译成中文就是预览，这个选项一般对返回HTML的页面
 
 在上面我们介绍到，编写的断言代码是JavaScript，那如果不会写怎么办 ？不用担心，因为postman已经给我们内置了一些常用的断言 。用的时候，只需从右侧点击其中一个断言，就会在文本框中自动生成对应断言代码块 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332208.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424987.webp)
 
 接下来就让我们了解一些常用断言，还是按响应的组成来划分，分别是状态行，响应头，响应体。
 
@@ -430,7 +437,7 @@ pm.test("Response time is less than 200ms", function () {
 - 断言city等于济南
 - 断言update_time包含2020-04-17
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332037.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424422.webp)
 
 总结，整体来说，如果用postman做接口测试，这个断言功能必不可少，其中我们常断言的响应体包含和JSON这俩个断言又是重重之重。
 
@@ -457,17 +464,17 @@ pm.test("Response time is less than 200ms", function () {
 
 定义全局变量和环境变量，点击右上角的小齿轮，弹出如下界面，就可以根据需求定义全局变量或者环境变量了。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332203.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424652.webp)
 
 已经定义的全局变量和环境变量，可以进行快速查看：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332567.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424535.webp)
 
 ### 定义集合变量
 
 选择一个集合，打开查看更多动作(…)菜单，然后点击编辑 。选择“变量”选项卡以编辑或添加到集合变量。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332023.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424995.webp)
 
 定义变量除了以上方式，还有另外一种方式 。但是这种方式在不同的位置定义，编写不一样。
 
@@ -477,7 +484,7 @@ pm.test("Response time is less than 200ms", function () {
 
 2.在以上的位置把想要的值选中右击，选中Set：环境|全局 ，选中一个变量名，点击后就会保存到这个变量中
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332666.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424558.webp)
 
 在Tests，Pre-requests Script：
 
@@ -499,7 +506,7 @@ pm.test("Response time is less than 200ms", function () {
 - 获取全局变量：pm.globals.get('变量名')
 - 获取集合变量：pm.pm.collectionVariables.get.get('变量名')
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332056.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424322.webp)
 
 变量的使用场景非常广泛，比如我们后面要提到的接口关联，请求前置脚本都会使用到变量 。
 
@@ -520,7 +527,7 @@ pm.test("Response time is less than 200ms", function () {
 - 请求的登录接口URL，参数t的值要求的规则是每次请求都必须是一个随机数。
 - 接口地址：http://localhost/index.php？m=Home&c=User&a=do_login&t=0.7102045930338428
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332893.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424184.webp)
 
 实现步骤：
 
@@ -528,7 +535,7 @@ pm.test("Response time is less than 200ms", function () {
 - 将这个值保存成环境变量
 - 将参数t的值替换成环境变量的值 。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332720.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424727.webp)
 
 总之，这个前置脚本对我们做接口测试也非常有用，对一些复杂的场景，都可以使用前置脚本进行处理后再请求接口 。
 
@@ -567,7 +574,7 @@ http://localhost/public/upload/user//head_pic//ba51d1c2f7f7b98dfb5cad90846e2d79.
 - 将这个值保存成全局变量(环境变量也可以)
 - 在图像预览中使用全局变量
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202110142332973.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101424424.webp)
 
 可以看出，接口的关联的解决方案都是用的是变量中的知识，也就是说只要你明确了要提取的值，后面就是保存该值，然后在其他接口使用该值就可以了。
 

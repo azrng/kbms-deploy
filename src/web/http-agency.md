@@ -31,7 +31,7 @@ tag:
 
 首先，我们大家知道，有一些国外的网站在国内是访问不了的，但是假如我们就想访问某同性交友网站改怎么办呢？这里就需要使用代理了，它能够突破自身 IP 限制，访问国外站点。还有一些涉密公司会禁止访问外网，那要是查资料该怎么办呢？使用代理。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112282244755.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101435650.webp)
 
 其次，代理还能够**提升网络带宽，加快访问速度**，代理服务器会存储一部分带宽，而且代理服务器内部会有一块大的缓冲区，当访问了某些页面后，代理服务器就会`缓存`这些页面，等下次访问相同页面时，代理服务器会直接返回缓冲区缓冲之后的页面，这样代理服务器就会把带宽省下来的同时提高访问速度。
 
@@ -39,7 +39,7 @@ tag:
 
 总的来说，代理的功能主要有下面几点。
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112282244918.webp)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101435296.webp)
 
 私有代理和公共代理
 
@@ -65,7 +65,7 @@ tag:
 
 不过，不论是公共代理还是私有代理，它们都有一个共同的特性，那就是**既能扮演客户端，接受响应报文，返回响应报文；也能扮演服务器，接受客户端请求，处理客户端请求**。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112282245214.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101435788.webp)
 
 所以，代理服务器分别扮演不同的**职责**，完全是根据你选择的参照物来说明的。
 
@@ -103,7 +103,7 @@ tag:
 
 可以使用代理服务器在大量的 web 服务器和 web 资源之间实现统一的访问控制，通常用在大型企业或者分布式机构中。比如下面是三种拥有不同访问控制权限的客户端。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112282246587.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101435635.webp)
 
 - 客户端 A 可以无限制的访问服务器 A 中的指定页面。
 - 客户端 B 可以无限制的直接访问互联网。
@@ -123,7 +123,7 @@ tag:
 
 可以使用反向代理来提高访问龟速 Web 服务器上公共内容时的性能。在这种配置中，通常将这些反向代理称为**服务器加速**。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112282246921.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101435682.webp)
 
 **转码器**
 
@@ -141,7 +141,7 @@ tag:
 
 在代理的层次结构中，会将报文在代理之间传递，一直传递到最终的服务器，然后再将响应报文通过代理传回给客户端，例如下图是一个反向代理的层次结构。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112282246057.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101435394.webp)
 
 代理层次结构中的代理服务器被赋予了父和子的关系，靠近服务器的被称为父代理，靠近客户端的被称为子代理。
 

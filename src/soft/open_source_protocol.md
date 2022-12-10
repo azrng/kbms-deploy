@@ -37,7 +37,7 @@ Android 使用了 Linux 内核，而 Linux 内核采用的是 GPL 的开源协�
 
 
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112272252419.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101437349.webp)
 
 下面由紧到松介绍一下几种常见的开源许可
 

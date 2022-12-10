@@ -80,7 +80,7 @@ docker-compose -f docker-compose.yaml up --build -d jenkins
 
 访问地址：[http://IP:8080](http://192.168.1.14:8080/)
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1611106025062-d5831aff-0228-44e2-9aed-c3b235645694.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101438040.png)
 
 ## 2.1 寻找超级管理员密码
 
@@ -96,7 +96,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 docker exec 容器ID  cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1624728935117-883b7798-4fd2-4cba-a59e-b5f93d5eb672.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101438856.png)
 
 输入找到的管理员密码然后进入系统
 
@@ -110,7 +110,7 @@ docker exec 容器ID  cat /var/jenkins_home/secrets/initialAdminPassword
 
 创建管理员用户密码
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1624729238683-fc4516b1-404a-46a0-b343-3d624120e091.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101438670.png)
 
 ## 2.4 系统界面
 
