@@ -14,13 +14,19 @@ tag:
 
 .NET 是一个免费的、跨平台的、开源的开发者平台，用于构建多种不同类型的应用程序。
 
+SDK下载：https://dotnet.microsoft.com/zh-cn/download
+
 # .Net可以做什么
 
 使用 .NET，您可以使用多种语言、编辑器和库来构建 Web、移动、桌面、游戏和 IoT。
 
+![image-20221210183502796](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101835404.png)
+
+.Net文档：https://learn.microsoft.com/zh-cn/dotnet/fundamentals/
+
 全面的c#编码规范(勤快哥)：https://masuit.com/1755
 
-<!-- # 教程
+
 
 ## 博客
 

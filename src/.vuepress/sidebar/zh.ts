@@ -21,27 +21,31 @@ export const zhSidebar = sidebar({
   "/dotnetcore/": [
     {
       text: "基础知识",
+      collapsible: true,
       children: [
         "/dotnetcore/base.md",
         "/dotnetcore/globalization.md",
         "/dotnetcore/routing.md",
         "/dotnetcore/healthcheck.md"
       ]
-    }, 
+    },
     {
       text: "配置框架",
+      collapsible: true,
       children: [
         "/dotnetcore/config/configread.md"
       ]
     },
     {
       text: "跨域",
+      collapsible: true,
       children: [
         "/dotnetcore/kuayu.md"
       ]
     },
     {
       text: "静态资源",
+      collapsible: true,
       children: [
         "/dotnetcore/staticfile/base.md",
         "/dotnetcore/staticfile/customerconfig.md"
@@ -49,6 +53,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "日志",
+      collapsible: true,
       children: [
         "/dotnetcore/loggers/ilogger.md",
         "/dotnetcore/loggers/serilog.md",
@@ -59,6 +64,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "过滤器",
+      collapsible: true,
       children: [
         "/dotnetcore/filter/base.md",
         "/dotnetcore/filter/realize.md",
@@ -66,6 +72,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "OpenApi",
+      collapsible: true,
       children: [
         "/dotnetcore/openapi/swaggerbase.md",
         "/dotnetcore/openapi/version.md",
@@ -73,6 +80,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "身份认证和授权",
+      collapsible: true,
       children: [
         "/dotnetcore/auth/session.md",
         "/dotnetcore/auth/cookie.md",
@@ -81,6 +89,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "健康检查",
+      collapsible: true,
       children: [
         "/dotnetcore/healthcheck.md",
       ]
@@ -88,25 +97,22 @@ export const zhSidebar = sidebar({
     ,
     {
       text: "实时通信",
+      collapsible: true,
       children: [
         "/dotnetcore/real-time/base.md",
       ]
     },
     {
       text: "缓存",
+      collapsible: true,
       children: [
         "/dotnetcore/cache/memorycache.md",
         "/dotnetcore/cache/redis.md",
       ]
     },
     {
-      text: "身份认证和授权",
-      children: [
-        "/dotnetcore/auth/session.md",
-      ]
-    },
-    {
       text: "IOC",
+      collapsible: true,
       children: [
         "/dotnetcore/ioc/base.md",
         "/dotnetcore/DI/default.md"
@@ -114,20 +120,40 @@ export const zhSidebar = sidebar({
     },
     {
       text: "WebAPI",
+      collapsible: true,
       children: [
         "/dotnetcore/webapi/webapi-base.md",
         "/dotnetcore/webapi/webapiversion.md",
       ]
     },
     {
-      text: "操作数据库",
+      text: "ORM",
+      collapsible: true,
       children: [
-        "/dotnetcore/orm/createdb.md",
-        "/dotnetcore/orm/efcoreoperation.md",
+        "/dotnetcore/orm/overview.md",
+        {
+          text: "Dapper",
+          collapsible: true,
+          children: [
+            "/dotnetcore/orm/dapper/overview.md",
+            "/dotnetcore/orm/dapper/dapper_read_write.md",
+            "/dotnetcore/orm/dapper/dapper_lnskydb.md"
+          ]
+        },
+
+        {
+          text: "EFCore",
+          collapsible: true,
+          children: [
+            "/dotnetcore/orm/createdb.md",
+            "/dotnetcore/orm/efcoreoperation.md"
+          ]
+        }
       ]
     },
     {
       text: "单元测试",
+      collapsible: true,
       children: [
         "/dotnetcore/unit-test/base.md",
         "/dotnetcore/unit-test/base-use-dissent.md",
@@ -136,18 +162,21 @@ export const zhSidebar = sidebar({
     },
     {
       text: "WinForm",
+      collapsible: true,
       children: [
         "/dotnetcore/winform/use_di.md",
       ]
     },
     {
       text: "小知识",
+      collapsible: true,
       children: [
         "/dotnetcore/small/dynamic_load.md",
       ]
     },
     {
       text: "部署",
+      collapsible: true,
       children: [
         "/dotnetcore/release/iis.md",
         "/dotnetcore/release/centos_net6.md",
@@ -159,6 +188,7 @@ export const zhSidebar = sidebar({
   '/middleware/': [
     {
       text: "单个",
+      collapsible: true,
       children:
         [
           "/middleware/yapi.md",
@@ -168,6 +198,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "Office",
+      collapsible: true,
       children:
         [
           "/middleware/office/aspose-pdf.md",
@@ -176,6 +207,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "打印",
+      collapsible: true,
       children:
         [
           "/middleware/print/fastreport.md",
@@ -183,6 +215,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "GRPC",
+      collapsible: true,
       children:
         [
           "/middleware/grpc/introduce.md",
@@ -191,6 +224,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "微信",
+      collapsible: true,
       children:
         [
           "/middleware/wechat/senparcweixin.md",
@@ -198,6 +232,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "配置中心",
+      collapsible: true,
       children:
         [
           "/middleware/config-centre/agileconfig.md",
@@ -205,6 +240,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "服务通知",
+      collapsible: true,
       children:
         [
           "/middleware/service-notifications/jieyi.md",
@@ -213,6 +249,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "CI&CD",
+      collapsible: true,
       children:
         [
           "/middleware/ci&cd/github/github-actions-buildimages-release.md"
@@ -222,6 +259,7 @@ export const zhSidebar = sidebar({
   '/db/': [
     {
       text: "基础",
+      collapsible: true,
       children:
         [
           "/db/base.md",
@@ -230,6 +268,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "PostgreSQL",
+      collapsible: true,
       children:
         [
           "/db/pgsql/jsonb_path_query.md",
@@ -239,6 +278,7 @@ export const zhSidebar = sidebar({
   '/soft/': [
     {
       text: "单个",
+      collapsible: true,
       children:
         [
           "/soft/soft-collection.md",
@@ -251,6 +291,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "Jenkins",
+      collapsible: true,
       children:
         [
           "/soft/jenkins/base.md",
@@ -261,6 +302,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "Linux",
+      collapsible: true,
       children:
         [
           "/soft/linux/catalog.md",
@@ -270,6 +312,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "Visual Studio",
+      collapsible: true,
       children:
         [
           "/soft/visualstudio/use-skill.md",
@@ -278,6 +321,7 @@ export const zhSidebar = sidebar({
     },
     {
       text: "Docker",
+      collapsible: true,
       children:
         [
           "/soft/docker/base.md",
@@ -288,14 +332,8 @@ export const zhSidebar = sidebar({
         ]
     },
     {
-      text: "Jenkins",
-      children:
-        [
-          "/aboutme/aboutme.md",
-        ]
-    },
-    {
       text: "Kubernetes",
+      collapsible: true,
       children:
         [
           "/soft/kubernetes/base.md",
@@ -303,10 +341,10 @@ export const zhSidebar = sidebar({
           "/soft/kubernetes/network.md",
           "/soft/kubernetes/service_discovery.md",
         ]
-    }
-    ,
+    },
     {
       text: "Git",
+      collapsible: true,
       children:
         [
           "/soft/code-version/base_theory.md",
