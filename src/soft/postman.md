@@ -79,7 +79,7 @@ postman安装步骤：
 
 若团队使用，可以进行注册，注册后使用账号可以加入团队工作区
 
-![图片](./soft/postman/202110142330342.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101655025.webp)
 
 ### 2.界面导航说明
 
