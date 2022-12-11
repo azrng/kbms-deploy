@@ -3,8 +3,8 @@ title: Docker
 lang: zh-CN
 date: 2021-02-22
 publish: true
-author: azrng
-isOriginal: true
+author: Code综艺圈
+isOriginal: false
 category:
  - soft
 tag:
@@ -20,7 +20,7 @@ tag:
 
 看看Docker 的Logo图
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142348172.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144054.webp)
 
 ，Docker就好比是下面的小鲸鱼，上面装满的每个集装箱(方块)可以理解为容器，不管集装箱里面装的什么，统一按集装箱的形式打包存放、运输即可，集装箱之间互不影响；即Docker不在乎容器里的内容是什么，**统一基于容器这种形式进行标准化管理，容器之间相互隔离**，所以Docker上运行的多个容器是相互不影响的。
 
@@ -32,7 +32,7 @@ Docker 从 17.03 版本之后分为 CE（Community Edition: 社区版） 和 EE�
 
 ## 1.2 Docker架构
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142348441.webp)Docker Architecture Diagram
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144122.webp)Docker Architecture Diagram
 
 **Docker是客户端/服务器模式架构(C/S)，Client(客户端)和Docker daemon(守护进程)通信， 后者接收到客户端指令并执行**。简述上图的三个流程：
 
@@ -74,7 +74,7 @@ Docker 从 17.03 版本之后分为 CE（Community Edition: 社区版） 和 EE�
 
   在项目根目录下增加一个Dockerfile文件，里面内容如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142348076.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144327.webp)
 
   具体内容如下
 
@@ -88,33 +88,33 @@ Docker 从 17.03 版本之后分为 CE（Community Edition: 社区版） 和 EE�
 
   设置Dockerfile的文件属性为始终复制，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349155.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144648.webp)
 
   以文件系统的形式发布项目，指定本地目录，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349034.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144320.webp)
 
 - 将发布之后的文件拷贝到装有Docker的主机上
 
   将项目进行发布，把发布之后的文件拷贝到我的阿里云服务器上，用到的工具是FinalShell(一个工具完成连接服务器和上传文件，很好用)，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349420.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144960.webp)
 
 - 打包为镜像
 
   进入发布文件目录，执行`docker build`命令，将发布文件打包为一个镜像，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349513.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144030.webp)
 
   上图中的mydockerdemo 是镜像名，可以自定义；通过`docker images`查看镜像是否生成，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349452.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144782.webp)
 
 - 根据镜像启动容器(里面包含我们的项目)
 
   镜像生成之后，就可以通过`docker run`指令根据镜像启动容器了，即启动我们的项目
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349716.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144433.webp)
 
   ```
   docker run -d --name mydockerdemo -p 9999:80 mydockerdemo
@@ -130,7 +130,7 @@ Docker 从 17.03 版本之后分为 CE（Community Edition: 社区版） 和 EE�
 
 - 测试访问看看，只要配置了云服务器的安全组和防火墙放开9999端口，那么外网就可以访问了,如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349630.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144833.webp)
 
 可能有小伙伴说，也挺麻烦的；其实编写Dockerfile，打包镜像等操作都是一次性的，只要生成了镜像，后续其他环境直接根据镜像启动即可，不用再单独安装.NetCore运行时等基础设施了，打包好的镜像里包含了完整的运行环境。
 
@@ -140,7 +140,7 @@ Docker 从 17.03 版本之后分为 CE（Community Edition: 社区版） 和 EE�
 
 Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，当然也有一些界面管理工具(点按钮的那种)，但大家似乎更喜欢直接敲命令，毕竟这种方式更加灵活、更加容易理解操作本质；有大神将常用命令用一张图很好的展现出来，这里借用一下(图片来源于网络，侵删)：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349168.webp)cmd_logic
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144078.webp)cmd_logic
 
 不熟悉Docker的小伙伴可能看见这图直接懵圈了，别急，接着往下看， 看完再回过头来瞅这张图，绝对感觉很给力。
 
@@ -150,29 +150,29 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
 - **`docker version`**：查看docker版本信息。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349190.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144653.webp)
 
 - **`docker info`**：查看docker详情信息，比如仓储信息、加速器配置信息、有多少个镜像、有多少个容器、CPU、内存等。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349901.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111144239.webp)
 
 - **`docker events`**：从docker 服务获取实时事件，通俗一点理解就是操作日志，比如对镜像、容器、网络、挂载卷等操作，就会记录对应的事件信息；**最多能返回最近的1000条日志信息**。
 
   先在一个终端执行命令，终端会阻塞：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349995.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145463.webp)
 
   开启另一个终端，执行根据镜像运行容器的命令：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349306.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145116.webp)
 
   此时开启的第一个终端就实时输出事件消息，如镜像拉取、容器启动、容器结束等信息，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349435.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145974.webp)
 
   既然可以把这个命令当做操作日志理解，那肯定可以根据条件查看对应的数据，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349218.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145727.webp)
 
   如图所示，会先显示符合条件的事件信息，然后会继续阻塞，如果对服务端有操作，信息还会实时显示。常用的参数指定如下：
 
@@ -190,11 +190,11 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
 - **`docker images`**：列出Docker主机上的镜像
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349162.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145089.webp)
 
   可以指定参数，比较常用的如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349102.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145466.webp)
 
   **-a** :列出本地所有的镜像（含中间镜像层，默认过滤掉中间镜像层）。
 
@@ -204,39 +204,39 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
 - **`docker search`**：从远程仓储中搜索镜像，后面直接根镜像名称即可
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349501.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145925.webp)
 
   可以指定条件进行搜索，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349973.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145829.webp)
 
   **--filter**：指定条件搜索，**is-official表示是否为官方的，stars表示要找多少星星以上的**。
 
   对于搜索，我还是比较喜欢用界面，直观好看：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142349881.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145699.webp)
 
 - **`docker pull`**：从远程仓储中拉取镜像，**后面跟镜像名和tag即可，即指定版本拉取，如果不指定tag，默认就latest，最新的**。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350147.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145254.webp)
 
   **镜像的分层原理就是采用UnionFS(联合文件系统)，是一种分层、轻量级的高性能文件系统；镜像可以通过分层来进行继承，可以基于基础镜像制作出各种具体的应用镜像**，比如我们刚拉取下来的nginx镜像，这里先了解，后续我们自己制作镜像的时候就明白了。
 
   **`docker pull 镜像名:tag`**：指定版本拉取；
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350426.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145338.webp)
 
 - **`docker rmi`**：删除指定镜像，后面可以跟名称或镜像ID
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350774.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145314.webp)
 
   删除指定版本，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350704.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111145603.webp)
 
   根据镜像ID删除，可以一下删除多个，中间用空格隔开：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350453.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146484.webp)
 
   删除全部镜像，就是找出所有镜像ID，然后删除就行了，当然肯定不是一个一个的拷贝镜像ID；**`docker images -aq`**可以显示所有镜像ID ，所以两个命令结合用即可，如下：
 
@@ -248,7 +248,7 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
 - **`docker save`**：导出镜像，可以离线拷贝到其他主机上使用，避免没有网络不能下载镜像的场景。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350204.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146297.webp)
 
   生成的tar文件就可以根据需要拷贝到对应设备上加载使用，不用在线拉取，因为很多场景是不允许连外网的。
 
@@ -256,15 +256,15 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   这里演示就将原来拉取的镜像删除，然后通过load命令重新加载，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350575.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146363.webp)
 
   加载镜像，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350478.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146235.webp)
 
   换一种写法，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350609.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146690.webp)
 
   选项说明：
 
@@ -272,7 +272,7 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   **--quiet , -q** : 简化输出信息，不显示具体加载过程。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350865.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146582.webp)
 
   注：这里因为是在TestDockerImage目录下执行命令，所以指定tar的文件时，就在当前目录下。
 
@@ -302,27 +302,27 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   演示如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350825.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146096.webp)
 
   上图可以看到终端阻塞了，**这种模式称为attached默认，即前台运行，与之对应的是detached模式，及后台运行**，接下来会演示。由于终端阻塞，这里另开一个终端执行`docker ps`命令看运行的容器，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350553.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146496.webp)
 
   **前台运行模式终端很容易被关闭，启动的nginx容器也会停掉**，这种情况对于很多场景是不允许的，所以可以指定为后台模式运行，即detached模式，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350059.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146434.webp)
 
   现在只是在容器内启动了一个nginx，并监听80端口，如果需要通过主机能访问到容器里面的nginx，还需进行端口映射，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350203.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146227.webp)
 
   这里启动了两个nginx容器，都是监听80端口，但并没有报端口被占用的错，所以容器之间是互不影响的。通过**-p**选项进行端口映射，这下就可以通过主机的9999端口访问到容器内部的80端口，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350729.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146334.webp)
 
   既然刚开始说可以将容器理解为简易版的Linux，那就应该可以进入容器内部操作一把，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350452.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146265.webp)
 
   在容器里面只能执行一些核心的命令，因为是极简版，所以内部只包含重要的功能，如果需要其他功能可以自己安装扩展。
 
@@ -330,11 +330,11 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   a、容器中执行**exit**命令，容器停止并退出，回到主机；
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350090.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111146461.webp)
 
   b、利用组合键**ctrl+p+q**，容器不停止退出，回到主机；
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142350887.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147568.webp)
 
 - **`docker ps [OPTIONS]`** ：显示主机中的容器，不加选项**默认只列出运行中的容器**；
 
@@ -344,7 +344,7 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   演示如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351041.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147870.webp)
 
 - 启动和停止容器的命令；
 
@@ -357,11 +357,11 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   **`docker stop`**停止容器，后面可以跟一个或多个容器ID：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351132.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147678.webp)
 
   **`docker start`**：启动被停止的容器，后面可以跟一个或多个容器ID：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351343.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147353.webp)
 
   **`docker restart`**重启命令和**`docker kill`**强制停止命令就不截图啦
 
@@ -371,11 +371,11 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   **`docker exec`**：进入容器后开启一个新的终端，正常执行Linux相关命令。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351161.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147403.webp)
 
   **`docker attach`**：进入容器正在执行的终端，不会启动新的进程。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351590.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147541.webp)
 
   退出容器模式：
 
@@ -395,23 +395,23 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   **--tail** :列出最新N条容器日志
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351326.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147833.webp)
 
   可以指定选项，查看需要的日志，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351153.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147697.webp)
 
 - **`docker top 容器ID`**：列出指定容器内部的进程，可以看到容器内的应用进程是否正常运行，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351224.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147301.webp)
 
 - **`docker inspect 容器ID`**：查看指定容器的详细信息，比如运行状态、网络配置、挂载的卷等信息都有，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351638.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147182.webp)
 
 - **`docker commit`：根据容器生成一个新的镜像**；容器是可编辑的，有些时候需要将已更改的容器生成一个新的镜像给其他人用。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142351917.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147082.webp)
 
   命令说明：
 
@@ -425,7 +425,7 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
 - **`docker export`和`docker import`**将容器方便离线导出和导入；
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352257.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147245.webp)
 
   命令说明：
 
@@ -445,7 +445,7 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
 - **`docker rm 容器ID`**：删除指定容器，运行中的容器默认不让删除，可以增加**-f选项**强制删除，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352768.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147248.webp)
 
 以上只是总结了平时比较常用的命令，并没有全部列出，更多细节可以进入官网：https://docs.docker.com/engine/reference/commandline/rm/；
 
@@ -461,11 +461,11 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   主机和容器之间可以通过命令进行数据拷贝，也就是说，在容器删除之前可以先进行数据拷贝，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352083.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147439.webp)
 
   命令简述：`docker run -it --name="mycentos" centos /bin/bash`，直接根据镜像centos以交互模式启动容器，容器名称为mycentos，在容器内部执行/bin/bash命令进入到终端；具体命令在[Docker小白到实战之常用命令演示，通俗易懂](http://mp.weixin.qq.com/s?__biz=MzU1MzYwMjQ5MQ==&mid=2247485629&idx=1&sn=506fae15e0c583f0a76d5c4145dbf83a&chksm=fbf11469cc869d7fae9c795ecf099a0babb62094fcb5b94b361ca131ae0323f57f46f55e79e3&scene=21#wechat_redirect)这篇文章中已经详细说明；这里简单回顾一下根据镜像启动容器流程，如图：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352158.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111147429.webp)
 
   上图简述：**在Docker执行启动命令时，会先从本地查找镜像，如果没有，就会去远程仓库搜索并拉取到主机，然后主机就可以根据镜像启动容器；如果远程仓库也没有找到镜像，那么就报错**。
 
@@ -473,11 +473,11 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   现在通过centos镜像启动了一个容器(Linux系统)，在上面创建一些文件进行测试，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352348.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148475.webp)
 
   现在如果将容器删除，里面对应的数据也会删除，所以需要将对应的数据拷贝到主机上，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352999.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148238.webp)
 
   `docker cp bfb96a6afdbc:/usr/TestData /usr/TestDataHost`命令解析:
 
@@ -489,13 +489,13 @@ Docker和我们熟悉的Git很类似，都是通过命令执行相关操作，�
 
   按照上面的语法规则，同样可以将主机上的数据文件拷贝到指定容器中，只是调换一下**SRC_PATH** 和**DEST_PATH**的位置即可，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352762.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148376.webp)
 
 - **将容器提交为镜像的方式**
 
   这种方式只能勉强说是一种备份，只是**通过`docker commit`命令将容器提交为镜像，从而达到备份数据的作用**；
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352014.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148485.webp)
 
   但很明显能感觉到不灵活，数据还是在容器内。关于`docker commit`命令上次已经说过，这里就不重复截图啦。
 
@@ -530,11 +530,11 @@ docker run -v 卷名:容器内路径 镜像名
 
   **指定主机目录**
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352943.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148941.webp)
 
   命令解析如下图：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352892.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148082.webp)
 
   ```
   # docker run -it --name="容器名称" -v 主机绝对路径:容器绝对路径 镜像名称
@@ -543,49 +543,49 @@ docker run -v 卷名:容器内路径 镜像名
 
   现在已经将容器内的目录挂载到主机上，接下来感受一下数据同步：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352276.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148974.webp)
 
   通过上图演示可以看到，**不管是在主机还是在容器中修改数据，都能及时同步更新；容器停止之后，主机更新数据，容器再启动，修改的数据也会同步到容器；容器删除，挂载的数据不会被删除，还是在主机中**，这就是我们想要的。
 
   可以通过`docker inspect 容器`命令查看容器的详细信息，其中就有挂载卷的详细信息，如下部分截图：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352106.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148172.webp)
 
   **不指定主机目录**
 
   很多时候，我们不喜欢自己指定主机目录，而是由Docker自动指定，所以通常我们只指定容器内目录，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352274.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148378.webp)
 
   看看Docker指定的主机路径在哪，还是通过`docker inspect 容器ID`查看详情，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352103.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148152.webp)
 
   看看刚才在容器操作的文件数据是否同步过来：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352927.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148098.webp)
 
   默认情况，docker都会将挂载的主机目录指定到如上图的目录中。
 
   可以通过`docker volume ls`查看主机挂载的数据卷信息，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352316.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148870.webp)
 
   通过上图可以看到，名称不直观，看不懂，所以更多时候都会在挂载的时候指定一个名称，即具名挂载。
 
 - **具名挂载**：在挂载时指定一个名称。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352967.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148779.webp)
 
   这里除了挂载的时候是指定名称挂载，之后的操作和效果都一样，这里就不重复截图了；需要注意的是这种方式和指定主机的命令很像，指定路径那种形式，冒号前面是路径，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142352693.webp)image-20210825175448280
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148426.webp)image-20210825175448280
 
 ### 5.2.3 容器间传递数据
 
 **数据卷其实还可以通过容器继承方式进行挂载，从而实现容器之间的数据共享**，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353481.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148286.webp)
 
 关键命令解析：
 
@@ -607,11 +607,11 @@ docker run -v 卷名:容器内路径 镜像名
 
 通过`docker inspect 容器ID`看两个容器的挂载详情都一样，截其中一个容器如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353533.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148560.webp)
 
 其实在指定挂载的时候还可以限制容器的操作权限，比如在容器内的挂载目录下，可以限制容器内只读或可读写，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353148.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148937.webp)
 
 **ro：代表只读；**
 
@@ -623,9 +623,9 @@ docker run -v 卷名:容器内路径 镜像名
 
 关于Redis安装在Docker中很简单，直接执行命令即可，由于之前拉取过redis的镜像，所以就直接启动容器了，如果本地没有镜像，就会去远程仓库拉取。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353297.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111148597.webp)
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353537.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149257.webp)
 
 上图中可以看到，默认情况下，redis的镜像将容器内的/data目录挂载到这个主机上，而这个目录就是redis数据存放的目录，这样就达到Redis的持久化。
 
@@ -651,13 +651,13 @@ docker run -d -v /usr/TestDataHost/redisconf:/usr/local/etc/redis --name myredis
 
 在第一篇文章最后就简单使用了Dockerfile构建了一个镜像，这里重新认识下这个Dockerfile文件，如下图：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353887.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149346.webp)
 
 **Dockerfile就是一个文本文件**，但不需要指定后缀类型；文件内容中FROM、WORKDIR、COPY等就是关键字，按照规则写好之后，就可以将指定的文件构建为镜像啦。
 
 **构建操作统一由Docker daemon进行，它会先对文件内容语法进行初步验证(语法不对就会返回错误信息)，然后逐一运行指令，每次生成一个新的镜像层，直到执行完所有指令，就构建出最终的镜像。** Dockerfile、镜像、容器的关系如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353109.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149334.webp)
 
 总结一下Dockerfile的知识点；
 
@@ -843,7 +843,7 @@ docker run -d -v /usr/TestDataHost/redisconf:/usr/local/etc/redis --name myredis
 
 新建一个项目，啥都不需要改，就用默认的接口演示，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353126.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149136.webp)
 
 Dockerfile内容如下：
 
@@ -867,7 +867,7 @@ Dockerfile内容如下：
 
 以文件的形式发布项目，并连同Dockerfile拷贝到安装好Docker的机器上进行构建(这里还是用我的云服务器)；
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353000.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149214.webp)
 
 **`docker build -t myimage:v1.0 .`解析**：
 
@@ -882,13 +882,13 @@ Dockerfile内容如下：
 
 启动容器如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353093.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149951.webp)
 
 **`ENTRYPOINT ["dotnet", "DockerfileDemo.dll"]`这行代码就等同于的项目目录下直接执行 dotnet DockerfileDemo.dll是一样的，目的就是启动我们的项目**。
 
 通过`docker logs`可以查看容器内部的日志，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353089.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149132.webp)
 
 ### 6.3.4 设置Dockerfile 
 
@@ -929,23 +929,23 @@ Dockerfile内容如下：
  docker build -t newimage .
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353154.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149148.webp)
 
 通过`docker logs`看看容器日志，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353565.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149439.webp)
 
 看看数据卷挂载是否成功，进入容器，看根目录下就会多了Logs目录，也可以通过`docker inspect 容器` 看容器详细信息，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353625.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149402.webp)
 
 标签也打成功了：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353871.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149883.webp)
 
 也可以通过`docker inspect 镜像`查看镜像内部的详细信息，执行命令`docker inspect newimage`如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353797.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149297.webp)
 
 关于步骤和效果，在Dockerfile注释和图表中已经详细描述。
 
@@ -958,7 +958,7 @@ Dockerfile内容如下：
 
 上面构建出来的newimage镜像用到的是ENTRYPOINT，所以我们先来测试一下ENTRYPOINT，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353066.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149964.webp)
 
 `docker run`启动容器时指定了参数 `--urls="http://+:9999"`，容器正常启动，并且参数还能生效，等同于在当前目录直接执行如下命令：
 
@@ -976,17 +976,17 @@ Dockerfile内容如下：
 
 然后重新构建一个镜像试试，测试如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353686.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149624.webp)
 
 如上图，对于CMD而言，如果在运行容器时，后面指定参数，这个参数就会把CMD命令替换掉，不能拼接，导致命令不对，所以报错；但这样就可以执行，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142353155.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149767.webp)
 
 如果在当前构建的上下文目录中不想要一些文件参与构建，**可以通过在.dockerignore文件中进行配置**，这个和git中的.gitignore一个道理，编写也比较简单，这里就不演示了。
 
 对了，.NetCore的镜像列表可以参照这个地址：https://hub.docker.com/_/microsoft-dotnet-aspnet/，每个镜像都有对应的Dockerfile，感兴趣的小伙伴可以点进去看看，参考参考。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354849.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149893.webp)
 
 # 7 网络
 
@@ -996,7 +996,7 @@ Dockerfile内容如下：
 
 在主机上可以执行命令`ip link show docker0`查看：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354926.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111149664.webp)
 
 **Docker在启动容器时可以指定网络模式，如果不指定，默认就是采用Bridge模式**；Docker的网络模式有如下几种：
 
@@ -1015,7 +1015,7 @@ docker run -d --name testnet --net host nginx
 docker inspect testnet
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354736.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150044.webp)
 
 ## 7.2 Bridge默认模式了解一下
 
@@ -1027,11 +1027,11 @@ docker inspect testnet
 
 容器没有启动时主机的网络配置如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354340.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150181.webp)
 
 当启动容器时，Docker主机就会创建一对虚拟网卡vethpair设备接口，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354690.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150682.webp)
 
 可以进入到容器看看IP分配情况，如果`ip addr`命令在容器内找不到，那是因为基础镜像只包含核心命令，如果要执行其他命令，需要额外安装。可以在容器内执行如下命令进行安装。
 
@@ -1041,11 +1041,11 @@ apt update && apt install -y iproute2
 
 安装好之后，就可以查看容器内的IP情况了，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354699.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150302.webp)
 
 这里有没有发现容器内的IP是和主机多出来的虚拟网卡是成对出现，这样主机网络和容器之间肯定能通；
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354463.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150664.webp)
 
 当然容器内部也可以ping通主机。
 
@@ -1059,15 +1059,15 @@ apt update && install iputils-ping
 
 这里新启动一个容器mynginx2，IP内部分配如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354669.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150268.webp)
 
 **mynginx容器内能ping通mynginx2，那是因为两个容器之间共用了docker0，通过docker0进行转发**。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354413.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150806.webp)
 
 大概一个网络流程如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354954.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150983.webp)
 
 这里的Docker0就好比是交换机，形成了网络桥梁。
 
@@ -1075,7 +1075,7 @@ apt update && install iputils-ping
 
 默认情况，容器间的访问只能通过IP，不能通过容器名访问；
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354220.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150971.webp)
 
 这种情况对于线上项目很不灵活，比如数据库备份需要临时迁移，IP可能会不一样，所以项目中的地址要重新配置，如果能通过容器名访问，那么就不用操心更换啦，只要容器名一样即可，就好比域名和IP的关系一样，IP再怎么变，域名不变就行。
 
@@ -1097,15 +1097,15 @@ docker exec -it mynginx3 /bin/bash
 apt update && apt install iputils-ping
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354544.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150964.webp)
 
 内部原理其实是在mynginx3内部做了个映射配置，容器mynginx3的hosts内容如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354791.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150663.webp)
 
 这样只能在容器mynginx3内部通过mynginx容器名ping通，不能在mynginx内部通过容器名mynginx3访问，如果要达到同样的效果，就得在启动mynginx时通过--link和mynginx3关联起来。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354028.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150226.webp)
 
 如果每个容器都这样的显示指定的话，感觉就有点麻烦啦，通常的做法都是通过自定义网络方式来达到这个目的。
 
@@ -1113,7 +1113,7 @@ apt update && apt install iputils-ping
 
 首先新创建一个网络，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354711.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150902.webp)
 
 命令解析：
 
@@ -1129,11 +1129,11 @@ docker network ls
 
 让启动的容器使用自定义的网络，即在启动容器时使用**--net**指定即可：
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/qQ1zuvjsChSHlyAc04dcnxyu4CCzxHZddJdFOCfPlcYicJdgJ7ziacobIicqUjyW2TB9Jy7p68lbEnRn6NUMLL7pQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150293.webp)
 
 **启动容器时不需要--link，只需要接入到自定义网络就可以通过容器名ping通了**，如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354615.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150820.webp)
 
 **自定义网络之所以能通过容器名ping通，那是容器内运行了一个本地DNS解析器，该解析器将请求转发到Docker内部DNS服务器当中，DNS服务器中记录了容器启动时通过--name或--net-alias参数指定的名称与容器之间的关系**。
 
@@ -1144,7 +1144,7 @@ docker network ls
 docker inspect testmynetnginx1
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354353.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150416.webp)
 
 # 8. Docker Compose
 
@@ -1173,7 +1173,7 @@ sudo curl -L "https://get.daocloud.io/docker/compose/releases/download/1.29.2/do
 
 如下图：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354976.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150094.webp)
 
 ### 8.2.2 授予执行权限
 
@@ -1185,7 +1185,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 看看权限结果分配如下：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142354465.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150632.webp)
 
 这样docker-compose就安装完啦。
 
@@ -1272,25 +1272,25 @@ https://www.runoob.com/w3cnote/yaml-intro.html
 
   这里只是引入了一个Redis的缓存包，通过构造函数注入之后就可以直接用啦；编写了一个API接口TestCache。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355730.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150904.webp)
 
   这里还需要在Startup文件中注入相关服务，并指定Redis的连接地址，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355845.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111150980.webp)
 
   运行起来测试一下效果，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355484.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151985.webp)
 
   Redis中也有值了，这里需要注意：存入Redis中的类型是Hash。
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355634.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151628.webp)
 
 - **编写Dockerfile文件**
 
   在项目根目录创建一个Dockerfile文件，内容如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355057.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151883.webp)
 
   关于Dockerfile中的内容这里就不细说了，之前有一篇文章专门分享的(点[这里](https://mp.weixin.qq.com/s?__biz=MzU1MzYwMjQ5MQ==&mid=2247485700&idx=1&sn=5b5625bde7ba831bd99946906fbd3615&chksm=fbf115d0cc869cc612e567f604ac8d1c233f739f8439df72f8bc7a194e501861efe225d44260&token=403152068&lang=zh_CN&scene=21#wechat_redirect))。这里的Dockerfile目的就是将我们的WebApi项目构建为镜像，和Redis没有关系，不过这里不是通过执行命令构建，而是通过Compose文件一起构建。
 
@@ -1300,11 +1300,11 @@ https://www.runoob.com/w3cnote/yaml-intro.html
 
   在项目根目录下创建docker-compose.yml文件，内容如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355217.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151285.webp)
 
   有了这个项目就可以一键启动了，这里需要稍微改一下我们原来的代码，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355078.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151130.webp)
 
   注：这里记得将docker-compose.yml文件通过右键->属性->设置为始终复制，保证编译后的文件有最新文件。
 
@@ -1312,11 +1312,11 @@ https://www.runoob.com/w3cnote/yaml-intro.html
 
 - **将项目先发布**，并拷贝到对应的服务器上，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355096.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151952.webp)
 
   这里用的是我的阿里云服务器，拷贝文件如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355902.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151890.webp)
 
 - **一键启动**
 
@@ -1328,23 +1328,23 @@ https://www.runoob.com/w3cnote/yaml-intro.html
 
   下面是执行docker-compose up内部执行的步骤：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355595.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151662.webp)
 
   先是构建我们的程序，然后拉取依赖的Redis服务，并启动，最后启动我们的程序。(执行顺序和依赖有关系)；启动之后就可以根据docker-compose.yml文件中映射的端口访问了，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355875.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151055.webp)
 
 - **看看启动的容器名**
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142355511.webp)image-20211007165313310
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151701.webp)image-20211007165313310
 
   通过`docker ps -n 2` 查看最近启动的容器，容器的名字规则是：**`目录名_Compose文件中定义的服务名_序号`**，那小伙伴肯定会好奇为什么程序能通过myredis名字连接到redis，可以通过`docker inspect composetest_myredis_1`查看容器详情：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142356579.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111151741.webp)
 
   同样可以查看到API服务对应的容器也是用的composetest_default这个网络，这个网络是一个桥接模式，可以通过`docker network ls`看到，如下：
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142356141.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111152075.webp)
 
 - **docker compose常用命令**
 
@@ -1354,11 +1354,11 @@ https://www.runoob.com/w3cnote/yaml-intro.html
 
   `docker-compose ps`：列出所有通过Compose运行的容器
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142356611.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111152347.webp)
 
   `docker-compose logs`：打印相关日志信息
 
-  ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111142356935.webp)
+  ![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111152947.webp)
 
   `docker-compose stop/start/restart`d：可以指定服务停止、开始和重新启动
 

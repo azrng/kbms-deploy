@@ -4,7 +4,7 @@ lang: zh-CN
 date: 2021-02-22
 publish: true
 author: azrng
-isOriginal: true
+isOriginal: false
 category:
  - soft
 tag:
@@ -14,7 +14,7 @@ tag:
 
 简单地说，Git 究竟是怎样的一个系统呢？请注意接下来的内容非常重要，若你理解了 Git 的思想和基本工作原理，用起来就会知其所以然，游刃有余。在学习 Git 时，请尽量理清你对其它版本管理系统已有的认识，如 CVS、Subversion 或 Perforce， 这样能帮助你使用工具时避免发生混淆。尽管 Git 用起来与其它的版本控制系统非常相似， 但它在对信息的存储和认知方式上却有很大差异，理解这些差异将有助于避免使用中的困惑。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042134229.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142324.webp)
 
 ### Git 初始化代码仓库
 
@@ -32,7 +32,7 @@ $ rm -rf .git/hooks/*.sample
 $ watch -n 1 -d find .
 ```
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042135651.webp)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142252.webp)
 
 我们这里可以一起看下生成的 .git 目录的结构如何：
 
@@ -170,9 +170,9 @@ $ watch -n 1 -d find .
 
 
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042136279.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142333.webp)
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042136907.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142921.webp)
 
 我们这里重点看下，生成的 8d 这个目录以及下面的文件。而其名称的由来是因为 Git 对其进行了一个叫做 SHA1 的 Hash 算法，用于将文件内容或者字符串变成这么一串加密的字符。
 
@@ -208,7 +208,7 @@ $ git add tmp.txt
 $ watch -n 1 -d find .
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042137619.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142935.webp)
 
 ### 理解 blob 对象和 SHA1
 
@@ -245,7 +245,7 @@ blob 10\0hello git
 
 
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042143782.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142172.webp)
 
 当我们使用 cat 命令来查看 object 对象里面的内容的时候，发现看着像是一串乱码。其实这是 Git 工具将文件的原始内容进行一个压缩，然后再存储到 object 对象里面。奇怪的是，我们发现压缩之后的内容反而比原始内容还大！
 
@@ -271,7 +271,7 @@ contents = open('0e41234f24b6da002d962a26c2495ea16a425f', 'rb').read()
 zlib.decompress(contents)
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042143701.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142965.webp)
 
 ### 聊聊工作区和暂存区
 
@@ -281,7 +281,7 @@ zlib.decompress(contents)
 
 这一切的答案，都要从工作区和索引区讲起。Git 根据其存储的状态不同，将对应状态的“空间”分为工作区、暂存区（也可称为索引区）和版本区三类。具体示例，可以参考下图。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042144410.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142537.webp)
 
 而更加深层次的理解，就要从执行 git add 命令后生成相关的 object 对象，但是其存储的是文件的类容、大小和内容，并不包含文件名称的信息。而文件名称相关的信息就包含在生成的 index 文件（索引文件）里面。
 
@@ -300,7 +300,7 @@ $ git ls-files -s  # 列出当前暂存区文件的详细信息
 $ watch -n 1 -d tree .git
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042144765.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142685.webp)
 
 当添加文件的时候，文件或目录会从工作区流向暂存区，加之一些其他操作，会导致工作区和暂存区是会有一定差别的。这就会导致，当我们执行 git status 的结果就是两者的差别。
 
@@ -320,7 +320,7 @@ $ git status
 $ watch -n 1 -d tree .git
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042144570.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142415.webp)
 
 如果我们这里去修改一个文件的话，很显然这个时候我们的工作区和暂存区又不一致了。当我们使用命令去查看文件状态的时候，发现一个文件被修改了，而 Git 是怎么知道的呢？咳咳，就是通过查找 index 文件的内容，找到对应文件名称以及其内部引用的 object 对象，与工作区的文件内容进行对比而来的。
 
@@ -350,7 +350,7 @@ $ git ls-files -s
 $ watch -n 1 -d tree .git
 ```
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/A1HKVXsfHNlLbWOuvyGBlO41hSYE0fZbsYbdMC217ibF77VPG9INRBiaholm6BfaH8vsVKwKK45ouyKyRCypNJicw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142612.webp)
 
 ### 理解 commit 提交原理
 
@@ -360,7 +360,7 @@ Git 仓库中的提交记录保存的是你的目录下所有文件的快照，�
 
 当我们使用 add 命令将工作区提交到暂存区，而暂存区其实保存的是当前文件的一个状态，其中包括有哪些目录和文件，以及其对应的大小和内容等信息。但是我们最终是需要将其提交到代码仓库（本地）的，而其命令就是 git commit 了。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042145476.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142725.webp)
 
 而当我们执行 git commit 命令的时候，究竟都发生了什么呢？可以看到当提交之后，.git 目录中生成了两个信息的 object 对象，其中 logs 和 refs 目录都有新的文件生成。通过如下操作，我们可以查看到其提交的类型和对应内容。
 
@@ -379,11 +379,11 @@ $ watch -n 1 -d tree .git
 ```
 
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042145418.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142551.webp)
 
 这样我们就理解了，当我们执行 git commit 命令之后，会生成一个 commit 对象和一个 tree 对象。commit 对象内容里面包含了一个 tree 对象和相关提交信息，而 tree 对象里面则包含了这次我们提交版本里面的文件状态（文件名称和 blob 对象），这样我们就知道了这次提交的变动了。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042145379.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111142375.webp)
 
 我们这次提交之后，处理 objects 目录发生变动之外，还有一些其他的变化。比如 logs 和 refs 的目录有所变化。我们查看 refs 目录里面的内容，发现其指向了 6e4a70 这个 commit 对象，即当前 master 分支上面最新的提交就是这个 6e4a70 了。
 
@@ -400,7 +400,7 @@ $ watch -n 1 -d tree .git
 
 
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042145967.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143775.webp)
 
 ### 加深理解 commit 提交
 
@@ -425,11 +425,11 @@ $ watch -n 1 -d tree .git
 
 
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042145271.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143509.webp)
 
 
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146746.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143610.webp)
 
 在 Git 中空文件夹是不算在追踪范围内的，而且添加文件夹并不会增加 object 对象。当我们查看 index 内容的时候，会发现文件名称是包含相对路径的。
 
@@ -453,7 +453,7 @@ $ watch -n 1 -d tree .git
 
 
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146204.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143679.webp)
 
 ### 文件的生命周期状态
 
@@ -463,7 +463,7 @@ $ watch -n 1 -d tree .git
 
 ![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146842.webp)
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/A1HKVXsfHNlLbWOuvyGBlO41hSYE0fZbUhMHtcbRno6Sia5CtNfJDfCcGd6ddvbx8NsU50flPQbZJYeTAEA06dg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143475.webp)
 
 ### Branch 和 HEAD 的意义
 
@@ -473,7 +473,7 @@ $ watch -n 1 -d tree .git
 
 我们在初始化仓库的时候，提供会默认给我们分配一个叫做 master 的分支（在最新的版本默认仓库已经变更为 main 了），而 master 分支就是指向最新的一次提交。为什么需要给分支起名字呢？就是为了方便我们使用和记忆，可以简单理解为 alias 命令的意义一致。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146732.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143889.webp)
 
 有了上述基础，我们就需要考虑下，分支到底是如何实现和工作的。要实现一个分支，我们最基本需要解决两个问题，第一个就是需要存储每一个分支指向的 commit，第二个问题就是在切换分支的时候帮助我们标识当前分支。
 
@@ -481,7 +481,7 @@ $ watch -n 1 -d tree .git
 
 当我们从 master 切换分支到 dev 的时候，HEAD 文件也会随即切换，即指向 dev 这个指针。设计就是这么美丽，不愧是鬼才，好脑袋。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146010.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143369.webp)
 
 ```
 # 左边执行
@@ -493,7 +493,7 @@ $ git cat-file -t 1711e01
 $ glo = git log
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146186.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143151.webp)
 
 ### 分支操作的背后逻辑
 
@@ -516,7 +516,7 @@ $ cat .git/HEAD
 $ glo = git log
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146917.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143947.webp)
 
 这里需要注意的是，即使我们删除了分支，但是该分支上一些特有的对象并不会被删除的。这些对象其实就是我们俗称的垃圾对象，还有我们多次使用 add 命令所产生的也有垃圾对象，而这些垃圾对象怎么清除和回收呢？后续，我们会涉及到的。
 
@@ -537,7 +537,7 @@ $ git cat-file -p 38f8e88
 $ glo = git log
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146083.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143528.webp)
 
 ### checkout 和 commit 操作
 
@@ -547,7 +547,7 @@ $ glo = git log
 
 这里不管 HEAD 文件指向的是分支名称也好，是 commit 对象也罢，其实本质都是一样的，因为分支名称也是指向某个 commit 对象的。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146934.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143281.webp)
 
 ```
 # 左边执行
@@ -558,7 +558,7 @@ $ git log
 $ glo = git log
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146725.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143178.webp)
 
 当我们切换到指定的 commit 的时候，如果需要在对应的 commit 上继续修改代码提交的话，可以使用上述图片中提及的 swtich 命令创建新分支，再进行提交。但是，通常我们都不会着玩，都会使用 checkout 命令来创建新分支的。
 
@@ -594,9 +594,9 @@ $ git checkout -b dev
 $ glo = git log
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146304.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143344.webp)
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146731.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143330.webp)
 
 ### 聊聊 diff 的执行逻辑
 
@@ -615,7 +615,7 @@ $ git diff --cached
 $ git diff HEAD
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112042146558.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111143260.webp)
 
 ### Git 如何添加远程仓库
 

@@ -76,11 +76,11 @@ docker run -d -p 9443:443 -p 9006:9006 -p 9022:22 --name gitlab  -v  D:/Soft/git
 
 ## 配置
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1630392393921-c9133767-a427-43ac-b77a-96685c75485b.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111139305.png)
 
 进入容器内去编辑配置或者编辑挂载目录的文件
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1630392436742-b7a1a83e-d915-430d-a960-f1612a97a4e4.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111139720.png)
 
 ```
 docker exec -it gitlab bash
@@ -125,7 +125,7 @@ gitlab默认用户是root，在容器内查找初始密码
 cat /etc/gitlab/initial_root_password
 ```
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1630392346545-d3be811e-20e6-4b75-85a2-1981b345a0af.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111139151.png)
 
 ### 容器内修改密码
 
@@ -137,11 +137,11 @@ cd /opt/gitlab/bin
 
 执行gitlab-rails console命令
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1630393079166-dcd56a70-64f3-41dd-8e48-4d97d69cbdf5.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111139064.png)
 
 找到root的用户，输入u=User.where(id:1).first，然后回车
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1630393092662-6540ad2c-d30e-4bee-8dac-48b234344ede.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111139614.png)
 
 修改password，输入u.password='123456789'然后回车
 
@@ -149,7 +149,7 @@ cd /opt/gitlab/bin
 u.password='123456789'
 ```
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1630393112625-6ee295f7-70e6-4a1c-a3f0-194d972f223c.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111139583.png)
 
 修改确认密码
 
@@ -157,11 +157,11 @@ u.password='123456789'
 u.password_confirmation='123456789'
 ```
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1630393132266-4b5613af-43c7-41cf-88ec-da38a3db7e70.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111139258.png)
 
 保存修改，输入u.save，然后回车，等到输出true，这时，密码修改成功。
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1630393150839-203c3d29-88c8-4c59-9af1-273e8bce2933.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111139851.png)
 
 这里密码已经修改成功，可以用123456789密码登录进去了
 

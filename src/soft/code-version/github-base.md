@@ -29,7 +29,7 @@ GitHub在程序开发领域家喻户晓，现在几乎整个互联网的开发�
 
 既然好处颇多，作为互联网界的一员，没有理由不学好GitHub😄本文将详细介绍GitHub的相关基础操作，带你快速入门GitHub
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/2B8E78E9-1B05-C56E-DA69-7E3FB9D10514.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111134466.png)
 
 ## 版本管理
 
@@ -39,7 +39,7 @@ GitHub在程序开发领域家喻户晓，现在几乎整个互联网的开发�
 
 SVN是属于**集中型**的版本管理系统，其特点是**将仓库集中存放在服务器中，所以只存在一个仓库**。集中型将所有特点是方便管理，但是如果开发者所处的环境无法联网，则无法获取到最新的源码，进而无法进行开发工作。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/32068D9D-DA15-6FF6-E787-13F68C8D447A.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111134835.png)
 
 ### Git
 
@@ -47,7 +47,7 @@ Git是**分散型**的版本管理系统。从下图中我们可以观察出来�
 
 > Fork的过程其实就是将某个仓库复制到自己的账户下
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/FC17C1DC-2832-8C17-593F-AFFFC2E58194.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111134389.png)
 
 ## 什么GitHub
 
@@ -97,7 +97,7 @@ email = your_email@example.com
 
 进入创建用户的页面：http://github.com/join，填写如下的信息在点击`Create an accout`即可
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/914FA373-2C35-0F0E-4014-2AF19FD706D2.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111134630.png)
 
 ### 配置SSH
 
@@ -114,11 +114,11 @@ ssh-keygen -t rsa -C   # 创建SSH Key
 
 下面我们需要在GitHub中添加公开密钥，今后就可以使用私有密钥进行认证。点击右上角的账户设定按钮：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/C03DC4AE-5900-4448-389D-3AEF8E51B3470.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111134796.png)
 
 进入settings之后，添加新的SSH Key
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/67256DD8-4FA2-89AA-409F-4AF2AAA83F0B.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111136768.png)
 
 接下来会出现Title和Key两个输入框，在Title中输入适当的密钥名称，Key部分复制上面id_rsa.pub文件中的内容
 
@@ -151,7 +151,7 @@ ssh -T git@github.com
 
 1、建立远程仓库需要我们先登陆自己的GitHub账号，再进行建仓。
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/7AE6783D-F1AC-5854-C46B-1D9BCCC4B45C0.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111136264.png)
 
 2、我们创建一个`git_start`的仓库
 
@@ -159,7 +159,7 @@ ssh -T git@github.com
 - 仓库的简单描述
 - **不要**在远程仓库添加README.md文件。我们使用手动push的方式来添加
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/47D8CEAB-83C6-F750-1CF9-15A8125121CD.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111136253.png)
 
 3、仓库解释
 
@@ -175,7 +175,7 @@ git remote add origin git@github.com:pidada/git_start.git   # 建立远程仓库
 git push -u origin main  # 推送
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/F3DCA996-12D0-3A2F-857E-3446D70D6063.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111136837.png)
 
 ### 本地仓库
 
@@ -191,7 +191,7 @@ cd git_start  # 切换到仓库中
 ls  # 查看内容，目前是没有任何内容
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/31513165-A44F-D52A-E78A-85C92244F6F1.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111136316.png)
 
 2、初始化操作
 
@@ -200,7 +200,7 @@ echo "学习GitHub的使用，快速入门" >> README.md   # 往文件中写入�
 git init   # 初始化
 ```
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/13BAC8A1-4BD4-1774-4BBE-497A64319754.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111136197.png)
 
 初始化之后会在当前目录下自动生成一个`.git`的文件。这个文件下存储着管理当前目录内容所需要的仓库数据
 
@@ -212,7 +212,7 @@ git init   # 初始化
 git status  # 查看待提交的文档
 ```
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/8FF487D2-CC4D-9F26-4DB7-4631C4138C6D.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111136795.png)
 
 4、提交文档
 
@@ -238,13 +238,13 @@ git remote add origin git@github.com:peter/git_start.git  # 建立连接
 git push -u origin master  # 推送到master分支
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/BEDAF4A1-E414-578C-2A9B-6C5A46104F08.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111137434.png)
 
 6、检查
 
 此时我们刷新远程仓库的页面，会发现页面更新了，也有了内容：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/EDEE13CE-8756-B6AE-D989-CED8CF849830.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111137605.png)
 
 7、查看提交日志
 
@@ -263,13 +263,13 @@ Date栏显示的是执行日期和时间
 
 最下面是提交信息，-m 参数后面的信息
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/7776369C-5D3D-B22C-45F4-E9D307EA0431.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111138879.png)
 
 8、修改`README.md`文件
 
 通过vim编辑器修改内容如下：
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/D4AAD3F7-D979-0D4E-CC75-97AABAD737C8.png)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111138764.png)
 
 上面使用了Markdown语法，然后我们重新按照上面的命令执行一遍：
 
@@ -281,7 +281,7 @@ git commit -m "修改README.md"  # 记录提交信息
 git push -u origin master # 推到master分支
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/2E4B0E8C-C894-AEC4-6893-2122B06B2A03.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111138260.png)
 
 回顾下整个操作的过程：
 
@@ -353,11 +353,11 @@ master分支是Git默认创建的分支，其他所有的分支都是在这个�
 - 不同的分支单独进行各自的作业
 - 该分支的作业完成之后再和master分支合并
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/3AAC1FC8-F322-6C9F-10F9-9BE0F5BEEEF5.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111138196.png)
 
 进行完作业之后的合并操作：
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/E2A533BC-1D3C-314A-D3F3-5D5AE6F5B456.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111138986.png)
 
 ### 分支相关命令
 
@@ -406,7 +406,7 @@ git merge --no-off feature-A  # 合并分支
 git log --graph  
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/2BECDD94-A988-DACA-D619-1AD69238A1C7.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111138217.png)
 
 ### 版本回溯
 
@@ -429,7 +429,7 @@ git reflog   # 针对当前仓库
 git log   # 查看以当前状态为终点的历史日志
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/9CBC56EB-160D-FDEC-6FF0-9FE7E848F4EC.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111138722.png)
 
 所以我们可以先通过`git reflog`来查看哈希值，再通过`git reset —hard [哈希值]`回到某个状态
 
@@ -503,7 +503,7 @@ git reset HEAD还能取消已缓存的内容。当我们对某个文件的内容
 git reset HEAD [filename]
 ```
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/21BFC455-2EF7-024D-6394-FC661C25E247.png)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212111139648.png)
 
 **关于HEAD 说明**：
 
