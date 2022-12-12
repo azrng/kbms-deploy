@@ -32,15 +32,15 @@ tag:
 
 使用快捷键**`Ctrl+F10`**，您可以让调试器运行到光标所在行位置。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152225989.gif)`Ctrl+F10`运行到光标位置
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122221791.gif)`Ctrl+F10`运行到光标位置
 
 ## **2、通过点击鼠标，运行到当前位置**
 
-在调试运行的程序时，通过鼠标悬停在当前行的代码上时，出现绿色的符号，可以点击此符号，直接让断点运行到此处。![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226823.gif)
+在调试运行的程序时，通过鼠标悬停在当前行的代码上时，出现绿色的符号，可以点击此符号，直接让断点运行到此处。![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122221412.gif)
 
 ## **3、在此处作为下一条要执行的语句**
 
-在调试运行的程序时，通过鼠标悬停在当前行的代码上时，通过按住`Ctrl`键转换为将此处作为下一条要执行的语句。它与通过绿色箭头符号运行到这里不同，此功能将会跳过中间的语句，直接将断点跳转到此处。因此，在下面的动图中，我们可以在监视窗口中引用obj仍然为null，中间的`MyClass`构造函数并没有被执行。![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226040.gif)
+在调试运行的程序时，通过鼠标悬停在当前行的代码上时，通过按住`Ctrl`键转换为将此处作为下一条要执行的语句。它与通过绿色箭头符号运行到这里不同，此功能将会跳过中间的语句，直接将断点跳转到此处。因此，在下面的动图中，我们可以在监视窗口中引用obj仍然为null，中间的`MyClass`构造函数并没有被执行。![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122221963.gif)
 
 ## **4、数据断点：当值发生变化时，触发中断（值更改时中断）**
 
@@ -50,7 +50,7 @@ tag:
 
 > 注意：数据断点绑定到活动对象时，旨在调试期间起作用。因此，一旦调试过程停止，设置的断点就会丢失，在以后的调试过程中不能重用它。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226581.gif)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122221668.gif)
 
 > 数据断点：值更改时中断
 
@@ -58,13 +58,13 @@ tag:
 
 可以将条件附加到断点中，以便尽在特定场景中触发中断。在下面的动图中，我们在循环中定义条件`i>6`的断点。然后点击`继续`，可以看到一旦断点停止，`i`的值实际上变成了`7`。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226429.gif)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122221651.gif)
 
 ## **6、跟踪断点**
 
 在遇到断点时，停止程序执行时最常见的操作。但是，你可以选择在输出窗口中不终止（或带终止）打印一些跟踪信息。下面的动图说明了这种可能性。我们在输出窗口中跟踪i从0到9的值。注意：跟踪断点在编辑器的断点显示位置显示为菱形形状。
 
-*注意，条件和跟踪操作都可以在断点上指定。*![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226329.gif)
+*注意，条件和跟踪操作都可以在断点上指定。*![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122221918.gif)
 
 ## **7、跟踪超出作用域的对象**
 
@@ -72,7 +72,7 @@ tag:
 
 在许多情况下，我们想继续跟踪作用域外对象的状态。为此，请在监视窗口中右键单击此类引用，单击菜单`[Make Object ID] 创建对象ID(M)`，并要在监视器中添加或者2，$3，...，取决于你已经创建了多个对象ID)。
 
-下面的动图演示了如何跟踪作用域外对象的属性获取器的状态，该属性获取器以字符串的形式返回实际的日期时间。它很好地显示了当引用`obj`在`Fct()`上下文中超出作用域时，要观看的`obj`项将被禁用，而`$1`仍然会获得更新。![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226201.gif)
+下面的动图演示了如何跟踪作用域外对象的属性获取器的状态，该属性获取器以字符串的形式返回实际的日期时间。它很好地显示了当引用`obj`在`Fct()`上下文中超出作用域时，要观看的`obj`项将被禁用，而`$1`仍然会获得更新。![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122221869.gif)
 
 ## **8、查看函数返回的值**
 
@@ -82,7 +82,7 @@ tag:
 
 > 注意，菜单`调试->窗口->自动窗口`仅在`Visual Studio`调试器附加到进程并且程序被调试器暂停时可用。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226996.gif)查看函数返回的值
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122222367.gif)查看函数返回的值
 
 ## **9、重新附加到进程**
 
@@ -93,7 +93,7 @@ tag:
 - 如果找到几个使用此名称的进程，则打开“附加到进程”对话框，只显示名称相同的进程
 - 如果找不到具有此名称的进程，则显示“附加到进程”对话框
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226382.gif)重新附加到进程
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122222384.gif)重新附加到进程
 
 重新附加到进程也适用于涉及多个进程的调试会话。在这种情况下，`Visual Studio`会尝试使用上述相同的启发式方法来查找它附加到的所有进程。
 
@@ -103,15 +103,15 @@ tag:
 
 为了避免更改任何状态，你可以在表达式后面加上`nse`(No-Side-Effect)。下面的动图说明了这种可能性（在监视窗口中监视`State`的值是否有变化）。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226437.gif)在即时窗口和在观察窗口的`No-Side-Effect`评估
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122222495.gif)在即时窗口和在观察窗口的`No-Side-Effect`评估
 
 下面这种动图是`nse`在监视窗口的使用。由于`SideEffectFct()`所观察的项中有`Refresh`评估按钮，所以此示例比前一个示例更简单。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226829.gif)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122222905.gif)
 
 ## **11、在源码中显示线程**
 
-调试多线程应用程序是有名的复杂。希望`在源码中显示线程`按钮能提供很大的帮助。它在编辑器的左侧边栏引入标记图标，以跟踪其他线程被暂停的位置。这个标记可以用来显示线程`ID`,并最终切换到另一个线程。注意：如果至少两个线程在同一位置暂停，则会显示不同的标记符号。![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226985.gif)
+调试多线程应用程序是有名的复杂。希望`在源码中显示线程`按钮能提供很大的帮助。它在编辑器的左侧边栏引入标记图标，以跟踪其他线程被暂停的位置。这个标记可以用来显示线程`ID`,并最终切换到另一个线程。注意：如果至少两个线程在同一位置暂停，则会显示不同的标记符号。![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122222687.gif)
 
 更多调试多线程应用程序的技巧可以在这个微软文档中找到：Get started debugging multithreaded applications (C#, Visual Basic, C++)
 
@@ -163,7 +163,7 @@ class Program {
 
 https://docs.microsoft.com/en-us/visualstudio/debugger/decompilation?view=vs-2019
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202111152226265.gif)从反编译的IL代码中调试源代码
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122222665.gif)从反编译的IL代码中调试源代码
 
 ## **结尾**
 
