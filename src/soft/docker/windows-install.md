@@ -9,6 +9,7 @@ category:
  - soft
 tag:
  - docker
+ - windows
 ---
 # Windows安装docker
 

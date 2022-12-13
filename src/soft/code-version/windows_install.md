@@ -1,5 +1,5 @@
 ---
-title: 安装Git
+title: Windows安装Git
 lang: zh-CN
 date: 2021-02-22
 publish: true
@@ -9,6 +9,8 @@ category:
  - soft
 tag:
  - git
+ - install
+ - windows
 ---
 # 安装Git
 

@@ -9,6 +9,7 @@ category:
  - soft
 tag:
  - Jenkins
+ - ci/cd
 ---
 # 构建自由风格任务
 

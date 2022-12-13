@@ -9,6 +9,7 @@ category:
  - soft
 tag:
  - git
+ - github
 ---
 > 作者：Peter    编辑：JackTian
 > 来源：公众号「杰哥的IT之旅」

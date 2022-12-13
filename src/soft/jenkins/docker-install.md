@@ -9,6 +9,7 @@ category:
  - soft
 tag:
  - Jenkins
+ - docker
 ---
 该方法部署的jenkins里面不包含netcore环境，下面包含通过docker部署netcore步骤
 

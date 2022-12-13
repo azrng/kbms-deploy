@@ -3,12 +3,12 @@ title: 常见目录文件命令
 lang: zh-CN
 date: 2021-02-22
 publish: true
-author: azrng
-isOriginal: true
+author: 代码国度
+isOriginal: false
 category:
  - soft
 tag:
- - linux
+ - centos
 ---
 # 常见的目录文件命令
 

@@ -9,6 +9,8 @@ category:
  - soft
 tag:
  - git
+ - gitlab
+ - docker
 ---
 # 安装
 

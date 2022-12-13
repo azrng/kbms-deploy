@@ -9,6 +9,7 @@ category:
  - soft
 tag:
  - Jenkins
+ - ci/cd
 ---
 ## 1.需要先安装java环境
 

@@ -9,6 +9,7 @@ category:
  - soft
 tag:
  - git
+ - 版本管理
 ---
 # Git基本原理
 

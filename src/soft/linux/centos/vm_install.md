@@ -8,7 +8,9 @@ isOriginal: true
 category:
  - soft
 tag:
- - linux
+ - centos
+ - vm
+ - install
 ---
 # **VMware**安装Centos
 
@@ -113,7 +115,7 @@ CentOS 系统镜像下载完成后， 使用 VMware 安装系统前需要先创�
 
 设置的虚拟机内存是受主机内存限制的， 比如我的主机内存为 8G，为了体验和性能， 设置虚拟机内存为 4G。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121056065.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212132132923.webp)
 
 
 
@@ -121,7 +123,7 @@ CentOS 系统镜像下载完成后， 使用 VMware 安装系统前需要先创�
 
 这是设置虚拟机访问网络的方式， 后面会介绍。
 
-![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121056621.webp)
+![img](https://cdn.jsdelivr.net/gh/azrng/file/blog202212132132755.webp)
 
 选择推荐的【LSI Logic】， 然后点击【下一步】。
 
@@ -131,7 +133,7 @@ CentOS 系统镜像下载完成后， 使用 VMware 安装系统前需要先创�
 
 上一步 IO 控制器选择了【LSI Logic】， 【LSI Logic 】适配器已提高性能，与通用 SCSI 设备结合使用效果更好。
 
-![图片](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/202112121056808.webp)
+![图片](https://cdn.jsdelivr.net/gh/azrng/file/blog202212132132930.webp)
 
 选择【创建新虚拟磁盘】，然后点击【下一步】。
 

@@ -9,6 +9,7 @@ category:
  - soft
 tag:
  - docker
+ - linux
 ---
 # Linux安装docker
 

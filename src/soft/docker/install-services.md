@@ -9,6 +9,7 @@ category:
  - soft
 tag:
  - docker
+ - install
 ---
 > Docker在线版：https://labs.play-with-docker.com/
 
