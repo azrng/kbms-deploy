@@ -30,26 +30,25 @@ SDK下载：https://dotnet.microsoft.com/zh-cn/download
 
 ## 博客
 
-* [官网]: https://docs.microsoft.com/zh-cn/
-* [博客园]: https://www.cnblogs.com/cate/dotnetcore/
+* 官网: https://docs.microsoft.com/zh-cn/
+* 博客园: https://www.cnblogs.com/cate/dotnetcore/
 
 ## 视频
 
-* [老张的哲学8]: https://space.bilibili.com/387802716
-* [杨中科]: https://space.bilibili.com/27948784
-* [dotNet源计划]: https://space.bilibili.com/12074309
-* [Donet易生君]: https://space.bilibili.com/486478189
-* [DotNET大王]: https://space.bilibili.com/486134845
-* [角落的白板报]: https://space.bilibili.com/2954671
-* [杨旭]: https://space.bilibili.com/361469957
-* [ArgoZhang]: https://space.bilibili.com/660853738
-* [全栈ACE]: https://space.bilibili.com/525836469
-> 注：排名不论先后
-
+* 杨中科: https://space.bilibili.com/27948784
+* 角落的白板报: https://space.bilibili.com/2954671
+* 老张的哲学8: https://space.bilibili.com/387802716
+* dotNet源计划: https://space.bilibili.com/12074309
+* Donet易生君: https://space.bilibili.com/486478189
+* DotNET大王: https://space.bilibili.com/486134845
+* 杨旭: https://space.bilibili.com/361469957
+* ArgoZhang: https://space.bilibili.com/660853738 
+* 全栈ACE: https://space.bilibili.com/525836469
+> 注：排名不分先后
 ## 实验
-* [微软Learn]: https://docs.microsoft.com/zh-cn/learn/browse/
-* [腾讯云实验室]: https://cloud.tencent.com/developer/labs/gallery
-* [阿里云实验室]: https://developer.aliyun.com/adc/labs -->
+* 微软Learn: https://docs.microsoft.com/zh-cn/learn/browse/
+* 腾讯云实验室: https://cloud.tencent.com/developer/labs/gallery
+* 阿里云实验室: https://developer.aliyun.com/adc/labs -->
 
 
 # 常用概念解释
@@ -81,7 +80,6 @@ Net Standard 是一个规范，它定义了Net Framewoek和Net Core必须实现�
 
 # 资料
 
-> https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet
->
-> Netf、NetCore、Net Standard区别：https://www.cnblogs.com/szlblog/p/11803623.html
+https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet
+NetF、NetCore、Net Standard区别：https://www.cnblogs.com/szlblog/p/11803623.html
 

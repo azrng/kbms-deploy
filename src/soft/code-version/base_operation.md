@@ -188,7 +188,7 @@ git checkout tag值
 git status
 ```
 
-On branch masterChanges not staged for commit: (use "git add <file>..." to **update**what will be committed) (use "git checkout -- <file>..." **to** discard changes **in** working directory)
+On branch masterChanges not staged for commit: (use "git add &lt;file&gt;..." to **update**what will be committed) (use "git checkout -- &lt;file&gt;..." **to** discard changes **in** working directory)
 
 ​               modified:  readme.txt  **no** changes added **to commit** (use "git add" **and**/**or** "git commit -a")
 
@@ -304,11 +304,11 @@ git branch -av
 
 See git-pull(1) for details 
 
-git pull <remote> <branch>
+git pull &lt;remote&gt; &lt;branch&gt;
 
 If you wish to set tracking information for this branch you can do so with:
 
-git branch --set-upstream-to=origin/<branch> dev
+git branch --set-upstream-to=origin/&lt;branch&gt; dev
 
 那么运行命令：
 
