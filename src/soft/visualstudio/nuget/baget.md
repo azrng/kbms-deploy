@@ -7,6 +7,8 @@ author: azrng
 isOriginal: true
 category:
  - soft
+tag:
+ - 包管理
 ---
 # 1. 介绍
 
