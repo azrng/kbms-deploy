@@ -322,9 +322,9 @@ export const zhSidebar = sidebar({
       collapsible: true,
       children:
         [
-          "/soft/linux/catalog.md",
-          "/soft/linux/vm_install.md",
-          "/soft/linux/hyper-v_install.md",
+          "/soft/linux/centos/catalog.md",
+          "/soft/linux/centos/vm_install.md",
+          "/soft/linux/centos/hyper-v_install.md",
         ]
     },
     {

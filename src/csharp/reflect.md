@@ -76,7 +76,7 @@ tag:
 
 包含应用程序域（`AppDomain`），程序集（`Assembly`），模块（`Module`），类型（`Type`），成员（`EventInfo、FieldInfo、MethodInfo、PropertyInfo`） 几个层次
 
-[![img](https://gitee.com/AZRNG/picture-storage/raw/master/kbms/1446823-20210805203304924-460469547.png)](https://img2020.cnblogs.com/blog/1446823/202108/1446823-20210805203304924-460469547.png)
+[![img](\csharp\1446823-20210805203304924-460469547.png)](https://img2020.cnblogs.com/blog/1446823/202108/1446823-20210805203304924-460469547.png)
 
 ### 2.3 静态方法
 

@@ -41,7 +41,7 @@ tag:
 
 1.打开终端程序并导航到项目文件夹
 
-![img](https://cdn.nlark.com/yuque/0/2022/png/272869/1666449750699-d987ea22-6a0f-4d88-a494-64aaec095c89.png)
+![img](\maui\1666449750699-d987ea22-6a0f-4d88-a494-64aaec095c89.png)
 
 2.运行keytool工具
 
@@ -51,7 +51,7 @@ keytool -genkey -v -keystore myapp.keystore -alias key -keyalg RSA -keysize 2048
 
 按照提示输入密码等设置
 
-![img](https://cdn.nlark.com/yuque/0/2022/png/272869/1666449805533-abf78679-6cd0-4b98-8a21-53cdb7aef38c.png)
+![img](\maui\1666449805533-abf78679-6cd0-4b98-8a21-53cdb7aef38c.png)
 
 该工具生成 一个 myapp.keystore 文件，该文件应与项目位于同一文件夹中。
 
@@ -89,7 +89,7 @@ dotnet publish -f:net7.0-android -c:Release /p:AndroidSigningKeyPass=123456 /p:A
 
 发布之后会生成到相对路径为：\bin\Release\net7.0-android\publish 
 
-![img](https://cdn.nlark.com/yuque/0/2022/png/272869/1666451120428-276a9ea0-f401-4546-bdb4-feceb836eef2.png)
+![img](\maui\1666451120428-276a9ea0-f401-4546-bdb4-feceb836eef2.png)
 
 包含aab文件和apk文件，有两个 aab 文件，一个未签名，另一个已签名。 签名的变体在文件名中具有 -signed 。
 

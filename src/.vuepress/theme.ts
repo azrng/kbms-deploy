@@ -4,6 +4,7 @@ import { zhSidebar } from "./sidebar/index.js";
 
 // 主题
 export default hopeTheme({
+  // hostname: "https://azrng.gitee.io/kbms/",
   hostname: "https://azrng.github.io/kbms/",
 
   // 作者信息
