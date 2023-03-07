@@ -7,6 +7,8 @@ author: azrng
 isOriginal: true
 category:
  - soft
+tag:
+ - nuget 
 ---
 ## 包源
 

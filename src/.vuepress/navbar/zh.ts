@@ -7,6 +7,7 @@ export const zhNavbar = navbar([
   { text: "Web", link: "/web/introduce.md" },
   { text: "csharp", link: "/csharp/predefined-type.md" },
   { text: "dotnetcore", link: "/dotnetcore/base.md" },
+  { text: "Maui", link: "/maui/base.md" },
   { text: '中间件', link: '/middleware/yapi.md' },
   { text: '数据库', link: '/db/base.md' },
   { text: '软件', link: '/soft/soft-collection.md' },

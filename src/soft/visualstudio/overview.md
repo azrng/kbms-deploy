@@ -11,6 +11,18 @@ tag:
  - VS
 ---
 
+# 概述
+
+![Visual Studio Win 2022 logo](https://visualstudio.microsoft.com/wp-content/uploads/2021/10/Product-Icon.svg)
+
+适用于 Windows 上 .NET 和 C++ 开发人员的最佳综合 IDE。 完整打包了一系列丰富的工具和功能，可提升和增强软件开发的每个阶段。
+
+# 警告
+
+使用visual studio开发过程中，有时发现在“错误列表”中的一些提示，大体分为错误、警告、消息，错误是我们必须处理的，否则代码通过编译，警告有时常常会被忽略，有时候忽略警告会为应用埋下安全隐患。
+
+这些警告来自微软的IDE的Security Code Scan - static code analyzer for .NET，这些汇总在https://security-code-scan.github.io/里。
+
 # 快捷键
 
 官方默认的快捷键操作
@@ -391,44 +403,6 @@ nuget默认的全局包下载地址一般为:C:\Users\{UserName}\AppData\Roaming
 
 以后的nuget包将存放在这地址上(重启vs生效)
 
-# 下载地址
-
-官网下载地址：https://visualstudio.microsoft.com/zh-hans/downloads/
-
-
-
-Vs2017 Enterprise:
-
-NJVYC-BMHX2-G77MM-4XJMR-6Q8QF
-
-Vs2017 Professional:
-
-KBJFW-NXHK6-W4WJM-CRMQB-G3CDH
-
-Vs 2019企业版
-
-BF8Y8-GN2QH-T84XB-QVY3B-RC4DF
-
-Visual Studio 2019 Enterprise
-
-BF8Y8-GN2QH-T84XB-QVY3B-RC4DF
-
-Visual Studio 2019 Professional
-
-NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y
-
-Vs2022激活码：
-
-Pro:
-
-TD244-P4NB7-YQ6XK-Y8MMM-YWV2J
-
-Enterprise:
-
-VHF9H-NXBBB-638P6-6JHCY-88JWH 
-
-> 激活码来源于网络，仅限用于学习使用
-
 # 个性化
 
 ## 修改文件编码
@@ -471,4 +445,40 @@ vs默认格式为 "GB2312-80",很多时候可能出现乱码情况
 
 ![img](https://cdn.jsdelivr.net/gh/azrng/file/blog202212122233142.png)
 
- 
+ # 下载地址
+
+官网下载地址：https://visualstudio.microsoft.com/zh-hans/downloads/
+
+
+
+Vs2017 Enterprise:
+
+NJVYC-BMHX2-G77MM-4XJMR-6Q8QF
+
+Vs2017 Professional:
+
+KBJFW-NXHK6-W4WJM-CRMQB-G3CDH
+
+Vs 2019企业版
+
+BF8Y8-GN2QH-T84XB-QVY3B-RC4DF
+
+Visual Studio 2019 Enterprise
+
+BF8Y8-GN2QH-T84XB-QVY3B-RC4DF
+
+Visual Studio 2019 Professional
+
+NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y
+
+Vs2022激活码：
+
+Pro:
+
+TD244-P4NB7-YQ6XK-Y8MMM-YWV2J
+
+Enterprise:
+
+VHF9H-NXBBB-638P6-6JHCY-88JWH 
+
+> 激活码来源于网络，仅限用于学习使用

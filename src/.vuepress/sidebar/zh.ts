@@ -16,7 +16,8 @@ export const zhSidebar = sidebar({
     "class.md",
     "type-convert.md",
     "attribute.md",
-    "reflect.md"
+    "reflect.md",
+    "sort.md"
   ],
   "/dotnetcore/": [
     {
@@ -185,6 +186,22 @@ export const zhSidebar = sidebar({
       ]
     }
   ],
+  '/maui/':[
+    {
+      text: "基础知识",
+      collapsible: true,
+      children: [
+        "/maui/base.md",
+      ]
+    },
+    {
+      text: "部署",
+      collapsible: true,
+      children: [
+        "/maui/release/generate_apk.md"
+      ]
+    }
+  ],
   '/middleware/': [
     {
       text: "单个",
@@ -285,7 +302,7 @@ export const zhSidebar = sidebar({
           "/soft/open_source_protocol.md",
           "/soft/uos.md",
           "/soft/small/picgo.md",
-          "/soft/postman.md",
+          //"/soft/postman.md",
 
         ]
     },
@@ -317,6 +334,17 @@ export const zhSidebar = sidebar({
         [
           "/soft/visualstudio/use-skill.md",
           "/soft/visualstudio/install.md",
+          {
+            text: "Nuget",
+            collapsible: true,
+            children:
+              [
+                "/soft/visualstudio/nuget/nuget_overview.md",
+                "/soft/visualstudio/nuget/nuget_autoupdate.md",
+                "/soft/visualstudio/nuget/baget.md",
+       
+              ]
+          },
         ]
     },
     {
