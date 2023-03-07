@@ -22,8 +22,9 @@
 2. Node.js
 
    ```shell
-   $ npm install
-   $ npm run docs:dev
+   $ npm install -g pnpm
+   $ pnpm install
+   $ pnpm run docs:dev
    ```
 
 3. 在浏览器打开`http://localhost:8080/`

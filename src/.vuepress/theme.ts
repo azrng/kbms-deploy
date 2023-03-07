@@ -15,7 +15,7 @@ export default hopeTheme({
   iconAssets: "iconfont",
   //导航栏logo
   logo: "/logo.svg", 
-  //repo: "vuepress-theme-hope/vuepress-theme-hope", //默认为 GitHub. 同时也可以是一个完整的 URL
+  //repo: "azrng/kbms", //默认为 GitHub. 同时也可以是一个完整的 URL
   docsDir: "docs",
   // 页面信息
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
