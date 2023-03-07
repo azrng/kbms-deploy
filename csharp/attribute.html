@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="generator" content="VuePress 2.0.0-beta.61" />
     <meta name="theme" content="VuePress Theme Hope" />
-    <meta property="og:url" content="https://azrng.github.io/kbms/kbms/csharp/attribute.html"><meta property="og:site_name" content="知识库"><meta property="og:title" content="C#特性"><meta property="og:description" content="开篇语 本文开始之前，首先我想问下大家对于属性和特性知道多少？属性和特性又有何区别？ img 对于该单词，我更想把它称之为：特性。对于属性和特性就是名称上有纠葛(不知道你们迷不迷，反正我写本文之前我是迷了)，什么是属性？属性是面向对象编程的基本概念，提供了对私有字段的访问封装，在C#中以get和set访问器方法实现对可读可写属性的操作，提供了安全和灵活的数据访问封装。什么是特性？下面内容就说明下："><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2022-12-09T02:19:17.000Z"><meta property="article:author" content="azrng"><meta property="article:tag" content="特性"><meta property="article:published_time" content="2021-02-22T00:00:00.000Z"><meta property="article:modified_time" content="2022-12-09T02:19:17.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"C#特性","image":[""],"datePublished":"2021-02-22T00:00:00.000Z","dateModified":"2022-12-09T02:19:17.000Z","author":[{"@type":"Person","name":"azrng"}]}</script><title>C#特性 | 知识库</title><meta name="description" content="开篇语 本文开始之前，首先我想问下大家对于属性和特性知道多少？属性和特性又有何区别？ img 对于该单词，我更想把它称之为：特性。对于属性和特性就是名称上有纠葛(不知道你们迷不迷，反正我写本文之前我是迷了)，什么是属性？属性是面向对象编程的基本概念，提供了对私有字段的访问封装，在C#中以get和set访问器方法实现对可读可写属性的操作，提供了安全和灵活的数据访问封装。什么是特性？下面内容就说明下：">
+    <meta property="og:url" content="https://azrng.github.io/kbms/kbms/csharp/attribute.html"><meta property="og:site_name" content="知识库"><meta property="og:title" content="C#特性"><meta property="og:description" content="开篇语 本文开始之前，首先我想问下大家对于属性和特性知道多少？属性和特性又有何区别？ img 对于该单词，我更想把它称之为：特性。对于属性和特性就是名称上有纠葛(不知道你们迷不迷，反正我写本文之前我是迷了)，什么是属性？属性是面向对象编程的基本概念，提供了对私有字段的访问封装，在C#中以get和set访问器方法实现对可读可写属性的操作，提供了安全和灵活的数据访问封装。什么是特性？下面内容就说明下： 介绍 使用特性，可以有效地将元数据或声明性信息与代码（程序集、类型、方法、属性等）相关联。 将特性与程序实体相关联后，可以在运行时使用 反射 这项技术查询特性。详情 用于添加元数据，如编译器指令和注释、描述、方法、类等其他信息。.Net 框架提供了两种类型的特性：预定义特性和自定义特性。"><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2023-03-07T15:22:36.000Z"><meta property="article:author" content="azrng"><meta property="article:tag" content="特性"><meta property="article:published_time" content="2021-02-22T00:00:00.000Z"><meta property="article:modified_time" content="2023-03-07T15:22:36.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"C#特性","image":[""],"datePublished":"2021-02-22T00:00:00.000Z","dateModified":"2023-03-07T15:22:36.000Z","author":[{"@type":"Person","name":"azrng"}]}</script><title>C#特性 | 知识库</title><meta name="description" content="开篇语 本文开始之前，首先我想问下大家对于属性和特性知道多少？属性和特性又有何区别？ img 对于该单词，我更想把它称之为：特性。对于属性和特性就是名称上有纠葛(不知道你们迷不迷，反正我写本文之前我是迷了)，什么是属性？属性是面向对象编程的基本概念，提供了对私有字段的访问封装，在C#中以get和set访问器方法实现对可读可写属性的操作，提供了安全和灵活的数据访问封装。什么是特性？下面内容就说明下： 介绍 使用特性，可以有效地将元数据或声明性信息与代码（程序集、类型、方法、属性等）相关联。 将特性与程序实体相关联后，可以在运行时使用 反射 这项技术查询特性。详情 用于添加元数据，如编译器指令和注释、描述、方法、类等其他信息。.Net 框架提供了两种类型的特性：预定义特性和自定义特性。">
     <style>
       :root {
         --bg-color: #fff;
@@ -31,10 +31,10 @@
       }
     </script>
     <link rel="preload" href="/kbms/assets/style-2773b519.css" as="style"><link rel="stylesheet" href="/kbms/assets/style-2773b519.css">
-    <link rel="modulepreload" href="/kbms/assets/app-081ac31f.js"><link rel="modulepreload" href="/kbms/assets/framework-63781bb7.js"><link rel="modulepreload" href="/kbms/assets/attribute.html-a226acb8.js"><link rel="modulepreload" href="/kbms/assets/attribute.html-fe7564bf.js">
+    <link rel="modulepreload" href="/kbms/assets/app-d5cbc15d.js"><link rel="modulepreload" href="/kbms/assets/framework-63781bb7.js"><link rel="modulepreload" href="/kbms/assets/attribute.html-0eae2957.js"><link rel="modulepreload" href="/kbms/assets/attribute.html-2a8f6754.js">
   </head>
   <body>
     <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="skip-link sr-only">跳至主要內容</a><!--]--><!----><!--]--><!----><!----><!--]--></div>
-    <script type="module" src="/kbms/assets/app-081ac31f.js" defer></script>
+    <script type="module" src="/kbms/assets/app-d5cbc15d.js" defer></script>
   </body>
 </html>
