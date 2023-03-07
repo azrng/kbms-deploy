@@ -8,6 +8,8 @@ bgImage: home.png
 heroText: 知识库
 heroFullScreen: true
 tagline: 人总是在正确的事情和容易做的事情之间做选择
+
+# 设置需要显示在首页的文章
 # projects:
 #   - icon: project
 #     name: 项目名称

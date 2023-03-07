@@ -5,16 +5,21 @@ import { zhSidebar } from "./sidebar/index.js";
 // 主题
 export default hopeTheme({
   hostname: "https://azrng.github.io/kbms/",
+
+  // 作者信息
   author: {
     name: "AZRNG",
     url: "https://azrng.gitee.io",
   },
   
   iconAssets: "iconfont",
-  logo: "/logo.svg", //导航栏logo
+  //导航栏logo
+  logo: "/logo.svg", 
   //repo: "vuepress-theme-hope/vuepress-theme-hope", //默认为 GitHub. 同时也可以是一个完整的 URL
   docsDir: "docs",
+  // 页面信息
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
+  // 主题颜色
   themeColor: {
     white: "#ffffff",
     red: "#e53e31",
@@ -22,11 +27,14 @@ export default hopeTheme({
     orange: "#f29e00",
   },
   fullscreen: true,
+
+  // 右边个人介绍栏
   blog: {
     name: "Azrng",
     timeline: "知识库",
     description: "一个.NET开发者",
     roundAvatar: true,//是否剪裁头像为圆形形状
+    // 友联小图标
     medias: {
       Gitee: "https://gitee.com/AZRNG",
       GitHub: "https://github.com/AZRNG",
@@ -39,11 +47,12 @@ export default hopeTheme({
       navbar: zhNavbar,
       // sidebar
       sidebar: zhSidebar,
+      // 禁用底部栏
       displayFooter: true,
       blog: {
         intro: "/aboutme/aboutme.md", // 点击个人头像跳转地址
       },
-      // page meta
+      // 页面元数据
       metaLocales: {
         editLink: "在 GitHub 上编辑此页",
       },
@@ -62,6 +71,7 @@ export default hopeTheme({
   // },
 
   plugins: {
+    blog: true,
     // If you don’t need comment feature, you can remove following option
     // The following config is for demo ONLY, if you need comment feature, please generate and use your own config, see comment plugin documentation for details.
     // To avoid disturbing the theme developer and consuming his resources, please DO NOT use the following config directly in your production environment!!!!!
