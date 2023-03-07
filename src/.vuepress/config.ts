@@ -1,5 +1,5 @@
-import { searchPlugin } from "@vuepress/plugin-search";
 import { defineUserConfig } from "vuepress";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
 import theme from "./theme.js";
 
 //https://v2.vuepress.vuejs.org/zh/reference/config.html
@@ -19,12 +19,9 @@ export default defineUserConfig({
 
   shouldPrefetch: false,
   plugins: [
-    searchPlugin({
-      locales: {
-        "/": {
-          placeholder: "搜索",
-        },
-      }
-    })
+    searchProPlugin({
+      // 索引全部内容
+      indexContent: true
+    }),
   ],
 });
