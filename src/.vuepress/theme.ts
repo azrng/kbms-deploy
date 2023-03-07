@@ -9,9 +9,10 @@ export default hopeTheme({
     name: "AZRNG",
     url: "https://azrng.gitee.io",
   },
+  
   iconAssets: "iconfont",
   logo: "/logo.svg", //导航栏logo
-  repo: "vuepress-theme-hope/vuepress-theme-hope", //默认为 GitHub. 同时也可以是一个完整的 URL
+  //repo: "vuepress-theme-hope/vuepress-theme-hope", //默认为 GitHub. 同时也可以是一个完整的 URL
   docsDir: "docs",
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
   themeColor: {
@@ -61,11 +62,6 @@ export default hopeTheme({
   // },
 
   plugins: {
-    blog: {
-      autoExcerpt: true,
-    },
-
-
     // If you don’t need comment feature, you can remove following option
     // The following config is for demo ONLY, if you need comment feature, please generate and use your own config, see comment plugin documentation for details.
     // To avoid disturbing the theme developer and consuming his resources, please DO NOT use the following config directly in your production environment!!!!!
@@ -103,9 +99,9 @@ export default hopeTheme({
       echarts: true,
       flowchart: true,
       gfm: true,
-      imageLazyload: true,
-      imageTitle: true,
-      imageSize: true,
+      imgLazyload: true,
+      figure: true,
+      imgSize: true,
       include: true,
       katex: true,
       mark: true,
