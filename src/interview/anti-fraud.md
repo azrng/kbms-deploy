@@ -4,6 +4,9 @@ date: 2021-02-22
 publish: true
 author: azrng
 isOriginal: true
+order: 1
+# 如果不想被收录到侧边栏，那么就可以设置index为false
+# index: false
 category:
  - 面试
 tag:

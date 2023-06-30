@@ -10,9 +10,6 @@ category:
 tag:
  - docker
 ---
-# 制作精简的镜像
-
-# 介绍
 
 前段时间网易蜂巢曾经推出蜂巢 `Logo` T恤，用的正是 Docker 镜像制作，最神奇的是，它最终的镜像大小只有 `585` 字节。
 
@@ -78,11 +75,11 @@ $ git commit
 
 答案是:在的，并且会占用仓库的大小。Git 会保存每一次提交的文件版本，而 Dockerfile 中每一条指令都可能增加整体镜像的大小，即使它最终什么事情都没做。
 
-# 制作步骤
+## 制作步骤
 
 了解了镜像层知识，有助于我们接下来制作精简镜像。这里开始，以最常用的开源缓存软件 `Redis` 为例，从一步步试验，来介绍如何制作更精简的 Docker 镜像。
 
-## lab-1：初始化构建 Redis 镜像
+### lab-1：初始化构建 Redis 镜像
 
 **直接上 `Dockerfile` ：**
 
@@ -132,9 +129,8 @@ $ docker build  -t redis:lab-1  .
 
 动辄就有 300多 M 的大小，不能忍，下面我们开始一步步优化。
 
-### 
 
-## lab-2：优化基础镜像
+### lab-2：优化基础镜像
 
 **精简1：选用更小的基础镜像。**
 
@@ -176,7 +172,7 @@ $ docker build  -t redis:lab-2  .
 
 减少了42M，稍有成效，但并不明显。细心的同学应该发现，只有 122 MB 的 `debian` 基础镜像，构建后增加到了 305 MB，看来这里面肯定有优化的空间，如何优化就要用到我们开头说到的 `Image Layer` 知识了。
 
-## lab-3：串联 Dockerfile 指令
+### lab-3：串联 Dockerfile 指令
 
 **精简2：串联你的 Dockerfile 指令（一般是 `RUN` 指令）。**
 
@@ -226,7 +222,7 @@ $ docker build  -t redis:lab-3  .
 
 哇！一下子减少了 50%，效果明显啊！这是最常用的一个精简手段了。
 
-## lab-4：压缩你的镜像
+### lab-4：压缩你的镜像
 
 **优化3：试着用命令或工具压缩你的镜像。**
 
@@ -266,7 +262,7 @@ $ docker save redis:lab-3 \
 
 好吧，从这里看起来并没有太大作用，所以我只能说`试着`，而不要报太大期望。
 
-## lab-5：使用最精简的 base image
+### lab-5：使用最精简的 base image
 
 ![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 
@@ -292,7 +288,7 @@ cloudcomb-logo（C语言开发） 就是用到了该原理，才能构建出 585
 
 
 
-## lab-6：提取动态链接的 .so 文件
+### lab-6：提取动态链接的 .so 文件
 
 实验上下文：
 
@@ -374,7 +370,7 @@ $ redis-benchmark  -h  \
 1. 用 `ldd` 查出所需的 .so 文件
 2. 将所有依赖压缩成 `rootfs.tar` 或 `rootfs.tar.gz`，之后打进 `scratch` 基础镜像
 
-## lab-7：为 Go 应用构建精简镜像
+### lab-7：为 Go 应用构建精简镜像
 
 Go 语言天生就方便用来构建精简镜像，得益于它能方便的打包成包含静态链接的二进制文件。
 
@@ -431,7 +427,7 @@ hello        latest   1a42948d3224   24 seconds ago   1.59 MB
 4. 优化程序依赖
 5. 选用更合适的开发语言
 
-# 参考
+## 参考
 
 - **scratch in Docker Hub**[4]
 - **Make FROM scratch a special cased 'no-base' spec**[5]
@@ -457,7 +453,7 @@ hello        latest   1a42948d3224   24 seconds ago   1.59 MB
 [11]Optimizing Docker Images: *http://www.centurylinklabs.com/optimizing-docker-images/*
 [12]Squashing Docker Images: *http://jasonwilder.com/blog/2014/08/19/squashing-docker-images/*
 
-# 转载信息
+## 转载信息
 
 文章来自黄庆兵老师的网易蜂巢《玩转 Docker 镜像》系列https://github.com/bingohuang/play-docker-images，原本分为上下两篇，由生态君整合成一篇便于阅读。
 

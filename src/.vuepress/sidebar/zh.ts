@@ -1,4 +1,5 @@
 import { sidebar } from "vuepress-theme-hope";
+import { dotnetcoreSidebar } from "./dotnetcore";
 
 // 介绍文档 https://vuepress-theme-hope.gitee.io/v2/zh/guide/layout/sidebar.html
 export const zhSidebar = sidebar({
@@ -19,174 +20,8 @@ export const zhSidebar = sidebar({
     "reflect.md",
     "sort.md"
   ],
-  "/dotnetcore/": [
-    {
-      text: "基础知识",
-      collapsible: true,
-      children: [
-        "/dotnetcore/base.md",
-        "/dotnetcore/globalization.md",
-        "/dotnetcore/routing.md",
-        "/dotnetcore/healthcheck.md"
-      ]
-    },
-    {
-      text: "配置框架",
-      collapsible: true,
-      children: [
-        "/dotnetcore/config/configread.md"
-      ]
-    },
-    {
-      text: "跨域",
-      collapsible: true,
-      children: [
-        "/dotnetcore/kuayu.md"
-      ]
-    },
-    {
-      text: "静态资源",
-      collapsible: true,
-      children: [
-        "/dotnetcore/staticfile/base.md",
-        "/dotnetcore/staticfile/customerconfig.md"
-      ]
-    },
-    {
-      text: "日志",
-      collapsible: true,
-      children: [
-        "/dotnetcore/loggers/ilogger.md",
-        "/dotnetcore/loggers/serilog.md",
-        "/dotnetcore/loggers/nlog.md",
-        "/dotnetcore/loggers/log4net.md",
-        "/dotnetcore/loggers/logdashboard.md",
-      ]
-    },
-    {
-      text: "过滤器",
-      collapsible: true,
-      children: [
-        "/dotnetcore/filter/base.md",
-        "/dotnetcore/filter/realize.md",
-      ]
-    },
-    {
-      text: "OpenApi",
-      collapsible: true,
-      children: [
-        "/dotnetcore/openapi/swaggerbase.md",
-        "/dotnetcore/openapi/version.md",
-      ]
-    },
-    {
-      text: "身份认证和授权",
-      collapsible: true,
-      children: [
-        "/dotnetcore/auth/session.md",
-        "/dotnetcore/auth/cookie.md",
-        "/dotnetcore/auth/jwt_baseuse.md",
-      ]
-    },
-    {
-      text: "健康检查",
-      collapsible: true,
-      children: [
-        "/dotnetcore/healthcheck.md",
-      ]
-    }
-    ,
-    {
-      text: "实时通信",
-      collapsible: true,
-      children: [
-        "/dotnetcore/real-time/base.md",
-      ]
-    },
-    {
-      text: "缓存",
-      collapsible: true,
-      children: [
-        "/dotnetcore/cache/memorycache.md",
-        "/dotnetcore/cache/redis.md",
-      ]
-    },
-    {
-      text: "IOC",
-      collapsible: true,
-      children: [
-        "/dotnetcore/ioc/base.md",
-        "/dotnetcore/DI/default.md"
-      ]
-    },
-    {
-      text: "WebAPI",
-      collapsible: true,
-      children: [
-        "/dotnetcore/webapi/webapi-base.md",
-        "/dotnetcore/webapi/webapiversion.md",
-      ]
-    },
-    {
-      text: "ORM",
-      collapsible: true,
-      children: [
-        "/dotnetcore/orm/overview.md",
-        {
-          text: "Dapper",
-          collapsible: true,
-          children: [
-            "/dotnetcore/orm/dapper/overview.md",
-            "/dotnetcore/orm/dapper/dapper_read_write.md",
-            "/dotnetcore/orm/dapper/dapper_lnskydb.md"
-          ]
-        },
-
-        {
-          text: "EFCore",
-          collapsible: true,
-          children: [
-            "/dotnetcore/orm/createdb.md",
-            "/dotnetcore/orm/efcoreoperation.md"
-          ]
-        }
-      ]
-    },
-    {
-      text: "单元测试",
-      collapsible: true,
-      children: [
-        "/dotnetcore/unit-test/base.md",
-        "/dotnetcore/unit-test/base-use-dissent.md",
-        "/dotnetcore/unit-test/base-use.md",
-      ]
-    },
-    {
-      text: "WinForm",
-      collapsible: true,
-      children: [
-        "/dotnetcore/winform/use_di.md",
-      ]
-    },
-    {
-      text: "小知识",
-      collapsible: true,
-      children: [
-        "/dotnetcore/small/dynamic_load.md",
-      ]
-    },
-    {
-      text: "部署",
-      collapsible: true,
-      children: [
-        "/dotnetcore/release/iis.md",
-        "/dotnetcore/release/centos_net6.md",
-        "/dotnetcore/release/supervisor.md",
-        "/dotnetcore/release/docker.md",
-      ]
-    }
-  ],
-  '/maui/':[
+  "/dotnetcore/": dotnetcoreSidebar,
+  '/maui/': [
     {
       text: "基础知识",
       collapsible: true,
@@ -299,11 +134,71 @@ export const zhSidebar = sidebar({
       children:
         [
           "/soft/soft-collection.md",
+          "/soft/game.md",
           "/soft/open_source_protocol.md",
+          "/soft/office.md",
+          "/soft/ps.md",
+          "/soft/search.md",
           "/soft/uos.md",
           "/soft/small/picgo.md",
-          //"/soft/postman.md",
 
+        ]
+    },
+    {
+      text: "Windows",
+      collapsible: true,
+      children: [
+        "/soft/windows/overview.md",
+        "/soft/windows/browser_plug.md",
+        "/soft/windows/bat_command.md",
+        "/soft/windows/child_system_linux.md",
+        "/soft/windows/chocolatey.md",
+        "/soft/windows/dbchm.md",
+        "/soft/windows/hyper-v.md",
+        "/soft/windows/newpc.md",
+        "/soft/windows/nssm.md",
+        "/soft/windows/terminal.md",
+        "/soft/windows/environment_config.md",
+        "/soft/vscode.md",
+        {
+          text: "接口调用",
+          collapsible: true,
+          children:
+            [
+              "/soft/call_interface/overview.md",
+              "/soft/call_interface/postman.md",
+            ]
+        }
+      ]
+    },
+    {
+      text: "Linux",
+      collapsible: true,
+      children:
+        [
+          "/soft/linux/overview.md",
+          {
+            text: "Centos",
+            collapsible: true,
+            children:
+              [
+                "/soft/linux/centos/overview.md",
+                "/soft/linux/centos/catalog.md",
+                "/soft/linux/centos/command.md",
+                "/soft/linux/centos/hyper-v_install.md",
+                "/soft/linux/centos/vm_install.md",
+                "/soft/linux/centos/environment/java.md",
+              ]
+          }, {
+            text: "ubuntu",
+            collapsible: true,
+            children:
+              [
+                "/soft/linux/ubuntu/overview.md",
+              ]
+          },
+          "/soft/linux/selinux.md",
+          "/soft/linux/virtual_machine.md",
         ]
     },
     {
@@ -318,22 +213,13 @@ export const zhSidebar = sidebar({
         ]
     },
     {
-      text: "Linux",
-      collapsible: true,
-      children:
-        [
-          "/soft/linux/centos/catalog.md",
-          "/soft/linux/centos/vm_install.md",
-          "/soft/linux/centos/hyper-v_install.md",
-        ]
-    },
-    {
       text: "Visual Studio",
       collapsible: true,
       children:
         [
+          "/soft/visualstudio/overview.md",
           "/soft/visualstudio/use-skill.md",
-          "/soft/visualstudio/install.md",
+          "/soft/visualstudio/editorConfig.md",
           {
             text: "Nuget",
             collapsible: true,
@@ -342,7 +228,16 @@ export const zhSidebar = sidebar({
                 "/soft/visualstudio/nuget/nuget_overview.md",
                 "/soft/visualstudio/nuget/nuget_autoupdate.md",
                 "/soft/visualstudio/nuget/baget.md",
-       
+
+              ]
+          },
+          {
+            text: "安装",
+            collapsible: true,
+            children:
+              [
+                "/soft/visualstudio/install.md",
+                "/soft/visualstudio/off_line_install.md",
               ]
           },
         ]
@@ -355,8 +250,14 @@ export const zhSidebar = sidebar({
           "/soft/docker/base.md",
           "/soft/docker/install-services.md",
           "/soft/docker/mark-small-image.md",
-          "/soft/docker/windows-install.md",
-          "/soft/docker/linux-install.md",
+          {
+            text: "安装",
+            collapsible: true,
+            children: [
+              "/soft/docker/windows-install.md",
+              "/soft/docker/linux-install.md",
+            ]
+          },
         ]
     },
     {
@@ -375,22 +276,28 @@ export const zhSidebar = sidebar({
       collapsible: true,
       children:
         [
+          "/soft/code-version/base_operation.md",
           "/soft/code-version/base_theory.md",
-          "/soft/code-version/github-base.md",
-          "/soft/code-version/wazgit.md",
-          "/soft/code-version/gitlabinstall.md",
+          {
+            text: "安装",
+            collapsible: true,
+            children: [
+              "/soft/code-version/windows_install.md",
+              "/soft/code-version/linux_install.md"
+            ]
+          },
+          {
+            text: "部署",
+            collapsible: true,
+            children: [
+              "/soft/code-version/gitea.md",
+              "/soft/code-version/gogs.md"
+            ]
+          }
         ]
     }
   ],
-  '/interview/': [
-    {
-      text: "面试",
-      children:
-        [
-          "/interview/anti-fraud.md",
-        ]
-    }
-  ],
+  '/interview/': "structure",
   '/aboutme/': [
     {
       text: "关于我",

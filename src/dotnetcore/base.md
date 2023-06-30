@@ -20,7 +20,7 @@ SDK下载：https://dotnet.microsoft.com/zh-cn/download
 
 使用 .NET，您可以使用多种语言、编辑器和库来构建 Web、移动、桌面、游戏和 IoT。
 
-![image-20221210183502796](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101835404.png)
+![202212101835404](/dotnet/202212101835404.png)
 
 .Net文档：https://learn.microsoft.com/zh-cn/dotnet/fundamentals/
 

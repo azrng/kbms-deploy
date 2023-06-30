@@ -14,49 +14,49 @@ tag:
 
 使用Hyper-v创建虚拟机安装uos系统，关于Hyper-V的基本用法可以看另一个文章
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101425096.png)
+![img](\soft\202212101425096.png)
 
 选择语言然后同意协议点击下一步进入硬盘分区，这里需要满足一定的磁盘大小才能下一步
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101425850.png)
+![img](\soft\202212101425850.png)
 
 选择盘符然后直接下一步，就开始漫长的安装步骤
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101426189.png)
+![img](\soft\202212101426189.png)
 
 安装完成
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101426763.png)
+![img](\soft\202212101426763.png)
 
 
 
 上面提示安装成功点击立即重启并立即拔出安装介质，可是我不是用U盘装的咋拔出介质，然后我就陷入了重启=>安装=>重启的死循环中，后来终于反应过来，打开Htper-V管理器，选择指定虚拟机然后点击右下角设置
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101426134.png)
+![img](\soft\202212101426134.png)
 
 将这里修改为无
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101426004.png)
+![img](\soft\202212101426004.png)
 
 然后点击立即重启
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101426775.png)
+![img](/soft/202212101426775.png)
 
 点击回车进入系统，然后这次就可以选择时区并创建账户
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101426117.png)
+![img](/soft/202212101426117.png)
 
 点击下一步
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101426258.png)
+![img](\soft\202212101426258.png)
 
 等待几分钟后
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101426219.png)
+![img](/soft/202212101426219.png)
 
 输入刚才设置的密码下一步，然后这里我们选择普通模式
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101426236.png)
+![img](/soft/202212101426236.png)
 
 这种终于可以进入系统了
 
@@ -66,43 +66,43 @@ tag:
 
 ## 系统主界面
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427603.png)
+![img](/soft/202212101427603.png)
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427327.png)
+![img](\soft\202212101427327.png)
 
 ## 计算机
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427761.png)
+![img](/soft/202212101427761.png)
 
 ## 视频播放
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427588.png)
+![img](/soft/202212101427588.png)
 
 ## 浏览器
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427604.png)
+![img](/soft/202212101427604.png)
 
 ## 日历
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427525.png)
+![img](/soft/202212101427525.png)
 
 ## 应用商店
 
 未联网状态，听说日常的软件都已经有的
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427064.png)
+![img](/soft/202212101427064.png)
 
 ## 设置
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427495.png)
+![img](/soft/202212101427495.png)
 
 系统信息
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427200.png)
+![img](/soft/202212101427200.png)
 
 ## 关机界面
 
-![img](https://cdn.jsdelivr.net/gh/azrng/file/blog/202212101427140.png)
+![img](/soft/202212101427140.png)
 
 # 体验总结
 

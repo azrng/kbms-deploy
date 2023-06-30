@@ -6,7 +6,7 @@ publish: true
 author: azrng
 isOriginal: false
 category:
- - soft
+  - soft
 ---
 
 # 框架下载

@@ -14,7 +14,7 @@ category:
 
 ### 1.1.1 神龙激活器
 
-https://azrng.lanzoui.com/ibrbqgb
+官网：http://www.yishimei.cn/network/319.html
 
 ## 1.2 火绒弹框拦截
 
@@ -134,7 +134,15 @@ ESF Database Migration Toolkit
 
 # 5. 远程控制
 
-## 5.1 Todesk
+## Todesk
+
+官网：https://www.todesk.com/
+
+## rustdesk
+
+RustDesk是一款优秀的免费开源的远程控制软件，采用rust语言编写，无需任何配置开箱即用，采用TLS 1.3端到端加密协议保护用户的通信安全，用户可以完全掌控数据，不用担心安全问题，自定义画面质量且允许用户在客户端程序里调节bitrate和quantizer改变画面传输质量，RustDesk远程控制软件内置文件传输和TCP隧道功能，使用内置文件管理器可以方便地与远程电脑互传文件，设置TCP隧道也很容易，更是贴心提供了快捷RDP模式，一键就可以实现基于TCP隧道的RDP连接，威航软件园测试发现RustDesk和系统自带远程桌面相比拥有绝对的优势，安全快速稳定，还允许用户通过安装RustDesk提供的服务器程序建立自己的网络。
+
+官网：https://rustdesk.com/docs/en/manual/
 
 # 6. 办公软件
 
@@ -203,6 +211,14 @@ iSlide 是一款PPT 插件。
 一个将视频加密的播放软件。
 
 https://www.quedashi.com/
+
+## Markdown
+
+### writage
+
+Writage 使 Microsoft Word 能够创建和编辑 Markdown 文件（扩展名为 .md），以及将 .docx 文件保存为 Markdown 文件。它还能够将选定的富文本复制为 Markdown，并将 Markdown 粘贴为富文本。
+
+官网：https://www.writage.com/overview/
 
 # 7. 下载工具
 

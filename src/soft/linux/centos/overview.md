@@ -14,10 +14,10 @@ tag:
 
 创建好连接上linux系统
 
-然后我们需要先添加yum源
-
-命令：rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
-
+然后我们需要先添加yum源，命令
+```
+rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+```
 然后升级所有包的同时也升级软件和系统内核
 
 命令：yum update
