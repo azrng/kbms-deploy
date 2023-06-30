@@ -264,8 +264,6 @@ $ docker save redis:lab-3 \
 
 ### lab-5：使用最精简的 base image
 
-![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
-
 使用 `scratch` 或者 `busybox` 作为基础镜像。
 
 关于 scratch：
