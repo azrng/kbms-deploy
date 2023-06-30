@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="generator" content="VuePress 2.0.0-beta.61" />
+    <meta name="generator" content="VuePress 2.0.0-beta.63" />
     <meta name="theme" content="VuePress Theme Hope" />
     <meta property="og:url" content="https://azrng.github.io/kbms/kbms/dotnetcore/staticfile/customerconfig.html"><meta property="og:site_name" content="知识库"><meta property="og:title" content="静态资源-自定义设置"><meta property="og:description" content="前文获取配置文件的时候，是获取默认的appsettings.json配置文件的配置，下面说明下如何进行自定义获取配置 1. Json Provider 1.1 构建独立的IConfiguration 编写方法 public static IConfigurationRoot LoadSettings(this IHostEnvironment env) { return new ConfigurationBuilder() .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) .AddJsonFile("common.json", optional: true, reloadOnChange: false) 	 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false) .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: false) .AddEnvironmentVariables() .Build(); }"><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2022-12-09T02:19:17.000Z"><meta property="article:author" content="azrng"><meta property="article:tag" content="静态资源"><meta property="article:published_time" content="2021-08-25T00:00:00.000Z"><meta property="article:modified_time" content="2022-12-09T02:19:17.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"静态资源-自定义设置","image":[""],"datePublished":"2021-08-25T00:00:00.000Z","dateModified":"2022-12-09T02:19:17.000Z","author":[{"@type":"Person","name":"azrng"}]}</script><title>静态资源-自定义设置 | 知识库</title><meta name="description" content="前文获取配置文件的时候，是获取默认的appsettings.json配置文件的配置，下面说明下如何进行自定义获取配置 1. Json Provider 1.1 构建独立的IConfiguration 编写方法 public static IConfigurationRoot LoadSettings(this IHostEnvironment env) { return new ConfigurationBuilder() .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) .AddJsonFile("common.json", optional: true, reloadOnChange: false) 	 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false) .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: false) .AddEnvironmentVariables() .Build(); }">
     <style>
@@ -30,11 +30,11 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <link rel="preload" href="/kbms/assets/style-2773b519.css" as="style"><link rel="stylesheet" href="/kbms/assets/style-2773b519.css">
-    <link rel="modulepreload" href="/kbms/assets/app-d5cbc15d.js"><link rel="modulepreload" href="/kbms/assets/framework-63781bb7.js"><link rel="modulepreload" href="/kbms/assets/customerconfig.html-3d3e69c9.js"><link rel="modulepreload" href="/kbms/assets/customerconfig.html-98939206.js">
+    <link rel="preload" href="/kbms/assets/style-05cc9f43.css" as="style"><link rel="stylesheet" href="/kbms/assets/style-05cc9f43.css">
+    <link rel="modulepreload" href="/kbms/assets/app-3c3dee46.js"><link rel="modulepreload" href="/kbms/assets/customerconfig.html-76f57b0f.js"><link rel="modulepreload" href="/kbms/assets/plugin-vue_export-helper-c27b6911.js"><link rel="modulepreload" href="/kbms/assets/customerconfig.html-00f102c7.js">
   </head>
   <body>
-    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="skip-link sr-only">跳至主要內容</a><!--]--><!----><!--]--><!----><!----><!--]--></div>
-    <script type="module" src="/kbms/assets/app-d5cbc15d.js" defer></script>
+    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="vp-skip-link sr-only">跳至主要內容</a><!--]--><!----><!--]--><!----><!----><!--]--></div>
+    <script type="module" src="/kbms/assets/app-3c3dee46.js" defer></script>
   </body>
 </html>

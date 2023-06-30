@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="generator" content="VuePress 2.0.0-beta.61" />
+    <meta name="generator" content="VuePress 2.0.0-beta.63" />
     <meta name="theme" content="VuePress Theme Hope" />
-    <meta property="og:url" content="https://azrng.github.io/kbms/kbms/soft/code-version/base_theory.html"><meta property="og:site_name" content="知识库"><meta property="og:title" content="Git基本原理"><meta property="og:description" content="Git基本原理 简单地说，Git 究竟是怎样的一个系统呢？请注意接下来的内容非常重要，若你理解了 Git 的思想和基本工作原理，用起来就会知其所以然，游刃有余。在学习 Git 时，请尽量理清你对其它版本管理系统已有的认识，如 CVS、Subversion 或 Perforce， 这样能帮助你使用工具时避免发生混淆。尽管 Git 用起来与其它的版本控制系统非常相似， 但它在对信息的存储和认知方式上却有很大差异，理解这些差异将有助于避免使用中的困惑。 图片"><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2022-12-13T15:06:13.000Z"><meta property="article:author" content="azrng"><meta property="article:tag" content="git"><meta property="article:tag" content="版本管理"><meta property="article:published_time" content="2021-02-22T00:00:00.000Z"><meta property="article:modified_time" content="2022-12-13T15:06:13.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Git基本原理","image":[""],"datePublished":"2021-02-22T00:00:00.000Z","dateModified":"2022-12-13T15:06:13.000Z","author":[{"@type":"Person","name":"azrng"}]}</script><title>Git基本原理 | 知识库</title><meta name="description" content="Git基本原理 简单地说，Git 究竟是怎样的一个系统呢？请注意接下来的内容非常重要，若你理解了 Git 的思想和基本工作原理，用起来就会知其所以然，游刃有余。在学习 Git 时，请尽量理清你对其它版本管理系统已有的认识，如 CVS、Subversion 或 Perforce， 这样能帮助你使用工具时避免发生混淆。尽管 Git 用起来与其它的版本控制系统非常相似， 但它在对信息的存储和认知方式上却有很大差异，理解这些差异将有助于避免使用中的困惑。 图片">
+    <meta property="og:url" content="https://azrng.github.io/kbms/kbms/soft/code-version/base_theory.html"><meta property="og:site_name" content="知识库"><meta property="og:title" content="Git基本原理"><meta property="og:description" content="Git基本原理 简单地说，Git 究竟是怎样的一个系统呢？请注意接下来的内容非常重要，若你理解了 Git 的思想和基本工作原理，用起来就会知其所以然，游刃有余。在学习 Git 时，请尽量理清你对其它版本管理系统已有的认识，如 CVS、Subversion 或 Perforce， 这样能帮助你使用工具时避免发生混淆。尽管 Git 用起来与其它的版本控制系统非常相似， 但它在对信息的存储和认知方式上却有很大差异，理解这些差异将有助于避免使用中的困惑。 Git 初始化代码仓库 执行完成了 git init 命令，究竟做了什么呢？ 执行完成如下命令之后，我们可以得到下图所示的内容，右侧的就是 Git 为我们创建的代码仓库，其中包含了用于版本管理所需要的内容。"><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2023-06-30T14:55:54.000Z"><meta property="article:author" content="azrng"><meta property="article:tag" content="git"><meta property="article:tag" content="版本管理"><meta property="article:published_time" content="2021-02-22T00:00:00.000Z"><meta property="article:modified_time" content="2023-06-30T14:55:54.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Git基本原理","image":[""],"datePublished":"2021-02-22T00:00:00.000Z","dateModified":"2023-06-30T14:55:54.000Z","author":[{"@type":"Person","name":"azrng"}]}</script><title>Git基本原理 | 知识库</title><meta name="description" content="Git基本原理 简单地说，Git 究竟是怎样的一个系统呢？请注意接下来的内容非常重要，若你理解了 Git 的思想和基本工作原理，用起来就会知其所以然，游刃有余。在学习 Git 时，请尽量理清你对其它版本管理系统已有的认识，如 CVS、Subversion 或 Perforce， 这样能帮助你使用工具时避免发生混淆。尽管 Git 用起来与其它的版本控制系统非常相似， 但它在对信息的存储和认知方式上却有很大差异，理解这些差异将有助于避免使用中的困惑。 Git 初始化代码仓库 执行完成了 git init 命令，究竟做了什么呢？ 执行完成如下命令之后，我们可以得到下图所示的内容，右侧的就是 Git 为我们创建的代码仓库，其中包含了用于版本管理所需要的内容。">
     <style>
       :root {
         --bg-color: #fff;
@@ -30,11 +30,11 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <link rel="preload" href="/kbms/assets/style-2773b519.css" as="style"><link rel="stylesheet" href="/kbms/assets/style-2773b519.css">
-    <link rel="modulepreload" href="/kbms/assets/app-d5cbc15d.js"><link rel="modulepreload" href="/kbms/assets/framework-63781bb7.js"><link rel="modulepreload" href="/kbms/assets/base_theory.html-190c21d9.js"><link rel="modulepreload" href="/kbms/assets/base_theory.html-e0502c57.js">
+    <link rel="preload" href="/kbms/assets/style-05cc9f43.css" as="style"><link rel="stylesheet" href="/kbms/assets/style-05cc9f43.css">
+    <link rel="modulepreload" href="/kbms/assets/app-3c3dee46.js"><link rel="modulepreload" href="/kbms/assets/base_theory.html-1906c227.js"><link rel="modulepreload" href="/kbms/assets/plugin-vue_export-helper-c27b6911.js"><link rel="modulepreload" href="/kbms/assets/base_theory.html-deff189d.js">
   </head>
   <body>
-    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="skip-link sr-only">跳至主要內容</a><!--]--><!----><!--]--><!----><!----><!--]--></div>
-    <script type="module" src="/kbms/assets/app-d5cbc15d.js" defer></script>
+    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="vp-skip-link sr-only">跳至主要內容</a><!--]--><!----><!--]--><!----><!----><!--]--></div>
+    <script type="module" src="/kbms/assets/app-3c3dee46.js" defer></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="generator" content="VuePress 2.0.0-beta.61" />
+    <meta name="generator" content="VuePress 2.0.0-beta.63" />
     <meta name="theme" content="VuePress Theme Hope" />
     <meta property="og:url" content="https://azrng.github.io/kbms/kbms/dotnetcore/orm/dapper/dapper_read_write.html"><meta property="og:site_name" content="知识库"><meta property="og:title" content="Dapper读写分离"><meta property="og:description" content="介绍 一个主库+一个从库或者多个从库的结构，从库的数据来自主库的同步。 操作 下面只是关于dapper操作数据库读写分离的构思。 新建一个存储连接字符串的类 public class ConnectionStringConsts { /// &lt;summary&gt; /// 主库连接字符串 /// &lt;/summary&gt; public static readonly string MasterConnectionString = "server=db.master.com;Database=crm_db;UID=root;PWD=1"; /// &lt;summary&gt; /// 从库连接字符串 /// &lt;/summary&gt; public static readonly string SlaveConnectionString = "server=db.slave.com;Database=crm_db;UID=root;PWD=1"; }"><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2022-12-10T10:50:06.000Z"><meta property="article:author" content="yi念之间"><meta property="article:tag" content="orm"><meta property="article:published_time" content="2022-12-10T00:00:00.000Z"><meta property="article:modified_time" content="2022-12-10T10:50:06.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Dapper读写分离","image":[""],"datePublished":"2022-12-10T00:00:00.000Z","dateModified":"2022-12-10T10:50:06.000Z","author":[{"@type":"Person","name":"yi念之间"}]}</script><title>Dapper读写分离 | 知识库</title><meta name="description" content="介绍 一个主库+一个从库或者多个从库的结构，从库的数据来自主库的同步。 操作 下面只是关于dapper操作数据库读写分离的构思。 新建一个存储连接字符串的类 public class ConnectionStringConsts { /// &lt;summary&gt; /// 主库连接字符串 /// &lt;/summary&gt; public static readonly string MasterConnectionString = "server=db.master.com;Database=crm_db;UID=root;PWD=1"; /// &lt;summary&gt; /// 从库连接字符串 /// &lt;/summary&gt; public static readonly string SlaveConnectionString = "server=db.slave.com;Database=crm_db;UID=root;PWD=1"; }">
     <style>
@@ -30,11 +30,11 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <link rel="preload" href="/kbms/assets/style-2773b519.css" as="style"><link rel="stylesheet" href="/kbms/assets/style-2773b519.css">
-    <link rel="modulepreload" href="/kbms/assets/app-d5cbc15d.js"><link rel="modulepreload" href="/kbms/assets/framework-63781bb7.js"><link rel="modulepreload" href="/kbms/assets/dapper_read_write.html-cf99b40f.js"><link rel="modulepreload" href="/kbms/assets/dapper_read_write.html-c67b4369.js">
+    <link rel="preload" href="/kbms/assets/style-05cc9f43.css" as="style"><link rel="stylesheet" href="/kbms/assets/style-05cc9f43.css">
+    <link rel="modulepreload" href="/kbms/assets/app-3c3dee46.js"><link rel="modulepreload" href="/kbms/assets/dapper_read_write.html-15e2bfb1.js"><link rel="modulepreload" href="/kbms/assets/dapper_read_write.html-c1b90f5e.js"><link rel="modulepreload" href="/kbms/assets/plugin-vue_export-helper-c27b6911.js">
   </head>
   <body>
-    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="skip-link sr-only">跳至主要內容</a><!--]--><!----><!--]--><!----><!----><!--]--></div>
-    <script type="module" src="/kbms/assets/app-d5cbc15d.js" defer></script>
+    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="vp-skip-link sr-only">跳至主要內容</a><!--]--><!----><!--]--><!----><!----><!--]--></div>
+    <script type="module" src="/kbms/assets/app-3c3dee46.js" defer></script>
   </body>
 </html>
