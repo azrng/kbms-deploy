@@ -5,7 +5,7 @@ import theme from "./theme.js";
 //https://v2.vuepress.vuejs.org/zh/reference/config.html
 export default defineUserConfig({
   // 设置网站的前缀地址
-  base: "/kbms/",
+  base: "/",
 
   locales: {
     "/": {
