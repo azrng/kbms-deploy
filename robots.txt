@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://azrng.github.io/kbms/kbms/sitemap.xml
+Sitemap: https://kbms.vercel.app/sitemap.xml
