@@ -1,0 +1,5 @@
+
+User-agent:*
+Disallow:
+
+Sitemap: https://azrng.gitee.io/kbms/kbms/sitemap.xml
