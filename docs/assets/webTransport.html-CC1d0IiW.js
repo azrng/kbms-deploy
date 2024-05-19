@@ -1,0 +1,53 @@
+import{_ as e}from"./plugin-vue_export-helper-DlAUqK2U.js";import{o as t,c as a,d as n}from"./app-Bfb6-vFH.js";const r="/kbms/dotnet/41802683a56a429097fad3bb4faa7d50.png",i={},s=n(`<h2 id="简介" tabindex="-1"><a class="header-anchor" href="#简介"><span>简介</span></a></h2><p>WebTransport 是一个新的 Web API，使用 HTTP/3 协议来支持双向传输。它用于 Web 客户端和 HTTP/3 服务器之间的双向通信。它支持通过 不可靠的 Datagrams API 发送数据，也支持可靠的 Stream API 发送数据。</p><p>因为 HTTP/3 使用了基于 UDP 的 QUIC 协议，所以 Web Transport 可以在一个连接上创建多个流，而且不会相互阻塞。</p><p>WebTransport 支持三种不同类型的流量：数据报（datagrams） 以及单向流和双向流。</p><p>WebTransport 的设计基于现代 Web 平台基本类型（比如 Streams API）。它在很大程度上依赖于 promise，并且可以很好地与 <code>async</code> 和 <code>await</code> 配合使用。</p><h2 id="操作" tabindex="-1"><a class="header-anchor" href="#操作"><span>操作</span></a></h2><h3 id="在-net-7-中使用-webtransport" tabindex="-1"><a class="header-anchor" href="#在-net-7-中使用-webtransport"><span>在 .NET 7 中使用 WebTransport</span></a></h3><p>WebTransport 在 .NET 7 以及以上版本可用，我们新建一个 .NET Core 的空项目，修改 csproj 文件，设置 EnablePreviewFeatures 和 RuntimeHostConfigurationOption ，如下</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>&lt;Project Sdk=&quot;Microsoft.NET.Sdk.Web&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;EnablePreviewFeatures&gt;True&lt;/EnablePreviewFeatures&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;RuntimeHostConfigurationOption Include=&quot;Microsoft.AspNetCore.Server.Kestrel.Experimental.WebTransportAndH3Datagrams&quot; Value=&quot;true&quot; /&gt;
+  &lt;/ItemGroup&gt;
+&lt;/Project&gt;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>要设置 WebTransport 连接，首先需要配置 Web 主机并通过 HTTP/3 侦听端口：</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.ConfigureKestrel((context, options) =&gt;
+{
+    // Port configured for WebTransport
+    options.ListenAnyIP([SOME PORT], listenOptions =&gt;
+    {
+        listenOptions.UseHttps(GenerateManualCertificate());
+        listenOptions.Protocols = HttpProtocols.Http1AndHttp2AndHttp3;
+    });
+});
+var app = builder.Build();
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>修改下面的代码，接收 WebTransport 请求和会话。</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>app.Run(async (context) =&gt;
+{
+    var feature = context.Features.GetRequiredFeature&lt;IHttpWebTransportFeature&gt;();
+    if (!feature.IsWebTransportRequest)
+    {
+        return;
+    }
+    var session = await feature.AcceptAsync(CancellationToken.None); 
+});
+
+await app.RunAsync();
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>等待 AcceptStreamAsync 方法直到接收到一个 Stream，使用 stream.Transport.Input 写入数据，stream.Transport.Output 读取数据。</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>var stream = await session.AcceptStreamAsync(CancellationToken.None);
+
+var inputPipe = stream.Transport.Input;
+var outputPipe = stream.Transport.Output;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><img src="`+r+`" alt="图片" tabindex="0" loading="lazy"><figcaption>图片</figcaption></figure><h3 id="在-javascript-中使用-webtransport" tabindex="-1"><a class="header-anchor" href="#在-javascript-中使用-webtransport"><span>在 JavaScript 中使用 WebTransport</span></a></h3><p>传入服务地址并创建 WebTransport 实例, transport.ready 完成，此时连接就可以使用了。</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>const url = &#39;https://localhost:5002&#39;;
+const transport = new WebTransport(url);
+
+await transport.ready;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>连接到服务器后，可以使用 Streams API 发送和接收数据。</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>// Send two Uint8Arrays to the server.
+const stream = await transport.createSendStream();
+const writer = stream.writable.getWriter();
+const data1 = new Uint8Array([65, 66, 67]);
+const data2 = new Uint8Array([68, 69, 70]);
+writer.write(data1);
+writer.write(data2);
+try {
+  await writer.close();
+  console.log(&#39;All data has been sent.&#39;);
+} catch (error) {
+  console.error(\`An error occurred: \${error}\`);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="资料" tabindex="-1"><a class="header-anchor" href="#资料"><span>资料</span></a></h2><p>https://mp.weixin.qq.com/s/m10ProVLVMXfQ1UEJ8mDig</p>`,23),l=[s];function d(o,p){return t(),a("div",null,l)}const m=e(i,[["render",d],["__file","webTransport.html.vue"]]),v=JSON.parse('{"path":"/dotnet/api/webTransport.html","title":"WebTransport","lang":"zh-CN","frontmatter":{"title":"WebTransport","lang":"zh-CN","date":"2024-01-15T00:00:00.000Z","publish":true,"author":"azrng","isOriginal":true,"category":["dotNET"],"tag":["API"],"description":"简介 WebTransport 是一个新的 Web API，使用 HTTP/3 协议来支持双向传输。它用于 Web 客户端和 HTTP/3 服务器之间的双向通信。它支持通过 不可靠的 Datagrams API 发送数据，也支持可靠的 Stream API 发送数据。 因为 HTTP/3 使用了基于 UDP 的 QUIC 协议，所以 Web Trans...","head":[["meta",{"property":"og:url","content":"https://azrng.gitee.io/kbms/kbms/dotnet/api/webTransport.html"}],["meta",{"property":"og:site_name","content":"知识库"}],["meta",{"property":"og:title","content":"WebTransport"}],["meta",{"property":"og:description","content":"简介 WebTransport 是一个新的 Web API，使用 HTTP/3 协议来支持双向传输。它用于 Web 客户端和 HTTP/3 服务器之间的双向通信。它支持通过 不可靠的 Datagrams API 发送数据，也支持可靠的 Stream API 发送数据。 因为 HTTP/3 使用了基于 UDP 的 QUIC 协议，所以 Web Trans..."}],["meta",{"property":"og:type","content":"article"}],["meta",{"property":"og:image","content":"https://azrng.gitee.io/kbms/kbms/dotnet/41802683a56a429097fad3bb4faa7d50.png"}],["meta",{"property":"og:locale","content":"zh-CN"}],["meta",{"property":"og:updated_time","content":"2024-01-15T05:51:03.000Z"}],["meta",{"property":"article:author","content":"azrng"}],["meta",{"property":"article:tag","content":"API"}],["meta",{"property":"article:published_time","content":"2024-01-15T00:00:00.000Z"}],["meta",{"property":"article:modified_time","content":"2024-01-15T05:51:03.000Z"}],["script",{"type":"application/ld+json"},"{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"WebTransport\\",\\"image\\":[\\"https://azrng.gitee.io/kbms/kbms/dotnet/41802683a56a429097fad3bb4faa7d50.png\\"],\\"datePublished\\":\\"2024-01-15T00:00:00.000Z\\",\\"dateModified\\":\\"2024-01-15T05:51:03.000Z\\",\\"author\\":[{\\"@type\\":\\"Person\\",\\"name\\":\\"azrng\\"}]}"]]},"headers":[{"level":2,"title":"简介","slug":"简介","link":"#简介","children":[]},{"level":2,"title":"操作","slug":"操作","link":"#操作","children":[{"level":3,"title":"在 .NET 7 中使用 WebTransport","slug":"在-net-7-中使用-webtransport","link":"#在-net-7-中使用-webtransport","children":[]},{"level":3,"title":"在 JavaScript 中使用 WebTransport","slug":"在-javascript-中使用-webtransport","link":"#在-javascript-中使用-webtransport","children":[]}]},{"level":2,"title":"资料","slug":"资料","link":"#资料","children":[]}],"git":{"createdTime":1705297863000,"updatedTime":1705297863000,"contributors":[{"name":"zhangyunpeng","email":"zhang.yunpeng@synyi.com","commits":1}]},"readingTime":{"minutes":1.63,"words":489},"filePathRelative":"dotnet/api/webTransport.md","localizedDate":"2024年1月15日","excerpt":"<h2>简介</h2>\\n<p>WebTransport 是一个新的 Web API，使用 HTTP/3 协议来支持双向传输。它用于 Web 客户端和 HTTP/3 服务器之间的双向通信。它支持通过 不可靠的 Datagrams API 发送数据，也支持可靠的 Stream API 发送数据。</p>\\n<p>因为 HTTP/3 使用了基于 UDP 的 QUIC 协议，所以 Web Transport 可以在一个连接上创建多个流，而且不会相互阻塞。</p>\\n<p>WebTransport 支持三种不同类型的流量：数据报（datagrams） 以及单向流和双向流。</p>\\n<p>WebTransport 的设计基于现代 Web 平台基本类型（比如 Streams API）。它在很大程度上依赖于 promise，并且可以很好地与 <code>async</code> 和 <code>await</code> 配合使用。</p>","autoDesc":true}');export{m as comp,v as data};
